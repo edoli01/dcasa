@@ -1,0 +1,288 @@
+/* D.Casa — lettura articolo. Colori, font e pulsanti ereditati dal sito. */
+.topbar.scrolled .navlinks a[aria-current="location"] {
+  color: var(--red);
+}
+
+.article-header {
+  padding-top: var(--page-intro-top);
+  padding-bottom: clamp(40px, 5vw, 80px);
+}
+
+.article-header > .eyebrow {
+  margin-bottom: var(--eyebrow-title-gap);
+}
+
+.article-header h1 {
+  max-width: 1200px;
+  font-size: clamp(44px, 6vw, 104px);
+  line-height: 1;
+}
+
+.article-deck {
+  max-width: 900px;
+  margin-top: var(--title-text-gap);
+  font-size: clamp(17px, 1.6vw, 23px);
+  line-height: 1.45;
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.article-cover {
+  margin: 0;
+}
+
+.article-cover img {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center 55%;
+}
+
+.editorial-article figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 64px);
+  padding-right: calc(var(--edge) + clamp(24px, 5vw, 90px));
+  padding-top: clamp(60px, 7vw, 110px);
+  padding-bottom: clamp(85px, 10vw, 160px);
+}
+
+.article-share {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.article-share-label {
+  margin-bottom: 8px;
+  text-align: left;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.article-share-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid var(--hair);
+  border-radius: var(--button-radius);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: color .2s, background-color .2s, border-color .2s;
+}
+
+.article-share-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.article-share-icon:hover,
+.article-share-icon:focus-visible {
+  color: #fff;
+  border-color: var(--red);
+  background: var(--red);
+}
+
+.article-share-icon:focus-visible,
+.article-category:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+
+.article-share-status {
+  position: absolute;
+  left: 88px;
+  top: 0;
+  width: max-content;
+  max-width: 240px;
+  padding: 10px 14px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--hair);
+  border-radius: var(--button-radius);
+  font-size: 12px;
+  z-index: 3;
+}
+
+.article-share-status:empty,
+.article-share-fallback[hidden] {
+  display: none;
+}
+
+.article-share-fallback {
+  position: absolute;
+  left: 88px;
+  top: 70px;
+  width: min(320px, 65vw);
+  padding: 10px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--hair);
+  border-radius: var(--button-radius);
+  z-index: 3;
+}
+
+/* Il sans è usato per tutti i titoli successivi all’apertura dell’articolo. */
+.article-page :is(h2, h3, h4, h5, h6) {
+  font-family: var(--sans);
+}
+
+.article-page :is(h2, h3, h4, h5, h6) :is(em, i, .serif, .vs) {
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+.article-body {
+  min-width: 0;
+}
+
+.article-body h2 {
+  max-width: 950px;
+  margin-top: 48px;
+  margin-bottom: 24px;
+  font-size: clamp(32px, 3.5vw, 56px);
+  line-height: 1.02;
+}
+
+.article-body p {
+  max-width: 92%;
+  color: var(--muted);
+  font-size: clamp(17px, 1.35vw, 20px);
+  line-height: 1.65;
+}
+
+.article-body h3 {
+  max-width: 950px;
+  margin: 32px 0 18px;
+  font-size: clamp(23px, 2.2vw, 34px);
+  line-height: 1.1;
+}
+
+.article-body > :first-child {
+  margin-top: 0;
+}
+
+.article-body p + p {
+  margin-top: 20px;
+}
+
+.article-body ul {
+  max-width: none;
+  padding-left: 24px;
+  margin: 24px 0 32px;
+  color: var(--muted);
+  font-size: clamp(17px, 1.35vw, 20px);
+  line-height: 1.65;
+}
+
+.article-body li + li {
+  margin-top: 14px;
+}
+
+.article-body strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.article-figure {
+  margin: 48px 0;
+}
+
+.article-figure img {
+  height: auto;
+}
+
+.article-end {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--hair);
+}
+
+.article-category {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.article-related {
+  padding-block: clamp(85px, 9vw, 145px);
+  background: #eeeae4;
+}
+
+@media (max-width: 760px) {
+  .article-cover img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .article-layout {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+    padding-right: var(--edge);
+    padding-top: 32px;
+    padding-bottom: 85px;
+  }
+
+  .article-share {
+    position: relative;
+    top: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .article-share-label {
+    flex-basis: 100%;
+  }
+
+  .article-share-status {
+    top: 88px;
+    left: 0;
+  }
+
+  .article-share-fallback {
+    top: 152px;
+    left: 0;
+  }
+
+  .article-figure {
+    margin-block: 32px;
+  }
+
+  .article-body h2 {
+    margin-top: 36px;
+  }
+
+  .article-related {
+    padding-block: 85px;
+  }
+}

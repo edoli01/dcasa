@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="it">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   D.Casa — Homepage | Prototipo ordinato
+  </title>
+  <meta content="Prototipo di studio homepage D.Casa, concept editoriale e fotografico" name="description"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="preloader.css">
+  <script src="preloader.js" defer></script>
+  <noscript><style>.dcasa-preloader { display: none; }</style></noscript>
+ </head>
+ <body>
+  <!-- Preloader globale D.Casa -->
+  <div class="dcasa-preloader" id="dcasaPreloader" role="status" aria-label="Caricamento pagina">
+    <svg class="dcasa-loader-logo" viewBox="0 0 885 885" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <!-- Fondo rosso originale del logo -->
+      <path d="M884.45 0H0V884.38H884.45V0Z" fill="#D21317"/>
+      <!-- Quadrato originale, fisso -->
+      <path d="M295.4 239.69H192.51V342.58H295.4V239.69Z" fill="white"/>
+      <!-- La maschera disegna e cancella la forma originale, senza alterarla -->
+      <defs>
+        <mask id="dcasaArrowMask" maskUnits="userSpaceOnUse" x="0" y="0" width="885" height="885">
+          <path class="dcasa-arrow-draw" pathLength="100" d="M187.54 650.38 L442.21 395.63 L696.96 650.38" fill="none" stroke="white" stroke-width="130" stroke-linecap="butt" stroke-linejoin="miter"/>
+        </mask>
+      </defs>
+      <!-- Freccia originale: rivelata dalla maschera animata -->
+      <path d="M442.21 466.81C494.91 519.51 661.37 685.95 661.37 685.95L732.55 614.8L442.21 324.46L151.9 614.8L223.17 685.95C223.17 685.95 389.56 519.51 442.21 466.81Z" fill="white" mask="url(#dcasaArrowMask)"/>
+    </svg>
+    <span class="sr-only">Caricamento</span>
+  </div>
+  <!-- HEADER — Logo e navigazione con menu Prodotti -->
+  <header class="topbar hero-header" id="topbar">
+   <a aria-label="D.Casa — torna all'inizio" class="brand" href="#top">
+    <img alt="Logo D.Casa" class="brand-logo brand-logo-dark" src="assets/dcasa_logo_esteso.svg"/>
+    <img alt="Logo D.Casa" class="brand-logo brand-logo-light" src="assets/dcasa_logo_esteso_bianco.svg"/>
+   </a>
+   <button aria-expanded="false" class="menu-toggle" id="menuToggle">
+    Menu ☰
+   </button>
+   <nav aria-label="Navigazione principale" class="navlinks">
+    <a href="azienda.html">
+     Azienda
+    </a>
+    <a href="showroom.html">
+     Showroom
+    </a>
+    <div class="nav-dropdown" id="productsNav">
+     <button aria-controls="productsSubmenu" aria-expanded="false" class="nav-dropdown-toggle" id="productsToggle" type="button">
+      Prodotti
+      <span aria-hidden="true" class="nav-chevron">
+      </span>
+     </button>
+     <div class="nav-submenu" id="productsSubmenu">
+      <div class="submenu-heading">
+       <span class="eyebrow">
+        Esplora i materiali
+       </span>
+      </div>
+      <div class="submenu-grid">
+       <a href="pavimenti-rivestimenti.html">
+        Pavimenti in legno
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="pavimenti-rivestimenti.html">
+        Pavimenti e rivestimenti
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="#arredo-bagno">
+        Arredo bagno
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="#benessere">
+        Benessere
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="#prodotti">
+        Rubinetteria
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="#prodotti">
+        Sanitari per disabilità
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="#camini-stufe">
+        Camini e stufe
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="#infissi-porte">
+        Infissi e porte
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="#prodotti">
+        Kerakoll Design House
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="#carta-parati">
+        Carta da parati
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="#prodotti">
+        Termoarredo
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+      </div>
+      <p class="submenu-note">
+       Anteprima della navigazione: le categorie rimandano per ora alla sezione Prodotti della homepage.
+      </p>
+     </div>
+    </div>
+    <a href="servizi.html">
+     Servizi
+    </a>
+    <a href="progetti.html">
+     Realizzazioni
+    </a>
+    <a href="blog.html">
+     Magazine &amp; Blog
+    </a>
+    <a href="contatti.html">
+     Contatti
+    </a>
+   </nav>
+  </header>
+  <main id="top">
+   <!-- 01 · HERO — Carosello fotografico -->
+   <section class="hero home-hero" id="hero">
+    <div class="hero-slides">
+     <div class="hero-slide active" style="background-image:url('assets/homepage/_WF60473.jpg')">
+     </div>
+     <div class="hero-slide" style="background-image:url('assets/homepage/_WIL5646.jpg')">
+     </div>
+     <div class="hero-slide" style="background-image:url('assets/homepage/_WIL5662.jpg')">
+     </div>
+     <div class="hero-slide" style="background-image:url('assets/homepage/_WL71919.jpg')">
+     </div>
+     <div class="hero-slide" style="background-image:url('assets/homepage/_WSA7639.jpg')">
+     </div>
+     <div class="hero-slide" style="background-image:url('assets/homepage/_WSA7681.jpg')">
+     </div>
+     <div class="hero-slide" style="background-image:url('assets/homepage/_WSV4835.jpg')">
+     </div>
+    </div>
+    <div class="hero-body page-shell">
+     
+     <h1>
+      Essenza
+      <br/>
+      <em class="serif">dell’abitare.</em>
+     </h1>
+     <p class="hero-sub">
+      Materiali, progetto e visione<br>per dare forma a spazi autentici.
+     </p>
+     <a class="text-link" href="#manifesto">
+      Scopri D.Casa
+      
+     </a>
+    </div>
+    <div class="hero-footer">
+     <div class="slide-arrows">
+      <button aria-label="Slide precedente" id="prevSlide">
+       <svg aria-hidden="true" class="ui-arrow ui-arrow-left" focusable="false" viewBox="0 0 505.08 840.34">
+        <polygon points="0 420.12 84.86 335.26 420.12 0 504.97 84.86 169.71 420.12 505.08 755.49 420.23 840.34 84.86 504.97 0 420.12"/>
+       </svg>
+      </button>
+      <button aria-label="Slide successiva" id="nextSlide">
+       <svg aria-hidden="true" class="ui-arrow ui-arrow-right" focusable="false" viewBox="0 0 505.08 840.34">
+        <polygon points="505.08 420.22 420.22 505.08 84.96 840.34 .11 755.48 335.37 420.22 0 84.85 84.85 0 420.22 335.37 505.08 420.22"/>
+       </svg>
+      </button>
+     </div>
+    </div>
+   </section>
+   <!-- 02 · MANIFESTO — Introduzione a D.Casa -->
+   <section class="manifesto page-shell" id="manifesto">
+    <p class="eyebrow">
+    D.Casa
+      </p>
+    <h2 class="display">
+     Più di uno showroom,
+     <br/>
+     <em class="serif">un modo di abitare.</em>
+    </h2>
+    <a class="text-link" href="azienda.html">
+      La nostra filosofia
+      
+     </a>
+   </section>
+   <!-- 03 · PRODOTTI — Griglia categorie -->
+   <section class="products page-shell" id="prodotti">
+    <div class="section-head">
+     <div>
+      <p class="eyebrow" style="margin-bottom:var(--eyebrow-title-gap)">
+       01 / Prodotti
+      </p>
+      <h2 class="section-title">
+       Materiali per
+       <br/>
+       ogni progetto.
+      </h2>
+     </div>
+     <div class="section-copy-column">
+      <p>
+       Un mondo di possibilità: dalle superfici agli ambienti, una selezione pensata per dare forma a ogni spazio.
+      </p>
+      
+     </div>
+    </div>
+    <div class="product-grid">
+     <a class="product-card" href="pavimenti-rivestimenti.html">
+      <div class="photo">
+       <img alt="Interno con pavimentazione materica" loading="lazy" src="assets/prodotti/pavimenti.jpg"/>
+      </div>
+      <div class="card-caption">
+       <h3>
+        Pavimenti e
+        rivestimenti
+       </h3>
+       <span>
+        <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+         <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+        </svg>
+       </span>
+      </div>
+     </a>
+     <a id="arredo-bagno" class="product-card" href="#contatti">
+      <div class="photo">
+       <img alt="Ambiente bagno contemporaneo" loading="lazy" src="assets/prodotti/arredo bagni.jpg"/>
+      </div>
+      <div class="card-caption">
+       <h3>
+        Arredo bagno
+       </h3>
+       <span>
+        <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+         <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+        </svg>
+       </span>
+      </div>
+     </a>
+     <a id="benessere" class="product-card" href="#contatti">
+      <div class="photo">
+       <img alt="Ambiente benessere e materiali" loading="lazy" src="assets/prodotti/benessere.jpg"/>
+      </div>
+      <div class="card-caption">
+       <h3>
+        Benessere
+       </h3>
+       <span>
+        <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+         <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+        </svg>
+       </span>
+      </div>
+     </a>
+     <a id="infissi-porte" class="product-card" href="#contatti">
+      <div class="photo">
+       <img alt="Architettura interna e aperture" loading="lazy" src="assets/prodotti/infissi e porte.jpg"/>
+      </div>
+      <div class="card-caption">
+       <h3>
+        Infissi e porte
+       </h3>
+       <span>
+        <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+         <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+        </svg>
+       </span>
+      </div>
+     </a>
+     <a id="carta-parati" class="product-card" href="#contatti">
+      <div class="photo">
+       <img alt="Parete decorativa" loading="lazy" src="assets/prodotti/carta da parati.jpg"/>
+      </div>
+      <div class="card-caption">
+       <h3>
+        Carta da parati
+       </h3>
+       <span>
+        <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+         <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+        </svg>
+       </span>
+      </div>
+     </a>
+     <a id="camini-stufe" class="product-card" href="#contatti">
+      <div class="photo">
+       <img alt="Living contemporaneo" loading="lazy" src="assets/prodotti/camini e stufe.jpg"/>
+      </div>
+      <div class="card-caption">
+       <h3>
+        Camini e stufe
+       </h3>
+       <span>
+        <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+         <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+        </svg>
+       </span>
+      </div>
+     </a>
+    </div>
+   </section>
+   <!-- 04 · AZIENDA — Storia VS Contemporaneità -->
+   <section class="history" id="azienda">
+    <div class="history-images">
+     <div class="photo">
+      <img alt="Architettura storica, immagine indicativa" loading="lazy" src="assets/azienda/_WSV4827.jpg"/>
+     </div>
+    </div>
+    <div class="history-body">
+     <p class="eyebrow">
+      02 / Azienda
+     </p>
+     <h2>
+      Una storia<br>che guarda avanti.
+     </h2>
+     <p>
+      Da oltre cinquant'anni, D.Casa unisce esperienza, ricerca e cultura del progetto. Una storia familiare che continua a trasformarsi, senza perdere le proprie radici.
+     </p>
+     <a class="text-link" href="azienda.html">
+      Scopri chi siamo
+      
+     </a>
+    </div>
+   </section>
+   <!-- 05 · NUMERI — Dati aziendali da verificare -->
+   <section class="numbers page-shell">
+    <p class="eyebrow numbers-head">
+     D.Casa / In numeri
+    </p>
+    <div class="stat-grid">
+     <div class="stat">
+      <div class="stat-value">30+</div>
+      <div class="stat-label">Anni di esperienza</div>
+     </div>
+     <div class="stat">
+      <div class="stat-value">2.500</div>
+      <div class="stat-label">Metri quadrati di showroom</div>
+     </div>
+     <div class="stat">
+      <div class="stat-value">12.000</div>
+      <div class="stat-label">Clienti</div>
+     </div>
+     <div class="stat">
+      <div class="stat-value">50+</div>
+      <div class="stat-label">Brand</div>
+     </div>
+    </div>
+   </section>
+   <!-- 06 · SERVIZI — Privati, Professionisti, Imprese -->
+   <section class="services page-shell" id="servizi">
+    <div class="services-heading">
+     <p class="eyebrow">03 / Servizi</p>
+     <h2 class="section-title">Al tuo fianco<br>in ogni fase.</h2>
+     <p class="services-description">Un supporto continuo, dalla scelta dei materiali alle soluzioni tecniche e alla realizzazione.</p>
+     <a class="text-link services-cta" href="servizi.html">Scopri i nostri servizi </a>
+    </div>
+    <div class="services-grid">
+     <a class="service-card" href="servizi.html#privati">
+      <div class="service-icon"><img alt="" loading="lazy" src="assets/dcasa_privati.png"></div>
+      <h3>Privati</h3>
+      <p>La casa, come la desideri.</p>
+      <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840"><polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/></svg>
+     </a>
+     <a class="service-card" href="servizi.html#professionisti">
+      <div class="service-icon"><img alt="" loading="lazy" src="assets/dcasa_professionisti.png"></div>
+      <h3>Professionisti</h3>
+      <p>Competenza e supporto progettuale.</p>
+      <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840"><polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/></svg>
+     </a>
+     <a class="service-card" href="servizi.html#imprese">
+      <div class="service-icon"><img alt="" loading="lazy" src="assets/dcasa_aziende.png"></div>
+      <h3>Imprese</h3>
+      <p>Soluzioni per ogni fase del lavoro.</p>
+      <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840"><polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/></svg>
+     </a>
+    </div>
+   </section>
+   <!-- 07 · CITAZIONE — Pausa editoriale -->
+   <section class="quote-section">
+    <span aria-hidden="true" class="mark">
+    </span>
+    <blockquote>
+     «Pensa il tuo spazio in altro modo.
+     <br/>
+     È la diversità che fa la differenza.»
+    </blockquote>
+    <span class="attribution">
+     D.Casa
+    </span>
+   </section>
+   <!-- 08 · REALIZZAZIONI — Progetti -->
+   <section class="projects page-shell" id="realizzazioni">
+    <div class="section-head">
+     <div>
+      <p class="eyebrow" style="margin-bottom:var(--eyebrow-title-gap)">04 / Realizzazioni</p>
+      <h2 class="section-title">Dalle idee<br>agli spazi.</h2>
+     </div>
+     <p class="section-copy-column">Una selezione di progetti che raccontano la versatilità dei materiali e la qualità del lavoro.</p>
+    </div>
+    <div class="project-layout" id="projectCarousel" role="region" aria-label="Progetti in evidenza" aria-roledescription="carosello" tabindex="0">
+     <a class="home-project" href="realizzazione-attico-fano.html">
+      <div class="photo">
+       <img alt="Soggiorno e zona pranzo dell’attico di Fano" loading="lazy" src="assets/progetto%20casa%20Fano/_WIL8148.jpg"/>
+      </div>
+      <div class="project-caption">
+       <div>
+        <p class="home-project-meta">01 / Residenziale · Fano</p>
+        <h3>Arredare con la luce. L’attico di Fano</h3>
+       </div>
+       <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840"><polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/></svg>
+      </div>
+     </a>
+     <a class="home-project" href="progetti.html#ovo-pesaro">
+      <div class="photo">
+       <img alt="Locale con bancone bar e pavimento decorato" loading="lazy" src="assets/progetti/_DSF9412_Panorama%201.jpg"/>
+      </div>
+      <div class="project-caption">
+       <div>
+        <p class="home-project-meta">02 / Commerciale · Pesaro</p>
+        <h3>Ovo ristorantino cocktail-bar</h3>
+       </div>
+       <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840"><polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/></svg>
+      </div>
+     </a>
+     <a class="home-project" href="progetti.html#casa-lucrezia">
+      <div class="photo">
+       <img alt="Cucina e zona pranzo con scala in legno e camino sospeso" loading="lazy" src="assets/progetti/_WIL8404.jpg"/>
+      </div>
+      <div class="project-caption">
+       <div>
+        <p class="home-project-meta">03 / Residenziale · Lucrezia</p>
+        <h3>Design e stile per una casa a Lucrezia</h3>
+       </div>
+       <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840"><polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/></svg>
+      </div>
+     </a>
+     <a class="home-project" href="progetti.html#villa-matarazzo">
+      <div class="photo">
+       <img alt="Ambiente luminoso con archi e travi in legno a vista" loading="lazy" src="assets/progetti/_WIL5373.jpg"/>
+      </div>
+      <div class="project-caption">
+       <div>
+        <p class="home-project-meta">04 / Hospitality · Gradara</p>
+        <h3>Relais Villa Matarazzo</h3>
+       </div>
+       <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840"><polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/></svg>
+      </div>
+     </a>
+    </div>
+    <div class="projects-footer">
+     <div class="project-controls" hidden>
+      <div class="slide-arrows project-arrows">
+       <button type="button" id="prevProject" aria-label="Progetto precedente" aria-controls="projectCarousel"><svg class="ui-arrow" aria-hidden="true" viewBox="0 0 505.08 840.34"><polygon points="0 420.12 84.86 335.26 420.12 0 504.97 84.86 169.71 420.12 505.08 755.49 420.23 840.34 84.86 504.97 0 420.12"/></svg></button>
+       <button type="button" id="nextProject" aria-label="Progetto successivo" aria-controls="projectCarousel"><svg class="ui-arrow" aria-hidden="true" viewBox="0 0 505.08 840.34"><polygon points="505.08 420.12 420.22 335.26 84.96 0 0.11 84.86 335.37 420.12 0 755.49 84.85 840.34 420.22 504.97 505.08 420.12"/></svg></button>
+      </div>
+     </div>
+    <a class="text-link projects-cta" href="progetti.html">Tutte le realizzazioni </a>
+    </div>
+   </section>
+   <!-- 09 · SHOWROOM — Tre sedi -->
+   <section class="showrooms page-shell" id="showroom">
+    <div class="showroom-head">
+     <p class="eyebrow">
+      05 / I nostri showroom
+     </p>
+     <h2 class="section-title">
+      Luoghi che danno
+      <br/>
+      forma alle idee.
+     </h2>
+     <p>
+      Tre sedi, tre storie di recupero architettonico. Luoghi da vivere, scoprire e attraversare.
+     </p>
+    </div>
+    <div class="showroom-grid">
+     <a class="showroom-item" href="showroom-calcinelli.html">
+      <div class="photo">
+       <img alt="Showroom D.Casa di Calcinelli" loading="lazy" src="assets/showroom/calcinelli/_WL71914.jpg"/>
+      </div>
+      <div class="card-caption">
+       <h3>
+        Calcinelli
+        <br/>
+        <small style="font-size:20px;font-weight:var(--serif-weight);opacity:.6">
+         <em>L'antico enopolio</em>
+        </small>
+       </h3>
+       <span>
+        <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+         <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+        </svg>
+       </span>
+      </div>
+     </a>
+     <a class="showroom-item" href="#contatti">
+      <div class="photo">
+       <img alt="Showroom D.Casa di Marotta" loading="lazy" src="assets/showroom/marotta/_WIL5646.jpg"/>
+      </div>
+      <div class="card-caption">
+       <h3>
+        Marotta
+        <br/>
+        <small style="font-size:20px;font-weight:var(--serif-weight);opacity:.6">
+         <em>Il birrificio-cappella</em>
+        </small>
+       </h3>
+       <span>
+        <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+         <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+        </svg>
+       </span>
+      </div>
+     </a>
+     <a class="showroom-item" href="#contatti">
+      <div class="photo">
+       <img alt="Showroom D.Casa di Pesaro" loading="lazy" src="assets/showroom/pesaro/_WSV4831.jpg"/>
+      </div>
+      <div class="card-caption">
+       <h3>
+        Pesaro
+        <br/>
+        <small style="font-size:20px;font-weight:var(--serif-weight);opacity:.6">
+         <em>La storica segheria</em>
+        </small>
+       </h3>
+       <span>
+        <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+         <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+        </svg>
+       </span>
+      </div>
+     </a>
+    </div>
+   </section>
+   <!-- 10 · BRAND — Elenco dimostrativo -->
+   <section class="brand-section page-shell" id="brand">
+    <div class="section-head">
+     <div>
+      <p class="eyebrow">06 / Qualità e ricerca</p>
+      <h2 class="section-title">
+       I brand.
+      </h2>
+     </div>
+     <p class="section-copy-column">
+      Una selezione di marchi e materiali. I nomi seguenti sono segnaposto grafici, da sostituire con l'elenco confermato.
+     </p>
+    </div>
+    <div class="brand-names">
+     <span class="brand-name">
+      Brand 01
+     </span>
+     <span class="brand-name">
+      Brand 02
+     </span>
+     <span class="brand-name">
+      Brand 03
+     </span>
+     <span class="brand-name">
+      Brand 04
+     </span>
+     <span class="brand-name">
+      Brand 05
+     </span>
+    </div>
+   </section>
+   <!-- 11 · BLOG -->
+   <section aria-label="Blog" class="editorial page-shell" id="magazine-blog">
+    <div class="blog-preview" id="blog">
+     <div class="blog-heading">
+      <div>
+       <p class="eyebrow">07 / Blog</p>
+       <h2 class="section-title">
+        Idee, materiali,
+        <br/>
+        prospettive.
+       </h2>
+      </div>
+      <div class="blog-aside section-copy-column">
+       <p>
+        Novità, ispirazioni e approfondimenti dal mondo D.Casa. Storie e idee per il tuo modo di abitare.
+       </p>
+       <a class="text-link" href="blog.html">
+        Tutti gli articoli
+       </a>
+      </div>
+     </div>
+     <div class="blog-cards">
+      <article class="blog-card">
+       <a href="articolo-eiko-365.html">
+        <div class="blog-photo"><img alt="EIKO 365" loading="lazy" src="assets/blog/3941.png"/></div>
+        <div class="blog-meta">Consapevolezza<span>7 ottobre 2026</span></div>
+        <h3>EIKO 365: Stufa a Pellet per tutto l’anno</h3>
+       </a>
+      </article>
+      <article class="blog-card">
+       <div class="blog-card-preview">
+        <div class="blog-photo"><img alt="copertina Neoclassica" loading="lazy" src="assets/blog/3923.png"/></div>
+        <div class="blog-meta">Consapevolezza<span>3 settembre 2026</span></div>
+        <h3>Neoclassica di Cerdomus: l’evoluzione contemporanea del battuto veneziano</h3>
+       </div>
+      </article>
+      <article class="blog-card">
+       <div class="blog-card-preview">
+        <div class="blog-photo"><img alt="Gigacer" loading="lazy" src="assets/blog/3913.jpg"/></div>
+        <div class="blog-meta">Consapevolezza<span>3 agosto 2026</span></div>
+        <h3>Argilla di Gigacer: l’armonia ancestrale della terra e dell’acqua nel design d’interni</h3>
+       </div>
+      </article>
+      <article class="blog-card">
+       <div class="blog-card-preview">
+        <div class="blog-photo"><img alt="Arteseta" loading="lazy" src="assets/blog/3901.jpg"/></div>
+        <div class="blog-meta">Consapevolezza<span>30 giugno 2026</span></div>
+        <h3>Arteseta di Marca Corona: Il fascino tridimensionale della ceramica</h3>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <!-- 12 · CONTATTI — CTA finale -->
+   <section class="final-cta page-shell" id="contatti">
+    <div>
+     <p class="eyebrow" style="margin-bottom:var(--eyebrow-title-gap)">
+      Il tuo prossimo progetto
+     </p>
+     <h2>
+      Diamo forma
+      <br/>
+      alle tue idee.
+     </h2>
+    </div>
+    <a class="text-link" href="mailto:info@dicasa-aiudi.it">
+     Parliamone
+     
+    </a>
+   </section>
+  </main>
+  <!-- FOOTER -->
+  <footer class="footer page-shell">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-home" href="index.html" aria-label="D.Casa — Homepage">
+          <img class="footer-logo" src="assets/dcasa_logo_esteso_bianco.svg" alt="Logo D.Casa" width="3459" height="884">
+        </a>
+        <p class="footer-tagline">Essenza dell’abitare.</p>
+        <p class="footer-description">Materiali, persone e idee.<br>Da oltre cinquant’anni, al tuo fianco.</p>
+        <div class="footer-socials" role="group" aria-label="Social D.Casa">
+          <a class="footer-social" href="https://www.facebook.com/dicasaaiudi/" target="_blank" rel="noopener noreferrer" aria-label="D.Casa su Facebook (nuova scheda)" data-social="facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14 21v-8h3l.5-4H14V7c0-1 .3-1.5 1.5-1.5H18V2.2c-.6-.1-1.7-.2-3-.2-3 0-5 1.8-5 5v2H7v4h3v8z"/></svg>
+          </a>
+          <a class="footer-social" href="https://www.instagram.com/dcasaaiudi/" target="_blank" rel="noopener noreferrer" aria-label="D.Casa su Instagram (nuova scheda)" data-social="instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <nav class="footer-column" aria-label="Esplora il sito">
+          <strong>Esplora</strong>
+          <a href="azienda.html">Azienda</a>
+          <a href="servizi.html">Servizi</a>
+          <a href="progetti.html">Realizzazioni</a>
+          <a href="blog.html">Magazine &amp; Blog</a>
+        </nav>
+        <nav class="footer-column" aria-label="I nostri showroom">
+          <strong>Showroom</strong>
+          <a href="showroom.html#calcinelli">Calcinelli</a>
+          <a href="showroom.html#marotta">Marotta</a>
+          <a href="showroom.html#pesaro">Pesaro</a>
+        </nav>
+        <div class="footer-column footer-contacts">
+          <strong>Contatti</strong>
+          <span class="footer-company">d.casa aiudi</span>
+          <address><a href="https://www.google.com/maps/search/?api=1&amp;query=Via%20Flaminia%2045%2F47%20Calcinelli%2061036%20Colli%20al%20Metauro%20PU" target="_blank" rel="noopener noreferrer" aria-label="Apri l’indirizzo di D.Casa Calcinelli su Google Maps (nuova scheda)">Via Flaminia, 45/47 · Calcinelli<br>61036 Colli al Metauro (PU)</a></address>
+          <span class="footer-tax">P.IVA e C.F. 01172340414</span>
+          <a class="footer-phone" href="tel:+390721894480"><span class="footer-contact-label">T.</span> +39 0721 894480</a>
+          <a href="mailto:info@dicasa-aiudi.it">info@dicasa-aiudi.it</a>
+          <a class="footer-pec" href="mailto:amministrazione@pec.dicasa-aiudi.it"><span class="footer-contact-label">PEC</span> amministrazione@pec.dicasa-aiudi.it</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Prototipo grafico D.Casa — non è il sito ufficiale</span>
+      <span>Fotografie illustrative · valori provvisori dove indicato</span>
+    </div>
+  </footer>
+  <script defer="True" src="script.js">
+  </script>
+   <script src="scroll-sezioni.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+[
+  {
+    "id": 3941,
+    "title": "EIKO 365: Stufa a Pellet per tutto l’anno",
+    "date": "2026-10-07",
+    "url": "articolo-eiko-365.html",
+    "categories": [
+      {
+        "name": "Consapevolezza",
+        "slug": "consapevolezza"
+      }
+    ],
+    "image": "assets/blog/3941.png",
+    "alt": "EIKO 365"
+  },
+  {
+    "id": 3923,
+    "title": "Neoclassica di Cerdomus: l’evoluzione contemporanea del battuto veneziano",
+    "date": "2026-09-03",
+    "url": null,
+    "categories": [
+      {
+        "name": "Consapevolezza",
+        "slug": "consapevolezza"
+      }
+    ],
+    "image": "assets/blog/3923.png",
+    "alt": "copertina Neoclassica"
+  },
+  {
+    "id": 3913,
+    "title": "Argilla di Gigacer: l’armonia ancestrale della terra e dell’acqua nel design d’interni",
+    "date": "2026-08-03",
+    "url": null,
+    "categories": [
+      {
+        "name": "Consapevolezza",
+        "slug": "consapevolezza"
+      }
+    ],
+    "image": "assets/blog/3913.jpg",
+    "alt": "Gigacer"
+  },
+  {
+    "id": 3901,
+    "title": "Arteseta di Marca Corona: Il fascino tridimensionale della ceramica",
+    "date": "2026-06-30",
+    "url": null,
+    "categories": [
+      {
+        "name": "Consapevolezza",
+        "slug": "consapevolezza"
+      }
+    ],
+    "image": "assets/blog/3901.jpg",
+    "alt": "Arteseta"
+  },
+  {
+    "id": 3883,
+    "title": "Lineadacqua di antoniolupi: quando il muro diventa sorgente",
+    "date": "2026-06-03",
+    "url": null,
+    "categories": [
+      {
+        "name": "Quotidianità",
+        "slug": "quotidianita"
+      }
+    ],
+    "image": "assets/blog/3883.jpg",
+    "alt": "Lineadacqua"
+  },
+  {
+    "id": 3870,
+    "title": "Arbi Arredobagno: esperienza e ricerca nel bagno contemporaneo",
+    "date": "2026-05-04",
+    "url": null,
+    "categories": [
+      {
+        "name": "Quotidianità",
+        "slug": "quotidianita"
+      }
+    ],
+    "image": "assets/blog/3870.jpg",
+    "alt": "Arbi Arredobagno: esperienza e ricerca nel bagno contemporaneo"
+  },
+  {
+    "id": 3855,
+    "title": "Listone Giordano: dove il legno si fa storia e la natura prende forma",
+    "date": "2026-04-02",
+    "url": null,
+    "categories": [
+      {
+        "name": "Quotidianità",
+        "slug": "quotidianita"
+      }
+    ],
+    "image": "assets/blog/3855.jpeg",
+    "alt": "Listone Giordano: dove il legno si fa storia e la natura prende forma"
+  },
+  {
+    "id": 3843,
+    "title": "Nic Design: bagno come spazio di identità",
+    "date": "2026-03-02",
+    "url": null,
+    "categories": [
+      {
+        "name": "Quotidianità",
+        "slug": "quotidianita"
+      }
+    ],
+    "image": "assets/blog/3843.jpeg",
+    "alt": "Nic Design"
+  },
+  {
+    "id": 3814,
+    "title": "Bulbo: dove il design si fa storia e la materia prende vita",
+    "date": "2026-02-03",
+    "url": null,
+    "categories": [
+      {
+        "name": "Quotidianità",
+        "slug": "quotidianita"
+      }
+    ],
+    "image": "assets/blog/3814.jpg",
+    "alt": "amnesia viola"
+  },
+  {
+    "id": 3793,
+    "title": "Quando il bagno racconta con stile: la filosofia essenziale dei lavabi NIC",
+    "date": "2026-01-08",
+    "url": null,
+    "categories": [
+      {
+        "name": "Quotidianità",
+        "slug": "quotidianita"
+      }
+    ],
+    "image": "assets/blog/3793.jpeg",
+    "alt": "Nic lavabi"
+  },
+  {
+    "id": 3784,
+    "title": "Mani di Fiemme e Bottega: i pavimenti Fiemme Tremila raccontano storie",
+    "date": "2025-12-01",
+    "url": null,
+    "categories": [
+      {
+        "name": "Quotidianità",
+        "slug": "quotidianita"
+      }
+    ],
+    "image": "assets/blog/3784.jpg",
+    "alt": "Mani di Fiemme"
+  },
+  {
+    "id": 3775,
+    "title": "Listone Giordano Magnetico: la rivoluzione del parquet modulare",
+    "date": "2025-10-30",
+    "url": null,
+    "categories": [
+      {
+        "name": "Quotidianità",
+        "slug": "quotidianita"
+      }
+    ],
+    "image": "assets/blog/3775.jpg",
+    "alt": "Listone giorndano magnetico"
+  },
+  {
+    "id": 3761,
+    "title": "Ceramica Flaminia: quando il bagno diventa design",
+    "date": "2025-09-29",
+    "url": null,
+    "categories": [
+      {
+        "name": "Quotidianità",
+        "slug": "quotidianita"
+      }
+    ],
+    "image": "assets/blog/3761.jpg",
+    "alt": "Ceramica Flaminia: quando il bagno diventa design"
+  },
+  {
+    "id": 3697,
+    "title": "Aurena: ceramiche per il bagno by Duravit",
+    "date": "2025-05-06",
+    "url": null,
+    "categories": [
+      {
+        "name": "Esperienza",
+        "slug": "esperienza"
+      }
+    ],
+    "image": "assets/blog/3697.jpg",
+    "alt": "aurena"
+  },
+  {
+    "id": 3653,
+    "title": "Casa EM: un progetto di ristrutturazione che emoziona",
+    "date": "2025-03-03",
+    "url": null,
+    "categories": [
+      {
+        "name": "Progetti",
+        "slug": "progetti"
+      }
+    ],
+    "image": "assets/blog/3653.png",
+    "alt": "Casa EM: un progetto di ristrutturazione che emoziona"
+  },
+  {
+    "id": 3590,
+    "title": "FOX di Antonio Lupi trasforma lo spazio, ridefinendo il concetto di arredo",
+    "date": "2025-01-20",
+    "url": null,
+    "categories": [
+      {
+        "name": "Consapevolezza",
+        "slug": "consapevolezza"
+      }
+    ],
+    "image": "assets/blog/3590.jpg",
+    "alt": "Fox Antonio Lupi"
+  },
+  {
+    "id": 3330,
+    "title": "SOUL by Treesse: un angolo di benessere personalizzato",
+    "date": "2024-05-04",
+    "url": null,
+    "categories": [
+      {
+        "name": "Consapevolezza",
+        "slug": "consapevolezza"
+      }
+    ],
+    "image": "assets/blog/3330.jpg",
+    "alt": "soul treemme"
+  },
+  {
+    "id": 3297,
+    "title": "Fontane Bianche di Salvatori e Fantini: Eleganza senza tempo",
+    "date": "2024-04-16",
+    "url": null,
+    "categories": [
+      {
+        "name": "Consapevolezza",
+        "slug": "consapevolezza"
+      }
+    ],
+    "image": "assets/blog/3297.jpg",
+    "alt": "fontane bianche"
+  },
+  {
+    "id": 3265,
+    "title": "Minipiscine Jam di Relax Design: l’ultima frontiera del relax",
+    "date": "2024-03-19",
+    "url": null,
+    "categories": [
+      {
+        "name": "Esperienza",
+        "slug": "esperienza"
+      }
+    ],
+    "image": "assets/blog/3265.jpg",
+    "alt": "Minipiscina Jam"
+  },
+  {
+    "id": 3162,
+    "title": "Two: il rivoluzionario porcellanato digitale HD con colorazioni a freddo",
+    "date": "2024-01-08",
+    "url": null,
+    "categories": [
+      {
+        "name": "Consapevolezza",
+        "slug": "consapevolezza"
+      }
+    ],
+    "image": "assets/blog/3162.jpg",
+    "alt": "Two: il rivoluzionario porcellanato digitale HD con colorazioni a freddo"
+  },
+  {
+    "id": 3152,
+    "title": "Stufe in ghisa Nestor Martin: una storia artigianale da oltre 150 anni",
+    "date": "2023-12-12",
+    "url": null,
+    "categories": [
+      {
+        "name": "Consapevolezza",
+        "slug": "consapevolezza"
+      }
+    ],
+    "image": "assets/blog/3152.jpg",
+    "alt": "stufa in ghisa"
+  },
+  {
+    "id": 2843,
+    "title": "Dal Rustico al Raffinato: la Trasformazione del Ristorante Mare Mio in un bistrot elegante",
+    "date": "2023-08-31",
+    "url": null,
+    "categories": [
+      {
+        "name": "Progetti",
+        "slug": "progetti"
+      }
+    ],
+    "image": "assets/blog/2843.jpg",
+    "alt": "Ristorante Mare mio Torrette"
+  },
+  {
+    "id": 2747,
+    "title": "Rubinetti Hansgrohe: Il rubinetto innovativo che unisce stile, praticità e filtraggio dell’acqua",
+    "date": "2023-07-14",
+    "url": null,
+    "categories": [
+      {
+        "name": "Esperienza",
+        "slug": "esperienza"
+      }
+    ],
+    "image": "assets/blog/2747.jpg",
+    "alt": "rubinetti Hansgrohe"
+  },
+  {
+    "id": 2734,
+    "title": "Pavimenti Fiemme Decking: un connubio perfetto tra bellezza e funzionalità",
+    "date": "2023-07-06",
+    "url": null,
+    "categories": [
+      {
+        "name": "Esperienza",
+        "slug": "esperienza"
+      }
+    ],
+    "image": "assets/blog/2734.jpg",
+    "alt": "Fiemme Decking piscina"
+  },
+  {
+    "id": 2713,
+    "title": "Soffioni doccia Antonio Lupi, una cascata di benessere ed emozioni",
+    "date": "2023-06-29",
+    "url": null,
+    "categories": [
+      {
+        "name": "Esperienza",
+        "slug": "esperienza"
+      }
+    ],
+    "image": "assets/blog/2713.jpg",
+    "alt": "Soffioni Meteo Antonio Lupi"
+  },
+  {
+    "id": 2684,
+    "title": "Esperienze di lusso e relax: l’incanto delle Spa Glass Infinity",
+    "date": "2023-06-22",
+    "url": null,
+    "categories": [
+      {
+        "name": "Esperienza",
+        "slug": "esperienza"
+      }
+    ],
+    "image": "assets/blog/2684.jpg",
+    "alt": "Infinity_glass_copertina"
+  },
+  {
+    "id": 2661,
+    "title": "I rubinetti Quadro Design conquistano ogni spazio",
+    "date": "2023-06-14",
+    "url": null,
+    "categories": [
+      {
+        "name": "Esperienza",
+        "slug": "esperienza"
+      }
+    ],
+    "image": "assets/blog/2661.jpg",
+    "alt": "spa glass infinity"
+  },
+  {
+    "id": 2649,
+    "title": "L’eleganza e la versatilità dei pavimenti Listone Giordano Decking",
+    "date": "2023-06-09",
+    "url": null,
+    "categories": [
+      {
+        "name": "Esperienza",
+        "slug": "esperienza"
+      }
+    ],
+    "image": "assets/blog/2649.jpeg",
+    "alt": "Pavimenti Listone giordano Decking"
+  },
+  {
+    "id": 2509,
+    "title": "Ovo a Pesaro, uno spazio di classe per godersi la vita",
+    "date": "2023-04-17",
+    "url": null,
+    "categories": [
+      {
+        "name": "Progetti",
+        "slug": "progetti"
+      }
+    ],
+    "image": "assets/blog/2509.jpg",
+    "alt": "ovo Pesaro"
+  },
+  {
+    "id": 2281,
+    "title": "Riqualificare un terrazzo come stanza esterna della casa",
+    "date": "2023-03-02",
+    "url": null,
+    "categories": [
+      {
+        "name": "Progetti",
+        "slug": "progetti"
+      }
+    ],
+    "image": "assets/blog/2281.jpg",
+    "alt": "terrazzo scoperto"
+  },
+  {
+    "id": 2256,
+    "title": "Clinica Blife: dove le donne trovano sé stesse",
+    "date": "2023-02-23",
+    "url": null,
+    "categories": [
+      {
+        "name": "Progetti",
+        "slug": "progetti"
+      }
+    ],
+    "image": "assets/blog/2256.jpg",
+    "alt": "Blife"
+  },
+  {
+    "id": 2139,
+    "title": "Mosaico ceramico moderno by Botteganove",
+    "date": "2023-02-01",
+    "url": null,
+    "categories": [
+      {
+        "name": "Esperienza",
+        "slug": "esperienza"
+      }
+    ],
+    "image": "assets/blog/2139.png",
+    "alt": "botteganove rivestimenti a mosaico"
+  },
+  {
+    "id": 1719,
+    "title": "Villa Matarazzo: una storica dimora riqualificata",
+    "date": "2022-10-27",
+    "url": null,
+    "categories": [
+      {
+        "name": "Progetti",
+        "slug": "progetti"
+      }
+    ],
+    "image": "assets/blog/1719.jpg",
+    "alt": "villa matarazzo"
+  },
+  {
+    "id": 1055,
+    "title": "Design e stile per una casa a Lucrezia",
+    "date": "2022-06-06",
+    "url": null,
+    "categories": [
+      {
+        "name": "Progetti",
+        "slug": "progetti"
+      }
+    ],
+    "image": "assets/blog/1055.jpg",
+    "alt": "casa a lucrezia"
+  },
+  {
+    "id": 849,
+    "title": "Una villa liberty dal cuore essenziale",
+    "date": "2022-05-12",
+    "url": null,
+    "categories": [
+      {
+        "name": "Progetti",
+        "slug": "progetti"
+      }
+    ],
+    "image": "assets/blog/849.jpg",
+    "alt": "villa liberty cattolica"
+  },
+  {
+    "id": 538,
+    "title": "Cocktail-bar+cucina: ristorante innovativo a Pesaro",
+    "date": "2022-01-28",
+    "url": null,
+    "categories": [
+      {
+        "name": "Progetti",
+        "slug": "progetti"
+      }
+    ],
+    "image": "assets/blog/538.jpg",
+    "alt": "Cocktail-bar+cucina: ristorante innovativo a Pesaro"
+  }
+]

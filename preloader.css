@@ -1,0 +1,89 @@
+/* =====================================================
+   D.CASA — PRELOADER GLOBALE
+   La grafica usa esattamente i tracciati del logo originale.
+   ===================================================== */
+
+:root {
+  --dcasa-loader-bg: #f8f7f4;
+  --dcasa-loader-size: 62px;
+  --dcasa-loader-fade: 550ms;
+}
+
+.dcasa-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  background: var(--dcasa-loader-bg);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--dcasa-loader-fade) cubic-bezier(.22, 1, .36, 1),
+              visibility var(--dcasa-loader-fade) ease;
+}
+
+.dcasa-preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.dcasa-loader-logo {
+  width: var(--dcasa-loader-size);
+  height: var(--dcasa-loader-size);
+  display: block;
+}
+
+/* pathLength=100 rende i valori indipendenti dalle dimensioni dell'SVG. */
+.dcasa-arrow-draw {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: dcasa-draw 1.55s ease-in-out infinite;
+}
+
+@keyframes dcasa-draw {
+  0%   { stroke-dashoffset: 100; }
+  44%  { stroke-dashoffset: 0; }
+  57%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -100; }
+}
+
+.dcasa-preloader .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dcasa-arrow-draw { animation: none; stroke-dashoffset: 0; }
+  .dcasa-preloader { transition-duration: 0ms; }
+}
+
+/* Passaggio diretto tra le pagine: la nuova pagina appare sopra la precedente.
+   Nei browser senza View Transitions resta la navigazione standard. */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: none;
+}
+
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+  animation: dcasa-page-enter 300ms ease-out both;
+}
+
+@keyframes dcasa-page-enter {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; }
+}

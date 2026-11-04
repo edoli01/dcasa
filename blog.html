@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magazine &amp; Blog — D.Casa</title>
+  <meta name="description" content="Sfoglia il magazine D.Casa e scopri ispirazioni, materiali e consigli per abitare. Esplora gli articoli su Consapevolezza, Esperienza, Progetti e Quotidianità.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="blog.css">
+  <script src="blog.js" defer></script>
+  <link rel="stylesheet" href="preloader.css">
+  <script src="preloader.js" defer></script>
+  <noscript><style>.dcasa-preloader { display: none; }</style></noscript>
+</head>
+<body>
+  <!-- HEADER: stessa navigazione della homepage, con tendina Prodotti -->
+  <header class="topbar scrolled" id="topbar">
+    <a class="brand" href="index.html" aria-label="D.Casa — Homepage">
+      <img class="brand-logo" src="assets/dcasa_logo_esteso.svg" alt="Logo D.Casa">
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">Menu ☰</button>
+    <nav aria-label="Navigazione principale" class="navlinks" id="siteNav">
+    <a href="azienda.html">
+     Azienda
+    </a>
+    <a href="showroom.html">
+     Showroom
+    </a>
+    <div class="nav-dropdown" id="productsNav">
+     <button aria-controls="productsSubmenu" aria-expanded="false" class="nav-dropdown-toggle" id="productsToggle" type="button">
+      Prodotti
+      <span aria-hidden="true" class="nav-chevron">
+      </span>
+     </button>
+     <div class="nav-submenu" id="productsSubmenu">
+      <div class="submenu-heading">
+       <span class="eyebrow">
+        Esplora i materiali
+       </span>
+      </div>
+      <div class="submenu-grid">
+       <a href="pavimenti-rivestimenti.html">
+        Pavimenti in legno
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="pavimenti-rivestimenti.html">
+        Pavimenti e rivestimenti
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="index.html#arredo-bagno">
+        Arredo bagno
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="index.html#benessere">
+        Benessere
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="index.html#prodotti">
+        Rubinetteria
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="index.html#prodotti">
+        Sanitari per disabilità
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="index.html#camini-stufe">
+        Camini e stufe
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="index.html#infissi-porte">
+        Infissi e porte
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="index.html#prodotti">
+        Kerakoll Design House
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="index.html#carta-parati">
+        Carta da parati
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+       <a href="index.html#prodotti">
+        Termoarredo
+        <span>
+         <svg aria-hidden="true" class="ui-arrow" focusable="false" viewBox="0 0 840 840">
+          <polygon points="840 0 840 594.14 720 594.13 720 204.85 84.85 840 0 755.15 635.15 120 245.71 120 245.71 0"/>
+         </svg>
+        </span>
+       </a>
+      </div>
+      <p class="submenu-note">
+       Anteprima della navigazione: le categorie rimandano per ora alla sezione Prodotti della homepage.
+      </p>
+     </div>
+    </div>
+    <a href="servizi.html">
+     Servizi
+    </a>
+    <a href="progetti.html">
+     Realizzazioni
+    </a>
+    <a aria-current="page" href="blog.html">
+     Magazine &amp; Blog
+    </a>
+    <a href="contatti.html">
+     Contatti
+    </a>
+   </nav>
+  </header>
+
+  <main>
+    <section class="blog-intro page-intro page-shell" aria-labelledby="blogTitle">
+      <p class="eyebrow">D.Casa / Magazine &amp; Blog</p>
+      <h1 id="blogTitle">Idee, materiali,<br><em>prospettive.</em></h1>
+      <p class="page-intro-copy">Storie, ispirazioni e consigli per il tuo modo di abitare. Esplora il mondo D.Casa, dalla scelta dei materiali alla vita di ogni giorno.</p>
+    </section>
+
+    <section class="blog-directory page-shell" id="articoli" aria-label="Archivio degli articoli">
+      <div class="blog-filter-bar">
+        <p class="eyebrow">Esplora per argomento</p>
+        <div class="blog-filters" role="group" aria-label="Filtra gli articoli per categoria">
+          <button class="blog-filter" type="button" data-category="tutti" aria-pressed="true" aria-controls="blogGrid">Tutti</button>
+          <button class="blog-filter" type="button" data-category="consapevolezza" aria-pressed="false" aria-controls="blogGrid">Consapevolezza</button>
+          <button class="blog-filter" type="button" data-category="esperienza" aria-pressed="false" aria-controls="blogGrid">Esperienza</button>
+          <button class="blog-filter" type="button" data-category="progetti" aria-pressed="false" aria-controls="blogGrid">Progetti</button>
+          <button class="blog-filter" type="button" data-category="quotidianita" aria-pressed="false" aria-controls="blogGrid">Quotidianità</button>
+        </div>
+      </div>
+      <p class="blog-results" id="blogResults" role="status" aria-live="polite" aria-atomic="true">36 articoli da esplorare</p>
+      <div class="journal-grid" id="blogGrid">
+        <article class="journal-card" data-categories="consapevolezza">
+          <a class="journal-link" href="articolo-eiko-365.html">
+            <div class="journal-photo"><img src="assets/blog/3941.png" alt="EIKO 365" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Consapevolezza</span><time datetime="2026-10-07">7 ottobre 2026</time></div>
+            <h2>EIKO 365: Stufa a Pellet per tutto l’anno</h2>
+            <span class="journal-read">Leggi l’articolo</span>
+          </a>
+        </article>
+        <article class="journal-card" data-categories="consapevolezza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3923.png" alt="copertina Neoclassica" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Consapevolezza</span><time datetime="2026-09-03">3 settembre 2026</time></div>
+            <h2>Neoclassica di Cerdomus: l’evoluzione contemporanea del battuto veneziano</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="consapevolezza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3913.jpg" alt="Gigacer" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Consapevolezza</span><time datetime="2026-08-03">3 agosto 2026</time></div>
+            <h2>Argilla di Gigacer: l’armonia ancestrale della terra e dell’acqua nel design d’interni</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="consapevolezza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3901.jpg" alt="Arteseta" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Consapevolezza</span><time datetime="2026-06-30">30 giugno 2026</time></div>
+            <h2>Arteseta di Marca Corona: Il fascino tridimensionale della ceramica</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="quotidianita">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3883.jpg" alt="Lineadacqua" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Quotidianità</span><time datetime="2026-06-03">3 giugno 2026</time></div>
+            <h2>Lineadacqua di antoniolupi: quando il muro diventa sorgente</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="quotidianita">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3870.jpg" alt="Arbi Arredobagno: esperienza e ricerca nel bagno contemporaneo" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Quotidianità</span><time datetime="2026-05-04">4 maggio 2026</time></div>
+            <h2>Arbi Arredobagno: esperienza e ricerca nel bagno contemporaneo</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="quotidianita">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3855.jpeg" alt="Listone Giordano: dove il legno si fa storia e la natura prende forma" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Quotidianità</span><time datetime="2026-04-02">2 aprile 2026</time></div>
+            <h2>Listone Giordano: dove il legno si fa storia e la natura prende forma</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="quotidianita">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3843.jpeg" alt="Nic Design" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Quotidianità</span><time datetime="2026-03-02">2 marzo 2026</time></div>
+            <h2>Nic Design: bagno come spazio di identità</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="quotidianita">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3814.jpg" alt="amnesia viola" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Quotidianità</span><time datetime="2026-02-03">3 febbraio 2026</time></div>
+            <h2>Bulbo: dove il design si fa storia e la materia prende vita</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="quotidianita">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3793.jpeg" alt="Nic lavabi" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Quotidianità</span><time datetime="2026-01-08">8 gennaio 2026</time></div>
+            <h2>Quando il bagno racconta con stile: la filosofia essenziale dei lavabi NIC</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="quotidianita">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3784.jpg" alt="Mani di Fiemme" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Quotidianità</span><time datetime="2025-12-01">1 dicembre 2025</time></div>
+            <h2>Mani di Fiemme e Bottega: i pavimenti Fiemme Tremila raccontano storie</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="quotidianita">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3775.jpg" alt="Listone giorndano magnetico" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Quotidianità</span><time datetime="2025-10-30">30 ottobre 2025</time></div>
+            <h2>Listone Giordano Magnetico: la rivoluzione del parquet modulare</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="quotidianita">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3761.jpg" alt="Ceramica Flaminia: quando il bagno diventa design" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Quotidianità</span><time datetime="2025-09-29">29 settembre 2025</time></div>
+            <h2>Ceramica Flaminia: quando il bagno diventa design</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="esperienza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3697.jpg" alt="aurena" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Esperienza</span><time datetime="2025-05-06">6 maggio 2025</time></div>
+            <h2>Aurena: ceramiche per il bagno by Duravit</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="progetti">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3653.png" alt="Casa EM: un progetto di ristrutturazione che emoziona" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Progetti</span><time datetime="2025-03-03">3 marzo 2025</time></div>
+            <h2>Casa EM: un progetto di ristrutturazione che emoziona</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="consapevolezza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3590.jpg" alt="Fox Antonio Lupi" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Consapevolezza</span><time datetime="2025-01-20">20 gennaio 2025</time></div>
+            <h2>FOX di Antonio Lupi trasforma lo spazio, ridefinendo il concetto di arredo</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="consapevolezza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3330.jpg" alt="soul treemme" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Consapevolezza</span><time datetime="2024-05-04">4 maggio 2024</time></div>
+            <h2>SOUL by Treesse: un angolo di benessere personalizzato</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="consapevolezza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3297.jpg" alt="fontane bianche" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Consapevolezza</span><time datetime="2024-04-16">16 aprile 2024</time></div>
+            <h2>Fontane Bianche di Salvatori e Fantini: Eleganza senza tempo</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="esperienza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3265.jpg" alt="Minipiscina Jam" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Esperienza</span><time datetime="2024-03-19">19 marzo 2024</time></div>
+            <h2>Minipiscine Jam di Relax Design: l’ultima frontiera del relax</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="consapevolezza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3162.jpg" alt="Two: il rivoluzionario porcellanato digitale HD con colorazioni a freddo" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Consapevolezza</span><time datetime="2024-01-08">8 gennaio 2024</time></div>
+            <h2>Two: il rivoluzionario porcellanato digitale HD con colorazioni a freddo</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="consapevolezza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/3152.jpg" alt="stufa in ghisa" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Consapevolezza</span><time datetime="2023-12-12">12 dicembre 2023</time></div>
+            <h2>Stufe in ghisa Nestor Martin: una storia artigianale da oltre 150 anni</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="progetti">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/2843.jpg" alt="Ristorante Mare mio Torrette" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Progetti</span><time datetime="2023-08-31">31 agosto 2023</time></div>
+            <h2>Dal Rustico al Raffinato: la Trasformazione del Ristorante Mare Mio in un bistrot elegante</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="esperienza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/2747.jpg" alt="rubinetti Hansgrohe" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Esperienza</span><time datetime="2023-07-14">14 luglio 2023</time></div>
+            <h2>Rubinetti Hansgrohe: Il rubinetto innovativo che unisce stile, praticità e filtraggio dell’acqua</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="esperienza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/2734.jpg" alt="Fiemme Decking piscina" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Esperienza</span><time datetime="2023-07-06">6 luglio 2023</time></div>
+            <h2>Pavimenti Fiemme Decking: un connubio perfetto tra bellezza e funzionalità</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="esperienza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/2713.jpg" alt="Soffioni Meteo Antonio Lupi" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Esperienza</span><time datetime="2023-06-29">29 giugno 2023</time></div>
+            <h2>Soffioni doccia Antonio Lupi, una cascata di benessere ed emozioni</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="esperienza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/2684.jpg" alt="Infinity_glass_copertina" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Esperienza</span><time datetime="2023-06-22">22 giugno 2023</time></div>
+            <h2>Esperienze di lusso e relax: l’incanto delle Spa Glass Infinity</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="esperienza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/2661.jpg" alt="spa glass infinity" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Esperienza</span><time datetime="2023-06-14">14 giugno 2023</time></div>
+            <h2>I rubinetti Quadro Design conquistano ogni spazio</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="esperienza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/2649.jpeg" alt="Pavimenti Listone giordano Decking" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Esperienza</span><time datetime="2023-06-09">9 giugno 2023</time></div>
+            <h2>L’eleganza e la versatilità dei pavimenti Listone Giordano Decking</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="progetti">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/2509.jpg" alt="ovo Pesaro" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Progetti</span><time datetime="2023-04-17">17 aprile 2023</time></div>
+            <h2>Ovo a Pesaro, uno spazio di classe per godersi la vita</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="progetti">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/2281.jpg" alt="terrazzo scoperto" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Progetti</span><time datetime="2023-03-02">2 marzo 2023</time></div>
+            <h2>Riqualificare un terrazzo come stanza esterna della casa</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="progetti">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/2256.jpg" alt="Blife" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Progetti</span><time datetime="2023-02-23">23 febbraio 2023</time></div>
+            <h2>Clinica Blife: dove le donne trovano sé stesse</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="esperienza">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/2139.png" alt="botteganove rivestimenti a mosaico" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Esperienza</span><time datetime="2023-02-01">1 febbraio 2023</time></div>
+            <h2>Mosaico ceramico moderno by Botteganove</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="progetti">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/1719.jpg" alt="villa matarazzo" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Progetti</span><time datetime="2022-10-27">27 ottobre 2022</time></div>
+            <h2>Villa Matarazzo: una storica dimora riqualificata</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="progetti">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/1055.jpg" alt="casa a lucrezia" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Progetti</span><time datetime="2022-06-06">6 giugno 2022</time></div>
+            <h2>Design e stile per una casa a Lucrezia</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="progetti">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/849.jpg" alt="villa liberty cattolica" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Progetti</span><time datetime="2022-05-12">12 maggio 2022</time></div>
+            <h2>Una villa liberty dal cuore essenziale</h2>
+          </div>
+        </article>
+        <article class="journal-card" data-categories="progetti">
+          <div class="journal-link journal-preview">
+            <div class="journal-photo"><img src="assets/blog/538.jpg" alt="Cocktail-bar+cucina: ristorante innovativo a Pesaro" loading="lazy" decoding="async" width="768" height="576"></div>
+            <div class="journal-meta"><span class="journal-category">Progetti</span><time datetime="2022-01-28">28 gennaio 2022</time></div>
+            <h2>Cocktail-bar+cucina: ristorante innovativo a Pesaro</h2>
+          </div>
+        </article>
+      </div>
+      <p class="blog-empty" id="blogEmpty" hidden>Non ci sono articoli in questa categoria.</p>
+      <div class="blog-load-more" id="blogLoadMore" hidden>
+        <button class="text-link" id="loadMoreArticles" type="button" aria-controls="blogGrid">Mostra altri articoli</button>
+      </div>
+    </section>
+
+    <section class="magazine-intro page-shell" id="magazine" aria-labelledby="magazineTitle">
+      <div class="magazine-heading">
+        <p class="eyebrow">Il magazine D.Casa</p>
+        <h2 class="section-title" id="magazineTitle">Un mondo<br>da abitare.</h2>
+        <p class="magazine-lead">Materiali, persone e progetti: il nostro modo di vivere la casa, da sfogliare. Scopri il magazine D.Casa e lasciati ispirare.</p>
+        <a class="text-link" href="GIORNALONE%20D.CASA%20-web.pdf" target="_blank" rel="noopener" aria-label="Sfoglia il magazine D.Casa in PDF (si apre in una nuova scheda)">Sfoglia il magazine <span class="magazine-format">PDF</span></a>
+      </div>
+      <a class="magazine-cover" href="GIORNALONE%20D.CASA%20-web.pdf" target="_blank" rel="noopener" aria-label="Apri il magazine D.Casa in PDF (si apre in una nuova scheda)">
+        <img src="assets/magazine/copertina.jpg" alt="D.Casa — Essenza dell’abitare, copertina del magazine" width="1200" height="1600" loading="lazy" decoding="async">
+      </a>
+    </section>
+
+    <section class="final-cta page-shell" aria-labelledby="blogCtaTitle">
+      <div>
+        <p class="eyebrow" style="margin-bottom:var(--eyebrow-title-gap)">Dall’ispirazione al progetto</p>
+        <h2 id="blogCtaTitle">Diamo forma<br>alle tue idee.</h2>
+      </div>
+      <a class="text-link" href="contatti.html">Parliamone</a>
+    </section>
+  </main>
+
+  <footer class="footer page-shell">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-home" href="index.html" aria-label="D.Casa — Homepage">
+          <img class="footer-logo" src="assets/dcasa_logo_esteso_bianco.svg" alt="Logo D.Casa" width="3459" height="884">
+        </a>
+        <p class="footer-tagline">Essenza dell’abitare.</p>
+        <p class="footer-description">Materiali, persone e idee.<br>Da oltre cinquant’anni, al tuo fianco.</p>
+        <div class="footer-socials" role="group" aria-label="Social D.Casa">
+          <a class="footer-social" href="https://www.facebook.com/dicasaaiudi/" target="_blank" rel="noopener noreferrer" aria-label="D.Casa su Facebook (nuova scheda)" data-social="facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14 21v-8h3l.5-4H14V7c0-1 .3-1.5 1.5-1.5H18V2.2c-.6-.1-1.7-.2-3-.2-3 0-5 1.8-5 5v2H7v4h3v8z"/></svg>
+          </a>
+          <a class="footer-social" href="https://www.instagram.com/dcasaaiudi/" target="_blank" rel="noopener noreferrer" aria-label="D.Casa su Instagram (nuova scheda)" data-social="instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <nav class="footer-column" aria-label="Esplora il sito">
+          <strong>Esplora</strong>
+          <a href="azienda.html">Azienda</a>
+          <a href="index.html#prodotti">Prodotti</a>
+          <a href="servizi.html">Servizi</a>
+          <a href="progetti.html">Realizzazioni</a>
+          <a href="blog.html">Magazine &amp; Blog</a>
+        </nav>
+        <nav class="footer-column" aria-label="I nostri showroom">
+          <strong>Showroom</strong>
+          <a href="showroom.html#calcinelli">Calcinelli</a>
+          <a href="showroom.html#marotta">Marotta</a>
+          <a href="showroom.html#pesaro">Pesaro</a>
+        </nav>
+        <div class="footer-column footer-contacts">
+          <strong>Contatti</strong>
+          <span class="footer-company">d.casa aiudi</span>
+          <address><a href="https://www.google.com/maps/search/?api=1&amp;query=Via%20Flaminia%2045%2F47%20Calcinelli%2061036%20Colli%20al%20Metauro%20PU" target="_blank" rel="noopener noreferrer" aria-label="Apri l’indirizzo di D.Casa Calcinelli su Google Maps (nuova scheda)">Via Flaminia, 45/47 · Calcinelli<br>61036 Colli al Metauro (PU)</a></address>
+          <span class="footer-tax">P.IVA e C.F. 01172340414</span>
+          <a class="footer-phone" href="tel:+390721894480"><span class="footer-contact-label">T.</span> +39 0721 894480</a>
+          <a href="mailto:info@dicasa-aiudi.it">info@dicasa-aiudi.it</a>
+          <a class="footer-pec" href="mailto:amministrazione@pec.dicasa-aiudi.it"><span class="footer-contact-label">PEC</span> amministrazione@pec.dicasa-aiudi.it</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Prototipo grafico D.Casa — non è il sito ufficiale</span>
+      <span>Fotografie illustrative · valori provvisori dove indicato</span>
+    </div>
+  </footer>
+  <script src="scroll-sezioni.js" defer></script>
+</body>
+</html>

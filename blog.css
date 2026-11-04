@@ -1,0 +1,227 @@
+/* D.Casa — archivio blog. Tipografia, header e pulsanti condivisi in style.css. */
+.topbar.scrolled .navlinks a[aria-current="page"] {
+  color: var(--red);
+}
+
+.magazine-intro .magazine-cover {
+  aspect-ratio: auto;
+  background: transparent;
+}
+
+.magazine-intro .magazine-cover img {
+  height: auto;
+}
+
+.magazine-cover:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 6px;
+}
+
+.magazine-format {
+  font-size: 11px;
+}
+
+.blog-directory {
+  padding-bottom: clamp(95px, 10.2vw, 160px);
+}
+
+.blog-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+  padding-block: 24px;
+  margin-bottom: clamp(40px, 5vw, 70px);
+}
+
+.blog-filter-bar .eyebrow {
+  margin: 0;
+}
+
+.blog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.blog-filter {
+  min-height: 44px;
+  padding: 11px 16px;
+  border: 1px solid var(--hair);
+  border-radius: var(--button-radius);
+  background: transparent;
+  color: var(--ink);
+  font: 500 13px/1.3 var(--sans);
+  cursor: pointer;
+  transition: background-color .2s, border-color .2s, color .2s;
+}
+
+.blog-filter:hover {
+  border-color: var(--red);
+  color: var(--red);
+  background: rgba(200, 36, 43, .06);
+}
+
+.blog-filter[aria-pressed="true"] {
+  border-color: var(--red);
+  color: #fff;
+  background: var(--red);
+}
+
+.blog-filter:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+
+.blog-results {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(40px, 5vw, 70px) clamp(20px, 2.5vw, 40px);
+}
+
+.journal-card {
+  min-width: 0;
+}
+
+.journal-card[hidden],
+.blog-load-more[hidden],
+.blog-empty[hidden] {
+  display: none;
+}
+
+.journal-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.journal-link:focus-visible,
+.journal-card:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 6px;
+}
+
+.journal-photo {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #eeeae4;
+}
+
+.journal-photo img {
+  transition: transform .55s ease;
+}
+
+a.journal-link:hover .journal-photo img {
+  transform: scale(1.035);
+}
+
+.journal-photo-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  font-family: var(--serif);
+  font-weight: var(--serif-weight);
+  font-size: clamp(24px, 2.4vw, 36px);
+  color: var(--muted);
+}
+
+.journal-meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding-top: 18px;
+  margin-top: 14px;
+  border-top: 1px solid var(--hair);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.journal-category {
+  color: var(--red);
+}
+
+.journal-card h2 {
+  margin-top: 12px;
+  font-size: clamp(20px, 1.8vw, 27px);
+  line-height: 1.08;
+  letter-spacing: 0;
+  font-weight: var(--title-weight);
+  transition: color .2s;
+}
+
+a.journal-link:hover h2 {
+  color: var(--red);
+}
+
+.journal-read {
+  display: block;
+  margin-top: auto;
+  padding-top: 22px;
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.blog-load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(40px, 5vw, 70px);
+}
+
+.blog-load-more button {
+  font-family: var(--sans);
+  cursor: pointer;
+}
+
+.blog-empty {
+  padding-block: 60px;
+  color: var(--muted);
+}
+
+@media (max-width: 1000px) {
+  .journal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .blog-directory {
+    padding-bottom: 85px;
+  }
+
+  .blog-filter-bar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .blog-filters {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 520px) {
+  .journal-grid {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journal-photo img {
+    transition: none;
+  }
+}

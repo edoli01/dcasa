@@ -1,0 +1,349 @@
+/* =========================================================
+   D.CASA — SHOWROOM
+   Header, font, bottoni, frecce, CTA e footer condividono style.css.
+   ========================================================= */
+
+/* 01 — PANORAMICA: hero e selettore dei tre showroom */
+.showcase-slides {
+  display: grid;
+}
+
+.showcase-slide {
+  grid-area: 1 / 1;
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .7s ease, visibility .7s;
+}
+
+.showcase-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.showcase-slide > img,
+.showroom-hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.showcase-shade,
+.showroom-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--hero-shade), var(--hero-shade)),linear-gradient(90deg,rgba(19,17,15,.62) 0%,rgba(19,17,15,.18) 57%,rgba(19,17,15,.03) 100%),linear-gradient(0deg,rgba(13,13,13,.32),transparent 30%);
+}
+
+.showcase-content {
+  padding-bottom: 170px;
+}
+
+.showcase-content h2,
+.showroom-hero-content h1 {
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: var(--title-weight);
+}
+
+.showcase-content .hero-sub,
+.showroom-hero-content .hero-sub {
+  font-family: var(--serif); font-weight: var(--serif-weight);
+  font-style: normal;
+  font-size: clamp(28px,3vw,44px);
+  line-height: 1.4;
+  margin-top: 8px;
+}
+
+.showcase-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-block: 28px;
+  border-top: 1px solid #ffffff64;
+}
+
+.showcase-bottom > p {
+  font-family: var(--serif); font-weight: var(--serif-weight);
+  font-style: normal;
+  font-size: 23px;
+  margin-right: auto;
+}
+
+.showcase-controls {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.showcase-select {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 15px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #ffffffb0;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .2s, border-color .2s;
+}
+
+.showcase-select:hover,
+.showcase-select:focus-visible {
+  color: white;
+}
+
+.showcase-select.is-active {
+  color: white;
+  border-color: #ffffff90;
+}
+
+.showcase-select-num {
+  font-size: 10px;
+  opacity: .65;
+}
+
+.showcase-arrows {
+  margin-left: auto;
+}
+
+/* 02 — CALCINELLI: storia */
+.showroom-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #eeeae4;
+}
+
+.showroom-history-photo {
+  position: relative;
+  overflow: hidden;
+  min-height: 650px;
+  background: #a9a39d;
+}
+
+.showroom-history-photo img {
+  position: absolute;
+  inset: 0;
+  filter: grayscale(1);
+}
+
+.history-photo-caption {
+  position: absolute;
+  bottom: 28px;
+  left: var(--edge);
+  padding: 8px 10px;
+  background: #0006;
+  color: white;
+  font-size: 11px;
+  letter-spacing: .04em;
+}
+
+.showroom-story-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(55px,5.95vw,130px) clamp(65px,7vw,150px);
+}
+
+.showroom-story-text h2 {
+  margin: var(--eyebrow-title-gap) 0 var(--title-text-gap);
+}
+
+.showroom-story-text p:not(.eyebrow) {
+  max-width: 620px;
+  margin-bottom: 25px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.showroom-story-text p.showroom-story-lead {
+  color: var(--ink);
+  font-size: clamp(22px,2.15vw,31px);
+  line-height: 1.45;
+  margin-bottom: 28px;
+}
+
+.showroom-story-text p.showroom-address {
+  margin-top: 24px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+/* 03 — GALLERY: stessa griglia della pagina Pavimenti e rivestimenti */
+.showroom-gallery {
+  padding-block: clamp(100px,11.05vw,185px) clamp(110px,11.9vw,195px);
+}
+
+.showroom-gallery-heading h2 {
+  margin-top: var(--eyebrow-title-gap);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: clamp(12px,1.8vw,28px);
+}
+
+.gallery-open {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: #ded9d2;
+  overflow: hidden;
+  cursor: zoom-in;
+  aspect-ratio: 1;
+}
+
+.gallery-open img {
+  transition: transform .65s ease;
+}
+
+.gallery-open:hover img {
+  transform: scale(1.025);
+}
+
+.showroom-next {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 65px;
+}
+
+/* 04 — LIGHTBOX */
+.gallery-lightbox[hidden] {
+  display: none;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  background: rgba(17,17,16,.95);
+}
+
+.gallery-lightbox img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+/* 05 — RESPONSIVE */
+@media (max-width:1100px) {
+  .showroom-story-text {
+    padding: 50px 60px;
+  }
+
+  .showcase-bottom > p {
+    display: none;
+  }
+
+  .showcase-controls {
+    margin-right: auto;
+  }
+}
+
+@media (max-width:760px) {
+  .showcase-content {
+    padding-bottom: 220px;
+  }
+
+  
+
+  .showcase-bottom {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-block: 18px;
+  }
+
+  .showcase-controls {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    flex-basis: 100%;
+    gap: 4px;
+  }
+
+  .showcase-select {
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    padding: 10px 6px;
+    font-size: 10px;
+  }
+
+  .showcase-arrows {
+    margin-left: auto;
+  }
+
+  .showroom-story {
+    grid-template-columns: 1fr;
+  }
+
+  .showroom-history-photo {
+    min-height: 0;
+    height: 65vh;
+  }
+
+  .showroom-story-text {
+    padding: 75px var(--edge) 95px;
+  }
+
+  .showroom-gallery {
+    padding-block: 90px 100px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 12px;
+  }
+
+  .gallery-lightbox {
+    padding: 15px;
+  }
+
+  .showroom-next {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .showcase-slide,
+  .gallery-open img {
+    transition: none;
+  }
+}
