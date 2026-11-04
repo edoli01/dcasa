@@ -13,9 +13,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet"/>
   <link rel="stylesheet" href="preloader.css">
-  <script src="preloader.js" defer></script>
-  <noscript><style>.dcasa-preloader { display: none; }</style></noscript>
- </head>
+  <script src="responsive-images.js"></script>
+<script src="preloader.js" defer></script>
+  <noscript><style>.dcasa-preloader { display: none; } .hero-slide:first-child { background-image: url("assets/homepage/_WF60473.webp"); }</style></noscript>
+ <link rel="preload" as="image" media="(max-width: 768px)" imagesrcset="assets/homepage/_WF60473-640.webp 640w, assets/homepage/_WF60473-960.webp 960w, assets/homepage/_WF60473-1200.webp 1200w, assets/homepage/_WF60473-1600.webp 1600w, assets/homepage/_WF60473.webp 1920w" imagesizes="max(100vw, 150.0000svh)" fetchpriority="high">
+<link rel="preload" as="image" media="(min-width: 769px)" imagesrcset="assets/homepage/_WF60473-640.webp 640w, assets/homepage/_WF60473-960.webp 960w, assets/homepage/_WF60473-1200.webp 1200w, assets/homepage/_WF60473-1600.webp 1600w, assets/homepage/_WF60473.webp 1920w" imagesizes="max(100vw, 150.0000svh)" fetchpriority="high">
+</head>
  <body>
   <!-- Preloader globale D.Casa -->
   <div class="dcasa-preloader" id="dcasaPreloader" role="status" aria-label="Caricamento pagina">
@@ -176,19 +179,19 @@
    <!-- 01 · HERO — Carosello fotografico -->
    <section class="hero home-hero" id="hero">
     <div class="hero-slides">
-     <div class="hero-slide active" style="background-image:url('assets/homepage/_WF60473.jpg')">
+     <div class="hero-slide active" data-image-candidates="assets/homepage/_WF60473-640.webp 640w, assets/homepage/_WF60473-960.webp 960w, assets/homepage/_WF60473-1200.webp 1200w, assets/homepage/_WF60473-1600.webp 1600w, assets/homepage/_WF60473.webp 1920w" data-image-ratio="1.5">
      </div>
-     <div class="hero-slide" style="background-image:url('assets/homepage/_WIL5646.jpg')">
+     <div class="hero-slide" data-image-candidates="assets/homepage/_WIL5646-640.webp 640w, assets/homepage/_WIL5646-960.webp 960w, assets/homepage/_WIL5646-1200.webp 1200w, assets/homepage/_WIL5646-1600.webp 1600w, assets/homepage/_WIL5646.webp 1920w" data-image-ratio="1.3333333333333333">
      </div>
-     <div class="hero-slide" style="background-image:url('assets/homepage/_WIL5662.jpg')">
+     <div class="hero-slide" data-image-candidates="assets/homepage/_WIL5662-640.webp 640w, assets/homepage/_WIL5662-960.webp 960w, assets/homepage/_WIL5662-1200.webp 1200w, assets/homepage/_WIL5662-1600.webp 1600w, assets/homepage/_WIL5662.webp 1920w" data-image-ratio="1.3333333333333333">
      </div>
-     <div class="hero-slide" style="background-image:url('assets/homepage/_WL71919.jpg')">
+     <div class="hero-slide" data-image-candidates="assets/homepage/_WL71919-640.webp 640w, assets/homepage/_WL71919-960.webp 960w, assets/homepage/_WL71919-1200.webp 1200w, assets/homepage/_WL71919-1600.webp 1600w, assets/homepage/_WL71919.webp 1920w" data-image-ratio="1.5">
      </div>
-     <div class="hero-slide" style="background-image:url('assets/homepage/_WSA7639.jpg')">
+     <div class="hero-slide" data-image-candidates="assets/homepage/_WSA7639-640.webp 640w, assets/homepage/_WSA7639-960.webp 960w, assets/homepage/_WSA7639-1200.webp 1200w, assets/homepage/_WSA7639-1600.webp 1600w, assets/homepage/_WSA7639.webp 1920w" data-image-ratio="1.5">
      </div>
-     <div class="hero-slide" style="background-image:url('assets/homepage/_WSA7681.jpg')">
+     <div class="hero-slide" data-image-candidates="assets/homepage/_WSA7681-640.webp 640w, assets/homepage/_WSA7681-960.webp 960w, assets/homepage/_WSA7681-1200.webp 1200w, assets/homepage/_WSA7681-1600.webp 1600w, assets/homepage/_WSA7681.webp 1920w" data-image-ratio="1.5">
      </div>
-     <div class="hero-slide" style="background-image:url('assets/homepage/_WSV4835.jpg')">
+     <div class="hero-slide" data-image-candidates="assets/homepage/_WSV4835-640.webp 640w, assets/homepage/_WSV4835-960.webp 960w, assets/homepage/_WSV4835-1200.webp 1200w, assets/homepage/_WSV4835-1600.webp 1600w, assets/homepage/_WSV4835-1920.webp 1920w, assets/homepage/_WSV4835.webp 2048w" data-image-ratio="1.499267935578331">
      </div>
     </div>
     <div class="hero-body page-shell">
@@ -259,7 +262,7 @@
     <div class="product-grid">
      <a class="product-card" href="pavimenti-rivestimenti.html">
       <div class="photo">
-       <img alt="Interno con pavimentazione materica" loading="lazy" src="assets/prodotti/pavimenti.jpg"/>
+       <img alt="Interno con pavimentazione materica" loading="lazy" src="assets/prodotti/pavimenti.webp" srcset="assets/prodotti/pavimenti-640.webp 640w, assets/prodotti/pavimenti-960.webp 960w, assets/prodotti/pavimenti-1200.webp 1200w, assets/prodotti/pavimenti-1600.webp 1600w, assets/prodotti/pavimenti-1920.webp 1920w, assets/prodotti/pavimenti.webp 2160w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(227px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(227px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(227px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(227px, 960px), (max-width: 768px) max(1px, calc(15.34392vw + 109.159px)), (max-width: 1440px) max(1px, calc(29.76190vw + -1.571px)), (max-width: 1920px) max(1px, calc(30.41667vw + -11.000px)), (max-width: 2560px) max(1px, calc(32.96875vw + -60.000px)), (max-width: 3840px) max(1px, calc(33.35938vw + -70.000px)), 1211px" data-source-ratio="0.8"/>
       </div>
       <div class="card-caption">
        <h3>
@@ -275,7 +278,7 @@
      </a>
      <a id="arredo-bagno" class="product-card" href="#contatti">
       <div class="photo">
-       <img alt="Ambiente bagno contemporaneo" loading="lazy" src="assets/prodotti/arredo bagni.jpg"/>
+       <img alt="Ambiente bagno contemporaneo" loading="lazy" src="assets/prodotti/arredo%20bagni.webp" srcset="assets/prodotti/arredo%20bagni-640.webp 640w, assets/prodotti/arredo%20bagni-960.webp 960w, assets/prodotti/arredo%20bagni.webp 1033w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(228px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(228px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(228px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(228px, 960px), (max-width: 768px) max(1px, calc(15.34392vw + 110.159px)), (max-width: 1440px) max(1px, calc(29.61310vw + 0.571px)), (max-width: 1920px) max(1px, calc(30.62500vw + -14.000px)), (max-width: 2560px) max(1px, calc(32.96875vw + -59.000px)), (max-width: 3840px) max(1px, calc(33.35938vw + -69.000px)), 1212px" data-source-ratio="0.8007751937984496"/>
       </div>
       <div class="card-caption">
        <h3>
@@ -290,7 +293,7 @@
      </a>
      <a id="benessere" class="product-card" href="#contatti">
       <div class="photo">
-       <img alt="Ambiente benessere e materiali" loading="lazy" src="assets/prodotti/benessere.jpg"/>
+       <img alt="Ambiente benessere e materiali" loading="lazy" src="assets/prodotti/benessere.webp" srcset="assets/prodotti/benessere-640.webp 640w, assets/prodotti/benessere-960.webp 960w, assets/prodotti/benessere-1200.webp 1200w, assets/prodotti/benessere-1600.webp 1600w, assets/prodotti/benessere-1920.webp 1920w, assets/prodotti/benessere.webp 2560w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(227px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(227px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(227px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(227px, 960px), (max-width: 768px) max(1px, calc(15.34392vw + 109.159px)), (max-width: 1440px) max(1px, calc(29.76190vw + -1.571px)), (max-width: 1920px) max(1px, calc(30.41667vw + -11.000px)), (max-width: 2560px) max(1px, calc(32.96875vw + -60.000px)), (max-width: 3840px) max(1px, calc(33.35938vw + -70.000px)), 1211px" data-source-ratio="0.7995391705069125"/>
       </div>
       <div class="card-caption">
        <h3>
@@ -305,7 +308,7 @@
      </a>
      <a id="infissi-porte" class="product-card" href="#contatti">
       <div class="photo">
-       <img alt="Architettura interna e aperture" loading="lazy" src="assets/prodotti/infissi e porte.jpg"/>
+       <img alt="Architettura interna e aperture" loading="lazy" src="assets/prodotti/infissi%20e%20porte.webp" srcset="assets/prodotti/infissi%20e%20porte-640.webp 640w, assets/prodotti/infissi%20e%20porte-960.webp 960w, assets/prodotti/infissi%20e%20porte-1200.webp 1200w, assets/prodotti/infissi%20e%20porte-1600.webp 1600w, assets/prodotti/infissi%20e%20porte-1920.webp 1920w, assets/prodotti/infissi%20e%20porte.webp 2160w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(227px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(227px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(227px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(227px, 960px), (max-width: 768px) max(1px, calc(15.34392vw + 109.159px)), (max-width: 1440px) max(1px, calc(29.76190vw + -1.571px)), (max-width: 1920px) max(1px, calc(30.41667vw + -11.000px)), (max-width: 2560px) max(1px, calc(32.96875vw + -60.000px)), (max-width: 3840px) max(1px, calc(33.35938vw + -70.000px)), 1211px" data-source-ratio="0.8"/>
       </div>
       <div class="card-caption">
        <h3>
@@ -320,7 +323,7 @@
      </a>
      <a id="carta-parati" class="product-card" href="#contatti">
       <div class="photo">
-       <img alt="Parete decorativa" loading="lazy" src="assets/prodotti/carta da parati.jpg"/>
+       <img alt="Parete decorativa" loading="lazy" src="assets/prodotti/carta%20da%20parati.webp" srcset="assets/prodotti/carta%20da%20parati-640.webp 640w, assets/prodotti/carta%20da%20parati-960.webp 960w, assets/prodotti/carta%20da%20parati-1200.webp 1200w, assets/prodotti/carta%20da%20parati-1600.webp 1600w, assets/prodotti/carta%20da%20parati-1920.webp 1920w, assets/prodotti/carta%20da%20parati.webp 2160w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(227px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(227px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(227px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(227px, 960px), (max-width: 768px) max(1px, calc(15.34392vw + 109.159px)), (max-width: 1440px) max(1px, calc(29.76190vw + -1.571px)), (max-width: 1920px) max(1px, calc(30.41667vw + -11.000px)), (max-width: 2560px) max(1px, calc(32.96875vw + -60.000px)), (max-width: 3840px) max(1px, calc(33.35938vw + -70.000px)), 1211px" data-source-ratio="0.8"/>
       </div>
       <div class="card-caption">
        <h3>
@@ -335,7 +338,7 @@
      </a>
      <a id="camini-stufe" class="product-card" href="#contatti">
       <div class="photo">
-       <img alt="Living contemporaneo" loading="lazy" src="assets/prodotti/camini e stufe.jpg"/>
+       <img alt="Living contemporaneo" loading="lazy" src="assets/prodotti/camini%20e%20stufe.webp" srcset="assets/prodotti/camini%20e%20stufe-640.webp 640w, assets/prodotti/camini%20e%20stufe-960.webp 960w, assets/prodotti/camini%20e%20stufe-1200.webp 1200w, assets/prodotti/camini%20e%20stufe-1600.webp 1600w, assets/prodotti/camini%20e%20stufe-1920.webp 1920w, assets/prodotti/camini%20e%20stufe.webp 2160w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(227px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(227px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(227px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(227px, 960px), (max-width: 768px) max(1px, calc(15.34392vw + 109.159px)), (max-width: 1440px) max(1px, calc(29.76190vw + -1.571px)), (max-width: 1920px) max(1px, calc(30.41667vw + -11.000px)), (max-width: 2560px) max(1px, calc(32.96875vw + -60.000px)), (max-width: 3840px) max(1px, calc(33.35938vw + -70.000px)), 1211px" data-source-ratio="0.8"/>
       </div>
       <div class="card-caption">
        <h3>
@@ -354,7 +357,7 @@
    <section class="history" id="azienda">
     <div class="history-images">
      <div class="photo">
-      <img alt="Architettura storica, immagine indicativa" loading="lazy" src="assets/azienda/_WSV4827.jpg"/>
+      <img alt="Architettura storica, immagine indicativa" loading="lazy" src="assets/azienda/_WSV4827.webp" srcset="assets/azienda/_WSV4827-640.webp 640w, assets/azienda/_WSV4827-960.webp 960w, assets/azienda/_WSV4827-1200.webp 1200w, assets/azienda/_WSV4827-1600.webp 1600w, assets/azienda/_WSV4827-1920.webp 1920w, assets/azienda/_WSV4827.webp 2048w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(840px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(840px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(840px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(840px, 960px), (max-width: 768px) max(1px, calc(61.37566vw + 368.635px)), (max-width: 1440px) max(1px, calc(13.39286vw + 737.143px)), (max-width: 1920px) max(1px, calc(6.25000vw + 840.000px)), (max-width: 2560px) max(1px, calc(50.00000vw + 0.000px)), (max-width: 3840px) max(1px, calc(50.00000vw + 0.000px)), 1920px" data-source-ratio="1.499267935578331"/>
      </div>
     </div>
     <div class="history-body">
@@ -451,7 +454,7 @@
     <div class="project-layout" id="projectCarousel" role="region" aria-label="Progetti in evidenza" aria-roledescription="carosello" tabindex="0">
      <a class="home-project" href="realizzazione-attico-fano.html">
       <div class="photo">
-       <img alt="Soggiorno e zona pranzo dell’attico di Fano" loading="lazy" src="assets/progetto%20casa%20Fano/_WIL8148.jpg"/>
+       <img alt="Soggiorno e zona pranzo dell’attico di Fano" loading="lazy" src="assets/progetto%20casa%20Fano/_WIL8148.webp" srcset="assets/progetto%20casa%20Fano/_WIL8148-640.webp 640w, assets/progetto%20casa%20Fano/_WIL8148-960.webp 960w, assets/progetto%20casa%20Fano/_WIL8148.webp 1200w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(350px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(350px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(350px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(350px, 960px), (max-width: 768px) max(1px, calc(-2.38095vw + 359.286px)), (max-width: 1440px) max(1px, calc(44.49405vw + -0.714px)), (max-width: 1920px) max(1px, calc(45.00000vw + -8.000px)), (max-width: 2560px) max(1px, calc(49.53125vw + -95.000px)), (max-width: 3840px) max(1px, calc(50.00000vw + -107.000px)), 1813px" data-source-ratio="1.3333333333333333"/>
       </div>
       <div class="project-caption">
        <div>
@@ -463,7 +466,7 @@
      </a>
      <a class="home-project" href="progetti.html#ovo-pesaro">
       <div class="photo">
-       <img alt="Locale con bancone bar e pavimento decorato" loading="lazy" src="assets/progetti/_DSF9412_Panorama%201.jpg"/>
+       <img alt="Locale con bancone bar e pavimento decorato" loading="lazy" src="assets/progetti/_DSF9412_Panorama%201.webp" srcset="assets/progetti/_DSF9412_Panorama%201-640.webp 640w, assets/progetti/_DSF9412_Panorama%201-960.webp 960w, assets/progetti/_DSF9412_Panorama%201-1200.webp 1200w, assets/progetti/_DSF9412_Panorama%201-1600.webp 1600w, assets/progetti/_DSF9412_Panorama%201-1920.webp 1920w, assets/progetti/_DSF9412_Panorama%201.webp 2048w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(350px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(350px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(350px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(350px, 960px), (max-width: 768px) max(1px, calc(-2.38095vw + 359.286px)), (max-width: 1440px) max(1px, calc(44.49405vw + -0.714px)), (max-width: 1920px) max(1px, calc(45.00000vw + -8.000px)), (max-width: 2560px) max(1px, calc(49.53125vw + -95.000px)), (max-width: 3840px) max(1px, calc(50.00000vw + -107.000px)), 1813px" data-source-ratio="1.3315994798439532"/>
       </div>
       <div class="project-caption">
        <div>
@@ -475,7 +478,7 @@
      </a>
      <a class="home-project" href="progetti.html#casa-lucrezia">
       <div class="photo">
-       <img alt="Cucina e zona pranzo con scala in legno e camino sospeso" loading="lazy" src="assets/progetti/_WIL8404.jpg"/>
+       <img alt="Cucina e zona pranzo con scala in legno e camino sospeso" loading="lazy" src="assets/progetti/_WIL8404.webp" srcset="assets/progetti/_WIL8404-640.webp 640w, assets/progetti/_WIL8404-960.webp 960w, assets/progetti/_WIL8404-1200.webp 1200w, assets/progetti/_WIL8404-1600.webp 1600w, assets/progetti/_WIL8404-1920.webp 1920w, assets/progetti/_WIL8404.webp 2048w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(350px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(350px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(350px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(350px, 960px), (max-width: 768px) max(1px, calc(-2.38095vw + 359.286px)), (max-width: 1440px) max(1px, calc(44.49405vw + -0.714px)), (max-width: 1920px) max(1px, calc(45.00000vw + -8.000px)), (max-width: 2560px) max(1px, calc(49.53125vw + -95.000px)), (max-width: 3840px) max(1px, calc(50.00000vw + -107.000px)), 1813px" data-source-ratio="1.3333333333333333"/>
       </div>
       <div class="project-caption">
        <div>
@@ -487,7 +490,7 @@
      </a>
      <a class="home-project" href="progetti.html#villa-matarazzo">
       <div class="photo">
-       <img alt="Ambiente luminoso con archi e travi in legno a vista" loading="lazy" src="assets/progetti/_WIL5373.jpg"/>
+       <img alt="Ambiente luminoso con archi e travi in legno a vista" loading="lazy" src="assets/progetti/_WIL5373.webp" srcset="assets/progetti/_WIL5373-640.webp 640w, assets/progetti/_WIL5373-960.webp 960w, assets/progetti/_WIL5373-1200.webp 1200w, assets/progetti/_WIL5373-1600.webp 1600w, assets/progetti/_WIL5373-1920.webp 1920w, assets/progetti/_WIL5373.webp 2045w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(350px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(350px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(350px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(350px, 960px), (max-width: 768px) max(1px, calc(-2.38095vw + 359.286px)), (max-width: 1440px) max(1px, calc(44.49405vw + -0.714px)), (max-width: 1920px) max(1px, calc(45.00000vw + -8.000px)), (max-width: 2560px) max(1px, calc(49.53125vw + -95.000px)), (max-width: 3840px) max(1px, calc(50.00000vw + -107.000px)), 1813px" data-source-ratio="1.333116036505867"/>
       </div>
       <div class="project-caption">
        <div>
@@ -526,7 +529,7 @@
     <div class="showroom-grid">
      <a class="showroom-item" href="showroom-calcinelli.html">
       <div class="photo">
-       <img alt="Showroom D.Casa di Calcinelli" loading="lazy" src="assets/showroom/calcinelli/_WL71914.jpg"/>
+       <img alt="Showroom D.Casa di Calcinelli" loading="lazy" src="assets/showroom/calcinelli/_WL71914.webp" srcset="assets/showroom/calcinelli/_WL71914-640.webp 640w, assets/showroom/calcinelli/_WL71914-960.webp 960w, assets/showroom/calcinelli/_WL71914-1200.webp 1200w, assets/showroom/calcinelli/_WL71914-1600.webp 1600w, assets/showroom/calcinelli/_WL71914.webp 1920w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(657px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(657px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(657px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(657px, 960px), (max-width: 768px) max(1px, calc(-63.22751vw + 903.587px)), (max-width: 1440px) max(1px, calc(58.03571vw + -27.714px)), (max-width: 1920px) max(1px, calc(58.12500vw + -29.000px)), (max-width: 2560px) max(1px, calc(61.87500vw + -101.000px)), (max-width: 3840px) max(1px, calc(62.50000vw + -117.000px)), 2283px" data-source-ratio="1.5"/>
       </div>
       <div class="card-caption">
        <h3>
@@ -545,7 +548,7 @@
      </a>
      <a class="showroom-item" href="#contatti">
       <div class="photo">
-       <img alt="Showroom D.Casa di Marotta" loading="lazy" src="assets/showroom/marotta/_WIL5646.jpg"/>
+       <img alt="Showroom D.Casa di Marotta" loading="lazy" src="assets/showroom/marotta/_WIL5646.webp" srcset="assets/showroom/marotta/_WIL5646-640.webp 640w, assets/showroom/marotta/_WIL5646-960.webp 960w, assets/showroom/marotta/_WIL5646-1200.webp 1200w, assets/showroom/marotta/_WIL5646-1600.webp 1600w, assets/showroom/marotta/_WIL5646.webp 1920w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(584px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(584px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(584px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(584px, 960px), (max-width: 768px) max(1px, calc(-56.08466vw + 802.730px)), (max-width: 1440px) max(1px, calc(51.48810vw + -23.429px)), (max-width: 1920px) max(1px, calc(51.66667vw + -26.000px)), (max-width: 2560px) max(1px, calc(55.00000vw + -90.000px)), (max-width: 3840px) max(1px, calc(55.54687vw + -104.000px)), 2029px" data-source-ratio="1.3333333333333333"/>
       </div>
       <div class="card-caption">
        <h3>
@@ -564,7 +567,7 @@
      </a>
      <a class="showroom-item" href="#contatti">
       <div class="photo">
-       <img alt="Showroom D.Casa di Pesaro" loading="lazy" src="assets/showroom/pesaro/_WSV4831.jpg"/>
+       <img alt="Showroom D.Casa di Pesaro" loading="lazy" src="assets/showroom/pesaro/_WSV4831.webp" srcset="assets/showroom/pesaro/_WSV4831-640.webp 640w, assets/showroom/pesaro/_WSV4831-960.webp 960w, assets/showroom/pesaro/_WSV4831-1200.webp 1200w, assets/showroom/pesaro/_WSV4831-1600.webp 1600w, assets/showroom/pesaro/_WSV4831-1920.webp 1920w, assets/showroom/pesaro/_WSV4831.webp 2048w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(656px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(656px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(656px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(656px, 960px), (max-width: 768px) max(1px, calc(-62.96296vw + 901.556px)), (max-width: 1440px) max(1px, calc(58.03571vw + -27.714px)), (max-width: 1920px) max(1px, calc(57.91667vw + -26.000px)), (max-width: 2560px) max(1px, calc(61.87500vw + -102.000px)), (max-width: 3840px) max(1px, calc(62.50000vw + -118.000px)), 2282px" data-source-ratio="1.499267935578331"/>
       </div>
       <div class="card-caption">
        <h3>
@@ -638,28 +641,28 @@
      <div class="blog-cards">
       <article class="blog-card">
        <a href="articolo-eiko-365.html">
-        <div class="blog-photo"><img alt="EIKO 365" loading="lazy" src="assets/blog/3941.png"/></div>
+        <div class="blog-photo"><img alt="EIKO 365" loading="lazy" src="assets/blog/3941.webp" srcset="assets/blog/3941-640.webp 640w, assets/blog/3941.webp 768w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(689px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(689px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(689px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(689px, 960px), (max-width: 768px) max(1px, calc(93.12169vw + -26.175px)), (max-width: 1440px) max(1px, calc(-8.77976vw + 756.429px)), (max-width: 1920px) max(1px, calc(43.95833vw + -3.000px)), (max-width: 2560px) max(1px, calc(49.37500vw + -107.000px)), (max-width: 3840px) max(1px, calc(49.68750vw + -115.000px)), 1793px" data-source-ratio="1.4912621359223301"/></div>
         <div class="blog-meta">Consapevolezza<span>7 ottobre 2026</span></div>
         <h3>EIKO 365: Stufa a Pellet per tutto l’anno</h3>
        </a>
       </article>
       <article class="blog-card">
        <div class="blog-card-preview">
-        <div class="blog-photo"><img alt="copertina Neoclassica" loading="lazy" src="assets/blog/3923.png"/></div>
+        <div class="blog-photo"><img alt="copertina Neoclassica" loading="lazy" src="assets/blog/3923.webp" srcset="assets/blog/3923-640.webp 640w, assets/blog/3923.webp 768w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(619px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(619px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(619px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(619px, 960px), (max-width: 768px) max(1px, calc(83.59788vw + -23.032px)), (max-width: 1440px) max(1px, calc(-7.73810vw + 678.429px)), (max-width: 1920px) max(1px, calc(39.37500vw + 0.000px)), (max-width: 2560px) max(1px, calc(44.37500vw + -96.000px)), (max-width: 3840px) max(1px, calc(44.68750vw + -104.000px)), 1612px" data-source-ratio="1.3403141361256545"/></div>
         <div class="blog-meta">Consapevolezza<span>3 settembre 2026</span></div>
         <h3>Neoclassica di Cerdomus: l’evoluzione contemporanea del battuto veneziano</h3>
        </div>
       </article>
       <article class="blog-card">
        <div class="blog-card-preview">
-        <div class="blog-photo"><img alt="Gigacer" loading="lazy" src="assets/blog/3913.jpg"/></div>
+        <div class="blog-photo"><img alt="Gigacer" loading="lazy" src="assets/blog/3913.webp" srcset="assets/blog/3913-640.webp 640w, assets/blog/3913.webp 768w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(821px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(821px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(821px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(821px, 960px), (max-width: 768px) max(1px, calc(111.11111vw + -32.333px)), (max-width: 1440px) max(1px, calc(-10.41667vw + 901.000px)), (max-width: 1920px) max(1px, calc(52.50000vw + -5.000px)), (max-width: 2560px) max(1px, calc(58.75000vw + -125.000px)), (max-width: 3840px) max(1px, calc(59.21875vw + -137.000px)), 2137px" data-source-ratio="1.7777777777777777"/></div>
         <div class="blog-meta">Consapevolezza<span>3 agosto 2026</span></div>
         <h3>Argilla di Gigacer: l’armonia ancestrale della terra e dell’acqua nel design d’interni</h3>
        </div>
       </article>
       <article class="blog-card">
        <div class="blog-card-preview">
-        <div class="blog-photo"><img alt="Arteseta" loading="lazy" src="assets/blog/3901.jpg"/></div>
+        <div class="blog-photo"><img alt="Arteseta" loading="lazy" src="assets/blog/3901.webp" srcset="assets/blog/3901-640.webp 640w, assets/blog/3901.webp 768w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(693px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(693px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(693px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(693px, 960px), (max-width: 768px) max(1px, calc(93.91534vw + -28.270px)), (max-width: 1440px) max(1px, calc(-8.77976vw + 760.429px)), (max-width: 1920px) max(1px, calc(44.16667vw + -2.000px)), (max-width: 2560px) max(1px, calc(49.53125vw + -105.000px)), (max-width: 3840px) max(1px, calc(50.00000vw + -117.000px)), 1803px" data-source-ratio="1.5"/></div>
         <div class="blog-meta">Consapevolezza<span>30 giugno 2026</span></div>
         <h3>Arteseta di Marca Corona: Il fascino tridimensionale della ceramica</h3>
        </div>

@@ -45,9 +45,14 @@ document.querySelectorAll('#siteNav a').forEach(link => {
 const slides = [...document.querySelectorAll('.showcase-slide')];
 const selectors = [...document.querySelectorAll('.showcase-select')];
 let activeSlide = 0;
-function showSlide(index) {
+let showcaseRequest = 0;
+async function showSlide(index) {
   if (!slides.length) return;
-  activeSlide = (index + slides.length) % slides.length;
+  const next = (index + slides.length) % slides.length;
+  const request = ++showcaseRequest;
+  try { await DCasaImages.prepare(slides[next].querySelector('img')); } catch { return; }
+  if (request !== showcaseRequest) return;
+  activeSlide = next;
   slides.forEach((slide, i) => {
     const selected = i === activeSlide;
     slide.classList.toggle('is-active', selected);

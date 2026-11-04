@@ -225,3 +225,6 @@ a.journal-link:hover h2 {
     transition: none;
   }
 }
+
+/* Keep the cover’s native ratio, independent of variant pixel rounding. */
+.magazine-intro .magazine-cover img { aspect-ratio: 1200 / 1600; }
