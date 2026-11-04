@@ -2,11 +2,11 @@
 
 ## Risultato
 
-123 fotografie rigenerate dagli originali in 451 varianti WebP, qualità 87, metodo 5. Profili ICC e orientamento EXIF preservati. Nessun ritaglio fisico né ingrandimento: il ridimensionamento usa sempre l’intero fotogramma e il rapporto originale, con il normale arrotondamento al pixel intero. Loghi e icone invariati. Tutti gli originali conservati.
+123 fotografie rigenerate dagli originali in 451 varianti WebP, qualità 87, metodo 5. Profili ICC e orientamento EXIF preservati. Nessun ritaglio fisico né ingrandimento: il ridimensionamento usa sempre l’intero fotogramma e il rapporto originale, con il normale arrotondamento al pixel intero. Loghi e icone invariati. Le 123 fotografie originali sono state rimosse dopo la verifica delle conversioni e dell’assenza di riferimenti residui nel sito. Restano recuperabili dalla cronologia Git precedente a questa rimozione. Il CSV conserva i percorsi e i pesi originali come inventario storico.
 
 - Originali fotografici: **165.32 MB**.
 - Una versione principale alla massima risoluzione prevista per fotografia: **26.93 MB**, risparmio **138.39 MB (83.7%)**.
-- Tutte le varianti insieme: **73.35 MB**, aggiunti al repository perché gli originali restano presenti. Il browser seleziona le varianti necessarie; non le scarica tutte. Il trasferimento effettivo dipende da viewport, DPR, cache e navigazione. MB decimali.
+- Tutte le varianti insieme: **73.35 MB**, presenti nel repository dopo la rimozione degli originali. Il browser seleziona le varianti necessarie; non le scarica tutte. Il trasferimento effettivo dipende da viewport, DPR, cache e navigazione. MB decimali.
 
 ## Risoluzioni e limiti degli originali
 
@@ -57,6 +57,10 @@ Gli sfondi statici della categoria pavimenti usano image-set e media query, cons
 - 88 controlli pagina/viewport/DPR su mobile 390 e 768 px, densità 1x, 2x, 2,625x e 3x: nessuna foto selezionata oltre 1920 px.
 - Rete e transizioni dei tre caroselli: una sola fotografia hero richiesta all’avvio; passaggio alla seconda verificato. Intervalli e durate CSS conservati; rispettata la preferenza di movimento ridotto.
 - 83 controlli su menu, lightbox, filtri e archivio blog, carosello showroom.
-- Tutte le 451 varianti decodificate e verificate rispetto alla proporzione del sorgente, senza upscale e con ICC preservato. Originali invariati rispetto a Git, sintassi JavaScript e diff check validi.
+- Tutte le 451 varianti decodificate e verificate rispetto alla proporzione del sorgente, senza upscale e con ICC preservato. Prima della pulizia, originali invariati rispetto a Git; dopo la pulizia, tutte le varianti sono state decodificate nuovamente e nessun riferimento del sito usa le 123 fotografie rimosse. Sintassi JavaScript e diff check validi.
 - Tutte le varianti e `.nojekyll` restituiscono HTTP 200 sotto il prefisso `/dcasa/`, con corrispondenza dei byte e dei percorsi, inclusi maiuscole, spazi e underscore. Percorsi relativi compatibili con GitHub Pages. Il file `.nojekyll` è ancora presente e invariato.
 - I font esterni sono esclusi dalle prove locali. Il controllo locale non equivale a una verifica sul dominio pubblico: i nuovi file non sono ancora distribuiti. Nessun merge in main, push o pubblicazione effettuati.
+
+## Pulizia degli originali
+
+Rimosse esclusivamente le 123 fotografie elencate nella colonna `originale` del CSV, per 165,32 MB. Conservati tutti i 451 WebP, loghi e icone PNG/SVG, PDF e `.nojekyll`. Il contenuto fotografico sul filesystem passa da 238,67 MB (originali + varianti) a 73,35 MB; la cronologia Git continua a contenere gli originali. Nessuna modifica a layout, testi o comportamento delle pagine.
