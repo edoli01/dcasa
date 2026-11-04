@@ -98,16 +98,23 @@ const HERO_SLIDE_DURATION = 6500;
 const heroPhotos = [...document.querySelectorAll('.azienda-hero-photo')];
 let activeHeroPhoto = 0;
 let heroTimer;
+let heroPrefetchTimer;
 
 function startHeroSlideshow() {
   clearInterval(heroTimer);
+  clearTimeout(heroPrefetchTimer);
   if (reducedMotion.matches || document.hidden || heroPhotos.length < 2) return;
+  function prepareNextHero() {
+    DCasaImages.prepare(heroPhotos[(activeHeroPhoto + 1) % heroPhotos.length]).catch(() => {});
+  }
+  heroPrefetchTimer = setTimeout(prepareNextHero, HERO_SLIDE_DURATION - 2000);
   heroTimer = setInterval(() => {
     const next = (activeHeroPhoto + 1) % heroPhotos.length;
     if (!heroPhotos[next].complete || !heroPhotos[next].naturalWidth) return;
     heroPhotos[activeHeroPhoto].classList.remove('is-active');
     heroPhotos[next].classList.add('is-active');
     activeHeroPhoto = next;
+    heroPrefetchTimer = setTimeout(prepareNextHero, HERO_SLIDE_DURATION - 2000);
   }, HERO_SLIDE_DURATION);
 }
 

@@ -36,11 +36,21 @@ const slides = [...document.querySelectorAll('.hero-slide')];
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 let currentSlide = 0;
 let slideTimer;
+let imagePrefetchTimer;
+let slideRequest = 0;
 
-function showSlide(index) {
+async function showSlide(index) {
   if (!slides.length) return;
-  currentSlide = (index + slides.length) % slides.length;
+  const next = (index + slides.length) % slides.length;
+  const request = ++slideRequest;
+  try { await DCasaImages.prepare(slides[next]); } catch { return; }
+  if (request !== slideRequest) return;
+  currentSlide = next;
 
+  if (!reducedMotion.matches) {
+    clearTimeout(imagePrefetchTimer);
+    imagePrefetchTimer = setTimeout(() => DCasaImages.prepare(slides[(currentSlide + 1) % slides.length]).catch(() => {}), SLIDE_DURATION - 2000);
+  }
   slides.forEach((slide, i) => {
     slide.classList.toggle('active', i === currentSlide);
   });
@@ -49,7 +59,11 @@ function showSlide(index) {
 
 function startSlideshow() {
   clearInterval(slideTimer);
+  clearTimeout(imagePrefetchTimer);
   if (reducedMotion.matches || slides.length <= 1) return;
+  imagePrefetchTimer = setTimeout(() => {
+    DCasaImages.prepare(slides[(currentSlide + 1) % slides.length]).catch(() => {});
+  }, SLIDE_DURATION - 2000);
   slideTimer = setInterval(() => showSlide(currentSlide + 1), SLIDE_DURATION);
 }
 
@@ -64,6 +78,7 @@ document.getElementById('prevSlide').addEventListener('click', () => {
 document.getElementById('nextSlide').addEventListener('click', () => {
   goToSlide(currentSlide + 1);
 });
+DCasaImages.prepare(slides[0]).catch(() => {});
 startSlideshow();
 
 // ---------------------------------------------------------

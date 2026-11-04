@@ -286,3 +286,6 @@
     padding-block: 85px;
   }
 }
+
+/* Preserve the source photographs’ exact ratio across responsive variants. */
+.article-figure img { aspect-ratio: 2528 / 1696; }
