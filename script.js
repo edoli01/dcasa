@@ -5,6 +5,8 @@
  * 2. Carosello fotografico
  * 3. Menu mobile
  * 4. Sottomenu Prodotti
+ * 5. Carosello Progetti
+ * 6. Carosello Prodotti
  *
  * Modifica tempi e comportamenti nelle costanti qui sotto.
  */
@@ -150,18 +152,20 @@ if (projectCarousel) {
   }
 
   function updateProjectControls() {
-    const left = projectCarousel.scrollLeft;
-    const right = left + projectCarousel.clientWidth;
-    previous.disabled = left <= 2;
-    next.disabled = right >= projectCarousel.scrollWidth - 2;
+    const canScroll = projectCarousel.scrollWidth > projectCarousel.clientWidth + 2;
+    previous.disabled = !canScroll;
+    next.disabled = !canScroll;
   }
 
   function moveProject(direction) {
     const left = projectCarousel.scrollLeft;
+    const end = projectCarousel.scrollWidth - projectCarousel.clientWidth;
     const offsets = cards.map(cardOffset);
-    const target = direction > 0
+    let target = direction > 0
       ? offsets.find((offset) => offset > left + 5)
       : offsets.reverse().find((offset) => offset < left - 5);
+    if (direction > 0 && left >= end - 2) target = 0;
+    if (direction < 0 && left <= 2) target = end;
     if (target === undefined) return;
     projectCarousel.scrollTo({
       left: target,
@@ -182,4 +186,70 @@ if (projectCarousel) {
   new ResizeObserver(updateProjectControls).observe(projectCarousel);
   document.querySelector('.project-controls').hidden = false;
   updateProjectControls();
+}
+
+// 6. PRODOTTI: tre schede per pagina su desktop, una su mobile.
+const productCarousel = document.getElementById('productCarousel');
+
+if (productCarousel) {
+  const cards = [...productCarousel.querySelectorAll('.product-card')];
+  const previous = document.getElementById('prevProduct');
+  const next = document.getElementById('nextProduct');
+
+  function productOffset(card) {
+    return card.getBoundingClientRect().left
+      - productCarousel.getBoundingClientRect().left + productCarousel.scrollLeft;
+  }
+
+  function updateProductControls() {
+    const canScroll = productCarousel.scrollWidth > productCarousel.clientWidth + 2;
+    previous.disabled = !canScroll;
+    next.disabled = !canScroll;
+  }
+
+  function scrollProducts(left) {
+    productCarousel.scrollTo({
+      left,
+      behavior: reducedMotion.matches ? 'instant' : 'smooth',
+    });
+  }
+
+  function moveProducts(direction) {
+    const step = productOffset(cards[1]) - productOffset(cards[0]);
+    const perPage = Math.max(1, Math.round(productCarousel.clientWidth / step));
+    const index = Math.round(productCarousel.scrollLeft / step);
+    const end = productCarousel.scrollWidth - productCarousel.clientWidth;
+    if (direction > 0 && productCarousel.scrollLeft >= end - 2) {
+      scrollProducts(0);
+      return;
+    }
+    if (direction < 0 && productCarousel.scrollLeft <= 2) {
+      scrollProducts(end);
+      return;
+    }
+    const target = Math.max(0, Math.min(cards.length - perPage, index + direction * perPage));
+    scrollProducts(productOffset(cards[target]));
+  }
+
+  // I collegamenti del menu devono mostrare anche le categorie fuori vista.
+  function revealLinkedProduct() {
+    const card = cards.find((item) => item.id && `#${item.id}` === window.location.hash);
+    if (card) scrollProducts(productOffset(card));
+  }
+
+  previous.addEventListener('click', () => moveProducts(-1));
+  next.addEventListener('click', () => moveProducts(1));
+  productCarousel.addEventListener('keydown', (event) => {
+    if (event.target !== productCarousel) return;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      moveProducts(event.key === 'ArrowRight' ? 1 : -1);
+    }
+  });
+  productCarousel.addEventListener('scroll', updateProductControls, { passive: true });
+  new ResizeObserver(updateProductControls).observe(productCarousel);
+  window.addEventListener('hashchange', revealLinkedProduct);
+  document.querySelector('.product-controls').hidden = false;
+  revealLinkedProduct();
+  updateProductControls();
 }

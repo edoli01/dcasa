@@ -708,13 +708,13 @@ a:hover .project-caption .ui-arrow {
   background: #ffffff2b;
 }
 
-.hero .text-link, .category-hero .text-link, .showrooms .text-link {
+.hero .text-link, .category-hero .text-link {
   --button-color: #fff;
   --button-hover-color: #fff;
   --button-hover-background: rgba(255, 255, 255, .16);
 }
 
-.hero .eyebrow, .showrooms .eyebrow, .final-cta .eyebrow {
+.hero .eyebrow, .final-cta .eyebrow {
   color: inherit;
   opacity: .78;
 }
@@ -725,6 +725,11 @@ a:hover .project-caption .ui-arrow {
 }
 
 /* ================= 04 — MANIFESTO ================= */
+
+.home-content {
+  --home-section-space: clamp(90px, 9vw, 144px);
+  --home-section-half-space: calc(var(--home-section-space) / 2);
+}
 
 .manifesto {
   min-height: 60vh;
@@ -745,15 +750,32 @@ a:hover .project-caption .ui-arrow {
 /* ================= 05 — PRODOTTI ================= */
 
 .products {
-  padding-top: 120px;
-  padding-bottom: 155px;
+  padding-block: var(--home-section-space) var(--home-section-half-space);
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: clamp(40px,5vw,88px) clamp(16px,2vw,32px);
+.product-carousel {
+  display: flex;
+  gap: clamp(16px,2vw,32px);
   align-items: start;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--hair) transparent;
+  padding-bottom: 18px;
+}
+
+.product-carousel .product-card {
+  flex: 0 0 calc((100% - 2 * clamp(16px,2vw,32px)) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.product-controls {
+  margin-top: 35px;
+}
+
+.product-controls[hidden] {
+  display: none;
 }
 
 .product-card[id] {
@@ -898,7 +920,7 @@ a:hover .project-caption .ui-arrow {
   grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr);
   gap: clamp(45px,6vw,110px);
   align-items: start;
-  padding-block: 0 185px;
+  padding-block: var(--home-section-half-space) var(--home-section-space);
 }
 
 .services-heading .eyebrow { margin-bottom:var(--eyebrow-title-gap); }
@@ -987,12 +1009,13 @@ a:hover .project-caption .ui-arrow {
 /* ================= 10 — REALIZZAZIONI ================= */
 
 .projects {
-  padding-block: 155px 180px;
+  padding-block: var(--home-section-half-space);
 }
 
 .project-layout {
+  --project-gap: clamp(16px, 2vw, 32px);
   display: flex;
-  gap: clamp(25px, 4vw, 70px);
+  gap: var(--project-gap);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
@@ -1001,7 +1024,7 @@ a:hover .project-caption .ui-arrow {
 }
 
 .home-project {
-  flex: 0 0 calc((100% - clamp(25px, 4vw, 70px)) / 2);
+  flex: 0 0 calc((100% - var(--project-gap)) / 2);
   min-width: 0;
   scroll-snap-align: start;
 }
@@ -1070,6 +1093,8 @@ a:hover .project-caption .ui-arrow {
   cursor: default;
 }
 
+.product-carousel:focus-visible,
+.product-card:focus-visible,
 .project-layout:focus-visible,
 .project-arrows button:focus-visible {
   outline: 2px solid var(--red);
@@ -1079,14 +1104,14 @@ a:hover .project-caption .ui-arrow {
 /* ================= 11 — SHOWROOM ================= */
 
 .showrooms {
-  background: #201f1c;
-  color: #fff;
-  padding-block: 135px 155px;
+  background: var(--paper);
+  color: var(--ink);
+  padding-block: var(--home-section-space) calc(var(--home-section-space) * 1.3);
 }
 
 .showroom-head {
-  max-width: 800px;
-  margin-bottom: 95px;
+  max-width: none;
+  margin-bottom: clamp(44px, 5vw, 72px);
 }
 
 .showroom-head .eyebrow {
@@ -1094,8 +1119,7 @@ a:hover .project-caption .ui-arrow {
 }
 
 .showroom-head p {
-  color: #c9c6c0;
-  max-width: 440px;
+  color: var(--muted);
   font-size: var(--section-copy-size);
   line-height: var(--section-copy-leading);
   margin-top: var(--title-text-gap);
@@ -1109,11 +1133,33 @@ a:hover .project-caption .ui-arrow {
 }
 
 .showroom-item .card-caption {
-  border-color: #55544f;
+  border-color: var(--hair);
+}
+
+.home-content .showroom-item .card-caption {
+  padding-top: 22px;
+  margin-top: 18px;
+}
+
+.home-content .showroom-item h3 {
+  font-size: clamp(28px, 2.6vw, 42px);
+  line-height: 1.1;
 }
 
 #showroom .showroom-item small {
-  font-family: var(--serif); font-weight: var(--serif-weight);
+  display: block;
+  margin-top: 4px;
+  font-family: var(--serif);
+  font-weight: var(--serif-weight);
+  font-size: clamp(22px, 1.8vw, 28px);
+  line-height: 1.25;
+  color: var(--muted);
+}
+
+.home-content .showroom-item .card-caption .ui-arrow {
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
 }
 
 .showroom-item:nth-child(2), .showroom-item:nth-child(3) {
@@ -1126,7 +1172,7 @@ a:hover .project-caption .ui-arrow {
 }
 
 .showroom-item:hover .card-caption .ui-arrow {
-  color: #ddd;
+  color: var(--red);
 }
 
 /* ================= 12 — BRAND ================= */
@@ -1135,19 +1181,67 @@ a:hover .project-caption .ui-arrow {
   padding-block: 130px 145px;
 }
 
+.home-content > .brand-section {
+  padding-block: var(--home-section-half-space) var(--home-section-space);
+}
+
 .brand-names {
-  display: grid;
-  grid-template-columns: repeat(5,1fr);
-  gap: 50px 25px;
+  overflow: hidden;
   margin-top: 90px;
+}
+
+.brand-track {
+  display: flex;
+  width: max-content;
+  animation: brand-scroll 32s linear infinite;
+}
+
+.brand-group {
+  --brand-gap: clamp(32px, 5vw, 96px);
+  display: flex;
   align-items: center;
+  justify-content: space-around;
+  flex-shrink: 0;
+  min-width: calc(100vw - 2 * var(--edge));
+  gap: var(--brand-gap);
+  padding-right: var(--brand-gap);
 }
 
 .brand-name {
+  flex: 0 0 auto;
+  min-width: clamp(140px, 15vw, 260px);
   font-family: var(--serif); font-weight: var(--serif-weight);
   font-size: clamp(24px,3vw,43px);
   text-align: center;
   color: #615e58;
+}
+
+.brand-name img {
+  display: block;
+  width: auto;
+  max-width: 180px;
+  height: 60px;
+  object-fit: contain;
+  margin-inline: auto;
+}
+
+@keyframes brand-scroll {
+  to { transform: translateX(-50%); }
+}
+
+.brand-names:is(:hover, :focus-within) .brand-track {
+  animation-play-state: paused;
+}
+
+.brand-names:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-track { animation: none; width: 100%; }
+  .brand-group { min-width: 0; width: 100%; flex-wrap: wrap; padding-right: 0; }
+  .brand-group[aria-hidden="true"] { display: none; }
 }
 
 /* ================= 13 — MAGAZINE E BLOG ================= */
@@ -1178,7 +1272,7 @@ a:hover .project-caption .ui-arrow {
 }
 
 .editorial {
-  padding-block: clamp(95px,10.2vw,180px);
+  padding-block: var(--home-section-space);
   border-top: 1px solid var(--hair);
 }
 
@@ -1553,6 +1647,10 @@ a:hover .project-caption .ui-arrow {
 }
 
 @media (max-width: 760px) {
+  .home-content {
+    --home-section-space: 80px;
+  }
+
   .topbar {
     padding-top: 18px;
     padding-bottom: 18px;
@@ -1616,7 +1714,7 @@ a:hover .project-caption .ui-arrow {
   }
 
   .products {
-    padding-block: 50px 100px;
+    padding-block: var(--home-section-space) var(--home-section-half-space);
   }
 
   .card-caption h3,
@@ -1660,7 +1758,7 @@ a:hover .project-caption .ui-arrow {
   }
 
   .services {
-    padding-block: 0 110px;
+    padding-block: var(--home-section-half-space) var(--home-section-space);
   }
 
 
@@ -1670,7 +1768,7 @@ a:hover .project-caption .ui-arrow {
   }
 
   .projects {
-    padding-block: 95px;
+    padding-block: var(--home-section-half-space);
   }
 
   .home-project {
@@ -1678,7 +1776,7 @@ a:hover .project-caption .ui-arrow {
   }
 
   .showrooms {
-    padding-block: 95px;
+    padding-block: var(--home-section-space) calc(var(--home-section-space) * 1.3);
   }
 
   .brand-section {
@@ -1686,8 +1784,7 @@ a:hover .project-caption .ui-arrow {
   }
 
   .brand-names {
-    grid-template-columns: repeat(2,1fr);
-    gap: 45px 20px;
+    margin-top: 56px;
   }
 
   .editorial-grid {
@@ -1728,9 +1825,12 @@ a:hover .project-caption .ui-arrow {
     font-size: 9px;
   }
 
-  .product-grid {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-    gap: 38px 14px;
+  .product-carousel {
+    gap: 14px;
+  }
+
+  .product-carousel .product-card {
+    flex-basis: 100%;
   }
 
   .history-images {
@@ -1850,8 +1950,8 @@ a:hover .project-caption .ui-arrow {
 }
 
 @media (max-width: 480px) {
-  .product-grid {
-    gap: 30px 12px;
+  .product-carousel {
+    gap: 12px;
   }
 
 }
@@ -1876,4 +1976,81 @@ a:hover .project-caption .ui-arrow {
     --title-text-gap: 22px;
     --text-button-gap: 30px;
   }
+}
+
+/* Showroom home: tre immagini verticali con titoli e frecce sovrapposti. */
+.showrooms-overlay .showroom-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+}
+
+.showrooms-overlay .showroom-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent 35%, rgb(0 0 0 / .12) 50%, rgb(0 0 0 / .75));
+  pointer-events: none;
+}
+
+.home-content .showrooms-overlay .showroom-item .card-caption {
+  position: absolute;
+  z-index: 2;
+  inset: auto clamp(18px, 2vw, 32px) clamp(20px, 2.4vw, 38px);
+  align-items: end;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.home-content .showrooms-overlay .showroom-item h3 {
+  min-width: 0;
+  font-size: clamp(28px, 2.8vw, 46px);
+  line-height: 1.02;
+  letter-spacing: -.025em;
+}
+
+#showroom.showrooms-overlay .showroom-item small {
+  margin-top: 2px;
+  color: #fff;
+  font-size: clamp(20px, 1.8vw, 28px);
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.home-content .showrooms-overlay .showroom-item .card-caption > span {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: clamp(32px, 3vw, 48px);
+  height: clamp(32px, 3vw, 48px);
+  border: 1px solid rgb(255 255 255 / .65);
+  border-radius: 50%;
+  transition: background .25s ease, border-color .25s ease;
+}
+
+.home-content .showrooms-overlay .showroom-item .card-caption .ui-arrow {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  color: #fff;
+}
+
+.showrooms-overlay .showroom-item:is(:hover, :focus-visible) .card-caption > span {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.showrooms-overlay .showroom-item:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 5px;
+}
+
+@media (max-width: 760px) {
+  .home-content .showrooms-overlay .showroom-item h3 { font-size: clamp(38px, 9.5vw, 64px); }
+  #showroom.showrooms-overlay .showroom-item small { font-size: clamp(22px, 5.2vw, 28px); }
+  .home-content .showrooms-overlay .showroom-item .card-caption > span { width: 42px; height: 42px; }
 }
