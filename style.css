@@ -20,8 +20,9 @@
   --title-weight: 400;
   --serif-weight: var(--title-weight);
   --title-tracking: -.025em;
-  /* Titolo della hero in homepage. */
-  --home-hero-title-size: clamp(44px, 7vw, 120px);
+  /* Corpo condiviso dal titolo della hero e dal Manifesto. */
+  --home-display-size: clamp(46px, 5.6vw, 105px);
+  --home-hero-title-size: var(--home-display-size);
   --home-hero-title-leading: 1;
   --home-hero-title-tracking: -.025em;
   /* Titoli delle hero e delle aperture nelle pagine interne. */
@@ -618,6 +619,22 @@ a:hover .project-caption .ui-arrow {
   letter-spacing: var(--home-hero-title-tracking);
 }
 
+.home-hero .hero-body {
+  justify-content: flex-end;
+  padding-top: 140px;
+  padding-bottom: 42px;
+}
+
+.home-hero .hero-body::before {
+  display: none;
+}
+
+.home-hero .hero-footer {
+  position: static;
+  justify-content: flex-start;
+  margin-top: 32px;
+}
+
 .hero-sub,
 .page-intro-copy {
   font-size: clamp(17px,1.6vw,23px);
@@ -744,7 +761,7 @@ a:hover .project-caption .ui-arrow {
 }
 
 .manifesto .display {
-  font-size: clamp(46px,5.6vw,105px);
+  font-size: var(--home-display-size);
 }
 
 /* ================= 05 — PRODOTTI ================= */
@@ -832,7 +849,7 @@ a:hover .project-caption .ui-arrow {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
-  background: #eceae5;
+
 }
 
 .history-images {
@@ -917,7 +934,7 @@ a:hover .project-caption .ui-arrow {
 
 .services {
   display: grid;
-  grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr);
+  grid-template-columns: repeat(2, minmax(0,1fr));
   gap: clamp(45px,6vw,110px);
   align-items: start;
   padding-block: var(--home-section-half-space) var(--home-section-space);
@@ -1136,30 +1153,16 @@ a:hover .project-caption .ui-arrow {
   border-color: var(--hair);
 }
 
-.home-content .showroom-item .card-caption {
-  padding-top: 22px;
-  margin-top: 18px;
-}
-
-.home-content .showroom-item h3 {
-  font-size: clamp(28px, 2.6vw, 42px);
-  line-height: 1.1;
-}
-
 #showroom .showroom-item small {
-  display: block;
-  margin-top: 4px;
   font-family: var(--serif);
+  font-size: 20px;
   font-weight: var(--serif-weight);
-  font-size: clamp(22px, 1.8vw, 28px);
-  line-height: 1.25;
-  color: var(--muted);
+  opacity: .6;
 }
 
-.home-content .showroom-item .card-caption .ui-arrow {
-  width: 20px;
-  height: 20px;
-  margin-top: 5px;
+.showroom-item:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 6px;
 }
 
 .showroom-item:nth-child(2), .showroom-item:nth-child(3) {
@@ -1698,6 +1701,10 @@ a:hover .project-caption .ui-arrow {
     bottom: 26px;
   }
 
+  .home-hero .hero-body {
+    padding-bottom: 26px;
+  }
+
   .manifesto {
     min-height: 50vh;
     gap: 36px;
@@ -1727,7 +1734,7 @@ a:hover .project-caption .ui-arrow {
   }
 
   .history-body {
-    padding: 50px var(--edge) 60px;
+    padding: 50px 0 60px;
   }
 
   .numbers {
@@ -1976,81 +1983,4 @@ a:hover .project-caption .ui-arrow {
     --title-text-gap: 22px;
     --text-button-gap: 30px;
   }
-}
-
-/* Showroom home: tre immagini verticali con titoli e frecce sovrapposti. */
-.showrooms-overlay .showroom-item {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  isolation: isolate;
-  color: #fff;
-}
-
-.showrooms-overlay .showroom-item::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(180deg, transparent 35%, rgb(0 0 0 / .12) 50%, rgb(0 0 0 / .75));
-  pointer-events: none;
-}
-
-.home-content .showrooms-overlay .showroom-item .card-caption {
-  position: absolute;
-  z-index: 2;
-  inset: auto clamp(18px, 2vw, 32px) clamp(20px, 2.4vw, 38px);
-  align-items: end;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-.home-content .showrooms-overlay .showroom-item h3 {
-  min-width: 0;
-  font-size: clamp(28px, 2.8vw, 46px);
-  line-height: 1.02;
-  letter-spacing: -.025em;
-}
-
-#showroom.showrooms-overlay .showroom-item small {
-  margin-top: 2px;
-  color: #fff;
-  font-size: clamp(20px, 1.8vw, 28px);
-  line-height: 1.15;
-  letter-spacing: 0;
-}
-
-.home-content .showrooms-overlay .showroom-item .card-caption > span {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: clamp(32px, 3vw, 48px);
-  height: clamp(32px, 3vw, 48px);
-  border: 1px solid rgb(255 255 255 / .65);
-  border-radius: 50%;
-  transition: background .25s ease, border-color .25s ease;
-}
-
-.home-content .showrooms-overlay .showroom-item .card-caption .ui-arrow {
-  margin: 0;
-  width: 16px;
-  height: 16px;
-  color: #fff;
-}
-
-.showrooms-overlay .showroom-item:is(:hover, :focus-visible) .card-caption > span {
-  background: var(--red);
-  border-color: var(--red);
-}
-
-.showrooms-overlay .showroom-item:focus-visible {
-  outline: 3px solid var(--red);
-  outline-offset: 5px;
-}
-
-@media (max-width: 760px) {
-  .home-content .showrooms-overlay .showroom-item h3 { font-size: clamp(38px, 9.5vw, 64px); }
-  #showroom.showrooms-overlay .showroom-item small { font-size: clamp(22px, 5.2vw, 28px); }
-  .home-content .showrooms-overlay .showroom-item .card-caption > span { width: 42px; height: 42px; }
 }
