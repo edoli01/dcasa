@@ -47,7 +47,7 @@
 .azienda-person-caption { border-top:1px solid var(--hair); margin-top:14px; padding-top:18px; }
 .azienda-person-caption h3 { font-size:clamp(16px,1.4vw,21px); line-height:1.08; font-weight: var(--title-weight); margin:0 0 8px; }
 .azienda-person-caption p { line-height:1.5; font-size:14px; color:var(--muted); }
-.azienda-team-controls { justify-content:flex-end; margin-top:30px; }
+.azienda-team-controls { justify-content:flex-end; margin-top:16px; }
 .azienda-team-controls[hidden] { display:none; }
 .azienda-team-controls button { color:var(--ink); border-color:var(--hair); }
 .azienda-team-controls button:disabled { opacity:.3; cursor:default; }

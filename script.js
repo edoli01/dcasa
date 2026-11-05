@@ -69,17 +69,6 @@ function startSlideshow() {
   slideTimer = setInterval(() => showSlide(currentSlide + 1), SLIDE_DURATION);
 }
 
-function goToSlide(index) {
-  showSlide(index);
-  startSlideshow();
-}
-
-document.getElementById('prevSlide').addEventListener('click', () => {
-  goToSlide(currentSlide - 1);
-});
-document.getElementById('nextSlide').addEventListener('click', () => {
-  goToSlide(currentSlide + 1);
-});
 DCasaImages.prepare(slides[0]).catch(() => {});
 startSlideshow();
 

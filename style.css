@@ -7,6 +7,7 @@
 
 :root {
   --paper: #f8f7f4;
+  --band-background: #eeeae4;
   --ink: #252521;
   --muted: #68665f;
   --red: #c8242b;
@@ -23,7 +24,7 @@
   /* Corpo condiviso dal titolo della hero e dal Manifesto. */
   --home-display-size: clamp(46px, 5.6vw, 105px);
   --home-hero-title-size: var(--home-display-size);
-  --home-hero-title-leading: 1;
+  --home-hero-title-leading: 0.85;
   --home-hero-title-tracking: -.025em;
   /* Titoli delle hero e delle aperture nelle pagine interne. */
   --hero-title-size: clamp(44px, 7vw, 120px);
@@ -620,9 +621,13 @@ a:hover .project-caption .ui-arrow {
 }
 
 .home-hero .hero-body {
-  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: end;
+  align-items: end;
+  gap: 24px;
   padding-top: 140px;
-  padding-bottom: 42px;
+  padding-bottom: 62px;
 }
 
 .home-hero .hero-body::before {
@@ -631,8 +636,35 @@ a:hover .project-caption .ui-arrow {
 
 .home-hero .hero-footer {
   position: static;
-  justify-content: flex-start;
-  margin-top: 32px;
+  width: auto;
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
+.hero-scroll-down {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 47px;
+  border: 1px solid #ffffff7d;
+  border-radius: 50%;
+  color: #fff;
+  transition: background .2s ease;
+}
+
+.hero-scroll-down svg {
+  width: 15px;
+  height: 15px;
+  transform: rotate(90deg);
+}
+
+.hero-scroll-down:hover {
+  background: #ffffff2b;
+}
+
+.hero-scroll-down:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
 }
 
 .hero-sub,
@@ -756,7 +788,7 @@ a:hover .project-caption .ui-arrow {
   gap: 50px;
   align-items: center;
   text-align: center;
-  background: #eeeae4;
+  background: var(--band-background);
   padding-block: 80px;
 }
 
@@ -788,7 +820,9 @@ a:hover .project-caption .ui-arrow {
 }
 
 .product-controls {
-  margin-top: 35px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
 }
 
 .product-controls[hidden] {
@@ -807,6 +841,12 @@ a:hover .project-caption .ui-arrow {
   padding-top: 18px;
   border-top: 1px solid var(--hair);
   margin-top: 14px;
+}
+
+.home-content .showroom-item .card-caption,
+.home-content .product-card .card-caption {
+  border-top: 0;
+  margin-top: 0;
 }
 
 .card-caption h3,
@@ -937,7 +977,7 @@ a:hover .project-caption .ui-arrow {
   grid-template-columns: repeat(2, minmax(0,1fr));
   gap: clamp(45px,6vw,110px);
   align-items: start;
-  padding-block: var(--home-section-half-space) var(--home-section-space);
+  padding-block: calc(var(--home-section-half-space) + 16px) var(--home-section-space);
 }
 
 .services-heading .eyebrow { margin-bottom:var(--eyebrow-title-gap); }
@@ -996,7 +1036,7 @@ a:hover .project-caption .ui-arrow {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: #eeeae4;
+  background: var(--band-background);
   padding: 80px var(--edge);
 }
 
@@ -1081,14 +1121,15 @@ a:hover .project-caption .ui-arrow {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 25px;
-  margin-top: 35px;
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .project-controls {
   display: flex;
   align-items: center;
   gap: 25px;
+  margin-left: auto;
 }
 
 .project-controls[hidden] {
@@ -1128,6 +1169,9 @@ a:hover .project-caption .ui-arrow {
 
 .showroom-head {
   max-width: none;
+}
+
+.home-content :is(.showrooms, .products, .projects) > .section-head {
   margin-bottom: clamp(44px, 5vw, 72px);
 }
 
@@ -1348,6 +1392,11 @@ a:hover .project-caption .ui-arrow {
   margin-top: var(--eyebrow-title-gap);
 }
 
+.home-content .blog-heading > .blog-aside.section-copy-column {
+  align-self: end;
+  text-align: right;
+}
+
 
 
 .blog-aside p {
@@ -1422,8 +1471,8 @@ a:hover .project-caption .ui-arrow {
   justify-content: space-between;
   gap: 40px;
   align-items: end;
-  background: var(--red);
-  color: #fff;
+  background: var(--band-background);
+  color: var(--ink);
   border: 0;
   min-height: 390px;
   padding-top: 100px;
@@ -1431,20 +1480,21 @@ a:hover .project-caption .ui-arrow {
 }
 
 .final-cta .text-link {
-  --button-color: #fff;
-  --button-hover-color: var(--red);
-  --button-hover-background: #fff;
+  --button-color: var(--red);
+  --button-hover-color: #fff;
+  --button-hover-background: var(--red);
 }
 
 /* ================= 15 — FOOTER ================= */
 
 .footer {
-  --footer-muted: #b9b6ae;
-  --footer-line: rgba(248,247,244,.18);
+  --footer-muted: var(--muted);
+  --footer-line: var(--hair);
   padding-top: clamp(65px,7vw,110px);
   padding-bottom: 28px;
-  background: #252521;
-  color: var(--paper);
+  background: var(--band-background);
+  color: var(--ink);
+  border-top: 1px solid var(--footer-line);
 }
 
 .footer-top {
@@ -1494,7 +1544,7 @@ a:hover .project-caption .ui-arrow {
   height: 44px;
   border: 1px solid var(--footer-line);
   border-radius: 50%;
-  color: var(--paper);
+  color: var(--ink);
   transition: background-color .2s ease, border-color .2s ease;
 }
 
@@ -1507,6 +1557,7 @@ a:hover .project-caption .ui-arrow {
 .footer a.footer-social:focus-visible {
   background: var(--red);
   border-color: var(--red);
+  color: var(--paper);
   text-decoration: none;
 }
 
@@ -1548,7 +1599,7 @@ a:hover .project-caption .ui-arrow {
 }
 
 .footer a:focus-visible {
-  outline: 2px solid var(--paper);
+  outline: 2px solid var(--ink);
   outline-offset: 5px;
 }
 
@@ -1702,7 +1753,13 @@ a:hover .project-caption .ui-arrow {
   }
 
   .home-hero .hero-body {
-    padding-bottom: 26px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-bottom: 46px;
+  }
+
+  .home-hero .hero-footer {
+    justify-self: end;
   }
 
   .manifesto {
@@ -1765,7 +1822,7 @@ a:hover .project-caption .ui-arrow {
   }
 
   .services {
-    padding-block: var(--home-section-half-space) var(--home-section-space);
+    padding-block: calc(var(--home-section-half-space) + 16px) var(--home-section-space);
   }
 
 
