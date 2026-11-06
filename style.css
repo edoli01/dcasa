@@ -2188,6 +2188,10 @@ a:hover .project-caption .ui-arrow {
   padding-block: var(--home-section-padding);
 }
 
+.home-content > :is(.manifesto, .quote-section) {
+  padding-block: calc(var(--home-section-padding) + 90px);
+}
+
 /* Vicino alle fasce, la distanza esterna si misura dal bordo colorato.
    La sezione Azienda nascosta non interrompe la sequenza visibile. */
 .home-content > section:has(+ :is(.manifesto, .quote-section)) {

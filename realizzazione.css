@@ -31,28 +31,35 @@
 .case-hero .hero-sub {
   font-family: var(--serif); font-weight: var(--serif-weight);
   font-style: normal;
-  font-size: clamp(28px,3vw,44px);
-  line-height: 1.4;
-  margin-top: var(--title-text-gap);
+  font-size: var(--hero-title-size);
+  line-height: var(--hero-title-leading);
+  letter-spacing: var(--hero-title-tracking);
+  max-width: none;
+  min-width: 0;
+  margin-top: 8px;
 }
 
-.case-hero-index {
-  position: absolute;
-  right: var(--edge);
-  bottom: 42px;
-  z-index: 2;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .08em;
+.case-hero .hero-sub {
+  grid-column: 1;
+  grid-row: 3;
+  margin-bottom: 0;
+}
+
+.case-hero-cta {
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: end;
+  align-self: end;
 }
 
 /* 02 — PRESENTAZIONE E SCHEDA DEL PROGETTO */
 .case-intro {
   display: grid;
-  grid-template-columns: minmax(0,1.3fr) minmax(320px,.9fr);
-  gap: clamp(40px,6vw,110px);
-  padding-block: clamp(100px,11.05vw,185px);
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+  gap: clamp(40px, 6vw, 88px);
+  padding-block: clamp(64px, 7vw, 112px) clamp(40px, 4vw, 64px);
   align-items: start;
+  scroll-margin-top: 100px;
 }
 
 .case-intro h2 {
@@ -60,72 +67,66 @@
 }
 
 .case-prose {
-  max-width: 760px;
+  max-width: 650px;
 }
 
 .case-prose p {
   color: var(--muted);
-  font-size: 17px;
-  line-height: 1.65;
-  margin-bottom: 25px;
+  font-size: var(--section-copy-size);
+  line-height: var(--section-copy-leading);
+  margin-bottom: 14px;
 }
 
-.case-prose .case-lead {
-  color: var(--ink);
-  font-size: clamp(22px,2.15vw,31px);
-  line-height: 1.45;
-}
-
-.case-prose .case-editor-note {
-  font-size: 12px;
-  border-left: 2px solid var(--red);
-  padding-left: 15px;
-  margin-top: 35px;
+.case-prose p:last-child {
+  margin-bottom: 0;
 }
 
 .case-facts {
   min-width: 0;
 }
 
-.case-facts .eyebrow {
-  margin-bottom: 0;
-  padding-bottom: 25px;
-  border-bottom: 1px solid var(--hair);
+.case-details {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 16px;
+  line-height: 1.4;
 }
 
-.case-facts dl {
-  margin: 0;
-}
-
-.case-facts dl > div {
-  padding: 17px 0;
-  border-bottom: 1px solid var(--hair);
-  display: grid;
-  grid-template-columns: minmax(0,3fr) minmax(0,1fr);
-  gap: 18px;
-}
-
-.case-facts dt {
-  font-size: 11px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: .05em;
-}
-
-.case-facts dd {
-  margin: 0;
+.case-details caption {
   text-align: left;
-  font-size: 15px;
-  line-height: 1.45;
+  padding-bottom: var(--eyebrow-title-gap);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .085em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
-/* 03 — GALLERY: stessa griglia delle pagine prodotto e showroom */
+.case-details th,
+.case-details td {
+  padding-block: 16px;
+  border-top: 1px solid var(--hair);
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: break-word;
+}
+
+.case-details th {
+  width: 68%;
+  padding-right: 20px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.case-details tbody tr:last-child > * {
+  border-bottom: 1px solid var(--hair);
+}
+
+/* 03 — GALLERY: fotografie subito dopo la presentazione */
 .case-gallery {
-  padding-bottom: clamp(110px,11.9vw,195px);
-}
-
-.case-gallery-heading h2 {
-  margin-top: var(--eyebrow-title-gap);
+  padding-top: 16px;
+  padding-bottom: clamp(72px, 7vw, 112px);
 }
 
 .gallery-grid {
@@ -193,7 +194,7 @@
 @media (max-width:900px) {
   .case-intro {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 36px;
   }
 
   .case-facts {
@@ -204,16 +205,19 @@
 @media (max-width:760px) {
   
 
-  .case-hero-index {
-    bottom: 26px;
+  .case-hero-cta {
+    grid-column: 1;
+    grid-row: 4;
+    justify-self: end;
+    margin-top: var(--text-button-gap);
   }
 
   .case-intro {
-    padding-block: 90px 100px;
+    padding-block: 48px 32px;
   }
 
   .case-gallery {
-    padding-bottom: 100px;
+    padding-bottom: 64px;
   }
 
   .gallery-grid {
@@ -225,9 +229,6 @@
     padding: 15px;
   }
 
-  .case-facts dl > div {
-    grid-template-columns: 95px minmax(0,1fr);
-  }
 }
 
 @media (prefers-reduced-motion:reduce) {
