@@ -4,26 +4,57 @@
    Stili esclusivi della pagina. Base condivisa: style.css
    ================================================================ */
 
-/* 01 / Apertura editoriale */
+/* 01 / Apertura editoriale e sedi */
+.contact-page {
+  --contact-section-gap: clamp(72px, 7vw, 112px);
+}
 
-.contact-intro h1 {font-family:var(--sans);font-weight: var(--title-weight);}
-.contact-intro h1 em,.locations-heading h2 em,.form-intro h2 em {font-family:var(--serif);font-weight: var(--serif-weight);}
+.contact-intro.page-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 32px;
+  align-items: end;
+  padding-bottom: calc(var(--page-intro-bottom) - 24px);
+}
 
-/* 02 / Sedi e mappa */
+.contact-intro > .eyebrow,
+.contact-intro > h1 {
+  grid-column: 1 / -1;
+}
+
+.contact-intro > .text-link {
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: end;
+}
+
+.contact-intro h1 {
+  font-family: var(--sans);
+  font-weight: var(--title-weight);
+}
+
+.contact-intro h1 em,
+.form-intro h2 em {
+  font-family: var(--serif);
+  font-weight: var(--serif-weight);
+}
+
+.contact-intro .page-intro-copy {
+  margin-bottom: 0;
+}
+
 .contact-locations {
-  padding-block: clamp(95px, 10.2vw, 160px);
-  background: #eeeae4;
+  padding-block: var(--contact-section-gap);
+  background: var(--band-background);
 }
+.locations-heading { margin-bottom: clamp(36px, 4vw, 56px); }
 
-.locations-heading > .section-copy-column {
-  color: var(--muted);
-}
-
+/* 02 / Mappa e informazioni delle tre sedi */
 .contact-map-wrap {
   height: clamp(360px, 38vw, 560px);
   position: relative;
   background: #d6d3cd;
-  margin-bottom: clamp(40px, 5vw, 70px);
+  margin-bottom: 36px;
   border: 1px solid var(--hair);
 }
 
@@ -62,31 +93,29 @@
   min-width: 0;
 }
 
-.location-card-top {
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: .06em;
+.location-card h3,
+.location-subtitle {
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1;
 }
 
 .location-card h3 {
-  font-size: clamp(24px, 2.2vw, 34px);
   font-weight: var(--title-weight);
-  margin: 20px 0 8px;
+  margin: 14px 0 4px;
 }
 
 .location-subtitle {
   color: var(--muted);
   font-family: var(--serif);
   font-weight: var(--serif-weight);
-  font-size: 20px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .location-card address {
   font-style: normal;
   font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 24px;
+  line-height: 1.4;
+  margin-bottom: 16px;
 }
 
 .location-links {
@@ -94,22 +123,15 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 28px;
+  margin-bottom: 0;
 }
 
 .location-links a {
   font-size: 16px;
 }
 
-.location-links a:first-child {
-  color: var(--red);
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  font-size: 11px;
-  font-weight: 600;
+.location-directions {
+  margin-top: 24px;
 }
 
 .location-links a:hover {
@@ -127,7 +149,7 @@
   grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
   align-items: start;
   gap: clamp(45px, 6vw, 110px);
-  padding-block: clamp(100px, 11.05vw, 180px);
+  padding-block: calc(var(--contact-section-gap) / 2) var(--contact-section-gap);
 }
 
 .form-intro h2 {
@@ -228,8 +250,8 @@
   min-height: 46px;
   padding: 14px 22px;
   color: var(--red);
-  font: 600 11px/1.3 var(--sans);
-  letter-spacing: .1em;
+  font: var(--button-font-weight) var(--button-font-size)/var(--button-line-height) var(--button-font-family);
+  letter-spacing: var(--button-tracking);
   text-transform: uppercase;
   cursor: pointer;
   transition: background .25s, color .25s;
@@ -263,13 +285,14 @@
 }
 
 @media (max-width: 760px) {
-  .contact-locations {
-    padding-block: 85px;
-  }
+  .contact-page { --contact-section-gap: 64px; }
+
+  .contact-intro.page-intro { grid-template-columns: minmax(0, 1fr); }
+  .contact-intro > .text-link { grid-column: 1; grid-row: 4; margin-top: 24px; }
 
   .contact-map-wrap {
-    height: 360px;
-    margin-bottom: 40px;
+    height: clamp(360px, 65svh, 480px);
+    margin-bottom: 28px;
   }
 
   .locations-grid {
@@ -277,12 +300,8 @@
     gap: var(--card-gap);
   }
 
-  .location-card h3 {
-    margin-top: 16px;
-  }
-
   .contact-form-section {
-    padding-block: 85px;
+    padding-block: 32px 64px;
   }
 
   .form-row {
