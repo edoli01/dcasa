@@ -9,7 +9,10 @@ const productButton = document.querySelector('#productsToggle');
 function updateHeader() {
   const hero = document.querySelector('#hero');
   if (!hero) return;
-  header.classList.toggle('scrolled', hero.getBoundingClientRect().bottom <= header.offsetHeight);
+  const scrolled = hero.classList.contains('showroom-detail-hero')
+    ? hero.querySelector('h1').getBoundingClientRect().top <= header.offsetHeight + 32
+    : hero.getBoundingClientRect().bottom <= header.offsetHeight;
+  header.classList.toggle('scrolled', scrolled);
 }
 window.addEventListener('scroll', updateHeader, {passive:true});
 window.addEventListener('resize', updateHeader);

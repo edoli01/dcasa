@@ -166,7 +166,7 @@
   max-width: 950px;
   margin-top: 48px;
   margin-bottom: 24px;
-  font-size: clamp(32px, 3.5vw, 56px);
+  font-size: calc(clamp(32px, 3.5vw, 56px) * var(--h2-scale));
   line-height: 1.02;
 }
 

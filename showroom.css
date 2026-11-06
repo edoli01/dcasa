@@ -3,7 +3,15 @@
    Header, font, bottoni, frecce, CTA e footer condividono style.css.
    ========================================================= */
 
+:root {
+  --showroom-band-background: #484037;
+}
+
 /* 01 — PANORAMICA: hero e selettore dei tre showroom */
+.showcase {
+  display: grid;
+  grid-template-rows: 1fr;
+}
 .showcase-slides {
   display: grid;
 }
@@ -39,8 +47,44 @@
   background: linear-gradient(var(--hero-shade), var(--hero-shade)),linear-gradient(90deg,rgba(19,17,15,.62) 0%,rgba(19,17,15,.18) 57%,rgba(19,17,15,.03) 100%),linear-gradient(0deg,rgba(13,13,13,.32),transparent 30%);
 }
 
-.showcase-content {
-  padding-bottom: 170px;
+.hero-body.showcase-content {
+  min-height: 0;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: end;
+  align-items: end;
+  column-gap: 32px;
+  padding-top: 140px;
+  padding-bottom: var(--hero-bottom-space);
+}
+
+.showcase-content > .eyebrow {
+  grid-column: 1;
+  grid-row: 1;
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: var(--serif-weight);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.showcase-content > h2 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.showcase-content > .hero-sub {
+  grid-column: 1;
+  grid-row: 3;
+  margin-bottom: 0;
+}
+
+.showcase-content > .text-link {
+  grid-column: 1;
+  grid-row: 4;
+  justify-self: start;
+  margin-top: var(--text-button-gap);
 }
 
 .showcase-content h2,
@@ -59,25 +103,16 @@
   margin-top: 8px;
 }
 
-.showcase-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  padding-block: 28px;
-  border-top: 1px solid #ffffff64;
+.showcase-content .hero-sub {
+  max-width: none;
+  min-width: 0;
+  font-size: var(--hero-title-size);
+  line-height: var(--hero-title-leading);
+  letter-spacing: var(--hero-title-tracking);
+  overflow-wrap: break-word;
 }
 
-.showcase-bottom > p {
-  font-family: var(--serif); font-weight: var(--serif-weight);
-  font-style: normal;
-  font-size: 23px;
-  margin-right: auto;
-}
+
 
 .showcase-controls {
   display: flex;
@@ -118,71 +153,163 @@
 }
 
 .showcase-arrows {
-  margin-left: auto;
+  position: absolute;
+  z-index: 3;
+  right: var(--edge);
+  bottom: var(--hero-bottom-space);
 }
 
-/* 02 — CALCINELLI: storia */
-.showroom-story {
+
+
+/* 02 — CALCINELLI: apertura d’archivio e racconto */
+.showroom-detail-hero {
+  overflow: visible;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: #eeeae4;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  background: var(--band-background);
+  color: var(--ink);
 }
 
-.showroom-history-photo {
-  position: relative;
-  overflow: hidden;
-  min-height: 650px;
+.showroom-archive-photo {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100svh;
+  margin: 0;
   background: #a9a39d;
 }
 
-.showroom-history-photo img {
+.showroom-archive-photo img {
   position: absolute;
   inset: 0;
   filter: grayscale(1);
 }
 
-.history-photo-caption {
+.showroom-archive-photo::after {
+  content: "";
   position: absolute;
-  bottom: 28px;
+  inset: 0;
+  background: linear-gradient(#0006, transparent 25%, transparent 75%, #0006);
+  pointer-events: none;
+}
+
+.showroom-archive-photo figcaption {
+  position: absolute;
+  z-index: 1;
+  bottom: 30px;
   left: var(--edge);
-  padding: 8px 10px;
-  background: #0006;
-  color: white;
-  font-size: 11px;
-  letter-spacing: .04em;
-}
-
-.showroom-story-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: clamp(55px,5.95vw,130px) clamp(65px,7vw,150px);
-}
-
-.showroom-story-text h2 {
-  margin: var(--eyebrow-title-gap) 0 var(--title-text-gap);
-}
-
-.showroom-story-text p:not(.eyebrow) {
-  max-width: 620px;
-  margin-bottom: 25px;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.65;
-}
-
-.showroom-story-text p.showroom-story-lead {
-  color: var(--ink);
-  font-size: clamp(22px,2.15vw,31px);
-  line-height: 1.45;
-  margin-bottom: 28px;
-}
-
-.showroom-story-text p.showroom-address {
-  margin-top: 24px;
+  right: var(--edge);
   font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: .07em;
+  letter-spacing: .04em;
+  color: #fff;
+}
+
+.showroom-detail-hero .showroom-hero-content {
+  min-width: 0;
+}
+
+.showroom-hero-heading {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: end;
+  align-items: end;
+  column-gap: 24px;
+  padding: 160px var(--edge) var(--hero-bottom-space);
+}
+
+.showroom-hero-heading > .eyebrow,
+.showroom-hero-heading > h1 {
+  grid-column: 1 / -1;
+}
+
+.showroom-hero-heading > h1 {
+  scroll-margin-top: clamp(120px, 18svh, 180px);
+}
+
+.showroom-detail-hero .hero-sub {
+  grid-column: 1;
+  grid-row: 3;
+  min-width: 0;
+  max-width: none;
+  font-size: var(--hero-title-size);
+  line-height: var(--hero-title-leading);
+  letter-spacing: var(--hero-title-tracking);
+  margin-bottom: 0;
+}
+
+.showroom-detail-hero .hero-scroll-down {
+  grid-column: 2;
+  grid-row: 3;
+  margin-top: 0;
+  color: var(--ink);
+  border-color: var(--hair);
+}
+
+.showroom-detail-hero .hero-scroll-down:hover {
+  background: var(--hair);
+}
+
+.showroom-detail-hero .hero-scroll-down:focus-visible {
+  outline-color: var(--ink);
+}
+
+@media (min-width: 761px) {
+  .showroom-detail-page .topbar:not(.scrolled):not(.menu-open) {
+    color: var(--ink);
+  }
+}
+
+.showroom-detail-page .topbar.scrolled {
+  background: var(--paper);
+}
+
+.showroom-timeline {
+  padding: 48px var(--edge) 88px;
+  scroll-margin-top: 100px;
+}
+
+.showroom-milestones {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.showroom-milestones li {
+  padding-block: 36px 48px;
+  border-top: 1px solid var(--hair);
+}
+
+.showroom-milestone-date {
+  display: block;
+  margin-bottom: 24px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: var(--serif-weight);
+  line-height: 1;
+  letter-spacing: var(--title-tracking);
+}
+
+.showroom-milestones h2 {
+  max-width: 480px;
+  margin-bottom: var(--title-text-gap);
+  font-size: calc(clamp(26px, 2.4vw, 40px) * var(--h2-scale));
+  line-height: 1.08;
+}
+
+.showroom-milestones li > p {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: var(--section-copy-size);
+  line-height: var(--section-copy-leading);
+}
+
+.showroom-timeline .showroom-address {
+  padding-top: 28px;
+  border-top: 1px solid var(--hair);
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .04em;
 }
 
 /* 03 — GALLERY: stessa griglia della pagina Pavimenti e rivestimenti */
@@ -197,7 +324,7 @@
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: clamp(12px,1.8vw,28px);
+  gap: var(--card-gap);
 }
 
 .gallery-open {
@@ -264,13 +391,7 @@
 
 /* 05 — RESPONSIVE */
 @media (max-width:1100px) {
-  .showroom-story-text {
-    padding: 50px 60px;
-  }
 
-  .showcase-bottom > p {
-    display: none;
-  }
 
   .showcase-controls {
     margin-right: auto;
@@ -278,17 +399,11 @@
 }
 
 @media (max-width:760px) {
-  .showcase-content {
-    padding-bottom: 220px;
+  .hero-body.showcase-content {
+    grid-template-columns: minmax(0, 1fr);
+    padding-bottom: 125px;
   }
 
-  
-
-  .showcase-bottom {
-    flex-wrap: wrap;
-    gap: 16px;
-    padding-block: 18px;
-  }
 
   .showcase-controls {
     display: grid;
@@ -306,20 +421,27 @@
   }
 
   .showcase-arrows {
-    margin-left: auto;
+    bottom: 46px;
   }
 
-  .showroom-story {
-    grid-template-columns: 1fr;
+  .showroom-detail-hero {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .showroom-history-photo {
+  .showroom-archive-photo {
+    position: relative;
+    top: auto;
+    min-height: 320px;
+    height: 50svh;
+  }
+
+  .showroom-hero-heading {
     min-height: 0;
-    height: 65vh;
+    padding: 48px var(--edge) 46px;
   }
 
-  .showroom-story-text {
-    padding: 75px var(--edge) 95px;
+  .showroom-timeline {
+    padding: 24px var(--edge) 56px;
   }
 
   .showroom-gallery {
@@ -328,7 +450,7 @@
 
   .gallery-grid {
     grid-template-columns: repeat(2,minmax(0,1fr));
-    gap: 12px;
+    gap: var(--card-gap);
   }
 
   .gallery-lightbox {

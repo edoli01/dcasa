@@ -27,7 +27,7 @@
 .filter-btn span { font-size:10px; margin-left:5px; opacity:.75; }
 
 /* 04 — Griglia fotografica: alternanza controllata */
-.project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(42px,6vw,100px) clamp(20px,3vw,56px); }
+.project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap: var(--card-gap); }
 .project-tile { min-width:0; }
 .project-tile[id] { scroll-margin-top:110px; }
 .project-tile.tile-wide { grid-column:span 2; }
@@ -40,7 +40,7 @@
 .project-over-image .ui-arrow { width:0.8em; height:0.8em; }
 .project-info { display:flex; justify-content:space-between; align-items:flex-end; gap:20px; padding-top:23px; }
 .project-type { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
-.project-info h2 { margin-top:8px; font-family:var(--sans); font-weight: var(--title-weight); font-size:clamp(20px,2.5vw,28px); line-height:1.02; letter-spacing:0; }
+.project-info h2 { margin-top:8px; font-family:var(--sans); font-weight: var(--title-weight); font-size:calc(clamp(20px,2.5vw,28px) * var(--h2-scale)); line-height:1.02; letter-spacing:0; }
 .project-number { color:var(--muted); font-size:11px; white-space:nowrap; }
 .prototype-note { color:var(--muted); font-size:12px; max-width:710px; margin-top:65px; line-height:1.6; }
 .empty-state { padding:80px 0; font-size:19px; }
@@ -53,7 +53,7 @@
 
  .filter-buttons { gap:3px; }
  .filter-btn { padding:9px 11px; }
- .project-grid { grid-template-columns:1fr; gap:55px; }
+ .project-grid { grid-template-columns:1fr; gap: var(--card-gap); }
  .project-tile.tile-wide { grid-column:auto; }
  .project-image, .tile-wide .project-image { aspect-ratio:4/5; }
 }

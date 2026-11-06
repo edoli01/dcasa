@@ -48,7 +48,7 @@
     const header = document.getElementById('topbar');
     const margin = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
     const offset = link.classList.contains('hero-scroll-down')
-      ? 0
+      ? margin
       : margin || (header ? header.offsetHeight + 16 : 0);
     const max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
     const destination = Math.min(max, Math.max(0, target.getBoundingClientRect().top + start - offset));

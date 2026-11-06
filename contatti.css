@@ -50,7 +50,7 @@
 .locations-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(20px, 3vw, 50px);
+  gap: var(--card-gap);
 }
 
 .location-card {
@@ -258,7 +258,7 @@
   }
 
   .locations-grid {
-    gap: 20px;
+    gap: var(--card-gap);
   }
 }
 
@@ -274,7 +274,7 @@
 
   .locations-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: var(--card-gap);
   }
 
   .location-card h3 {

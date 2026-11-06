@@ -21,14 +21,18 @@
   --title-weight: 400;
   --serif-weight: var(--title-weight);
   --title-tracking: -.025em;
+  /* Riduzione proporzionale di tutti gli H2, con interlinea relativa invariata. */
+  --h2-scale: .90;
   /* Corpo condiviso dal titolo della hero e dal Manifesto. */
   --home-display-size: clamp(46px, 5.6vw, 105px);
   --home-hero-title-size: var(--home-display-size);
   --home-hero-title-leading: 0.85;
   --home-hero-title-tracking: -.025em;
-  /* Titoli delle hero e delle aperture nelle pagine interne. */
-  --hero-title-size: clamp(44px, 7vw, 120px);
-  --hero-title-leading: .85;
+  /* Le aperture interne seguono la tipografia della hero della home. */
+  --hero-title-size: var(--home-hero-title-size);
+  --hero-title-leading: var(--home-hero-title-leading);
+  --hero-title-tracking: var(--home-hero-title-tracking);
+  --hero-bottom-space: 62px;
   /* Paragrafi che introducono o accompagnano i titoli di sezione. */
   --section-copy-size: clamp(18px, 1.5vw, 20px);
   --section-copy-leading: 1.45;
@@ -37,6 +41,8 @@
   --eyebrow-title-gap: 28px;
   --title-text-gap: 28px;
   --text-button-gap: 36px;
+  /* Distanza comune tra card, slide e immagini delle gallery. */
+  --card-gap: 22px;
   --hero-content-top: clamp(220px, 30svh, 360px);
   --page-intro-top: clamp(160px, 21svh, 260px);
   --page-intro-bottom: clamp(70px, 8vw, 120px);
@@ -132,6 +138,10 @@ em, i {
   align-items: flex-start;
   gap: 5rem;
   margin-bottom: clamp(45px,6vw,110px);
+}
+
+.section-head .eyebrow {
+  margin-bottom: var(--eyebrow-title-gap);
 }
 
 /* Colonna comune per i testi a destra dei titoli. */
@@ -275,8 +285,8 @@ em, i {
   font-weight: var(--title-weight);
 }
 
-.section-title, .history-body h2, .final-cta h2 {
-  font-size: clamp(37px,4.2vw,78px);
+.section-title, .history-body h2, .final-cta h2, .showroom-milestone-date {
+  font-size: calc(clamp(37px,4.2vw,78px) * var(--h2-scale));
   line-height: 1.0;
 }
 
@@ -602,6 +612,7 @@ a:hover .project-caption .ui-arrow {
 .blog-intro h1 {
   font-size: var(--hero-title-size);
   line-height: var(--hero-title-leading);
+  letter-spacing: var(--hero-title-tracking);
 }
 
 .hero h1 {
@@ -611,7 +622,7 @@ a:hover .project-caption .ui-arrow {
   max-width: 1050px;
 }
 
-/* Impostazioni indipendenti per il solo titolo della homepage. */
+/* Tipografia della homepage e composizione condivisa delle hero in basso. */
 .home-hero h1 {
   font-family: var(--sans);
   font-weight: var(--title-weight);
@@ -620,25 +631,46 @@ a:hover .project-caption .ui-arrow {
   letter-spacing: var(--home-hero-title-tracking);
 }
 
-.home-hero .hero-body {
+:is(.home-hero, .hero-bottom) .hero-body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-content: end;
   align-items: end;
   gap: 24px;
   padding-top: 140px;
-  padding-bottom: 62px;
+  padding-bottom: var(--hero-bottom-space);
 }
 
-.home-hero .hero-body::before {
+:is(.home-hero, .hero-bottom) .hero-body::before {
   display: none;
 }
 
-.home-hero .hero-footer {
+:is(.home-hero, .hero-bottom) .hero-footer {
   position: static;
   width: auto;
   justify-content: flex-end;
   margin-top: 0;
+}
+
+/* Etichetta e titolo restano insieme; la freccia occupa la colonna destra. */
+.hero-bottom .hero-body {
+  row-gap: 0;
+}
+
+.hero-bottom .hero-body > .eyebrow {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0 0 var(--eyebrow-title-gap);
+}
+
+.hero-bottom .hero-body > h1 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.hero-bottom .hero-footer {
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .hero-scroll-down {
@@ -780,12 +812,34 @@ a:hover .project-caption .ui-arrow {
   --home-section-half-space: calc(var(--home-section-space) / 2);
 }
 
+.home-intro {
+  padding-block: var(--home-section-half-space);
+  color: var(--ink);
+}
+
+.home-intro p {
+  width: 44%;
+  margin-left: auto;
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.45;
+}
+
+.home-intro em {
+  font-style: italic;
+}
+
+@media (max-width: 760px) {
+  .home-intro p {
+    width: 100%;
+  }
+}
+
 .manifesto {
   min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 50px;
+  gap: 0;
   align-items: center;
   text-align: center;
   background: var(--band-background);
@@ -793,7 +847,12 @@ a:hover .project-caption .ui-arrow {
 }
 
 .manifesto .display {
-  font-size: var(--home-display-size);
+  font-size: calc(var(--home-display-size) * var(--h2-scale));
+  margin-bottom: 50px;
+}
+
+.manifesto .eyebrow {
+  margin-bottom: var(--eyebrow-title-gap);
 }
 
 /* ================= 05 — PRODOTTI ================= */
@@ -804,7 +863,7 @@ a:hover .project-caption .ui-arrow {
 
 .product-carousel {
   display: flex;
-  gap: clamp(16px,2vw,32px);
+  gap: var(--card-gap);
   align-items: start;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -814,7 +873,7 @@ a:hover .project-caption .ui-arrow {
 }
 
 .product-carousel .product-card {
-  flex: 0 0 calc((100% - 2 * clamp(16px,2vw,32px)) / 3);
+  flex: 0 0 calc((100% - 2 * var(--card-gap)) / 3);
   min-width: 0;
   scroll-snap-align: start;
 }
@@ -884,6 +943,10 @@ a:hover .project-caption .ui-arrow {
 }
 
 /* ================= 06 — STORIA ================= */
+
+.history[hidden] {
+  display: none;
+}
 
 .history {
   display: grid;
@@ -1070,7 +1133,7 @@ a:hover .project-caption .ui-arrow {
 }
 
 .project-layout {
-  --project-gap: clamp(16px, 2vw, 32px);
+  --project-gap: var(--card-gap);
   display: flex;
   gap: var(--project-gap);
   overflow-x: auto;
@@ -1167,6 +1230,10 @@ a:hover .project-caption .ui-arrow {
   padding-block: var(--home-section-space) calc(var(--home-section-space) * 1.3);
 }
 
+.home-intro + .showrooms {
+  padding-top: 0;
+}
+
 .showroom-head {
   max-width: none;
 }
@@ -1189,7 +1256,7 @@ a:hover .project-caption .ui-arrow {
 .showroom-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  gap: 22px;
+  gap: var(--card-gap);
   align-items: start;
 }
 
@@ -1228,6 +1295,10 @@ a:hover .project-caption .ui-arrow {
   padding-block: 130px 145px;
 }
 
+.brand-section .eyebrow {
+  margin-bottom: var(--eyebrow-title-gap);
+}
+
 .home-content > .brand-section {
   padding-block: var(--home-section-half-space) var(--home-section-space);
 }
@@ -1244,7 +1315,7 @@ a:hover .project-caption .ui-arrow {
 }
 
 .brand-group {
-  --brand-gap: clamp(32px, 5vw, 96px);
+  --brand-gap: var(--card-gap);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -1296,11 +1367,11 @@ a:hover .project-caption .ui-arrow {
 .editorial-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6vw;
+  gap: var(--card-gap);
 }
 
 .editorial-block .eyebrow {
-  margin-bottom: 25px;
+  margin-bottom: var(--eyebrow-title-gap);
 }
 
 .editorial-block h2 {
@@ -1332,7 +1403,7 @@ a:hover .project-caption .ui-arrow {
 }
 
 .magazine-heading .section-title {
-  margin: 22px 0 36px;
+  margin: var(--eyebrow-title-gap) 0 36px;
 }
 
 .magazine-lead {
@@ -1409,7 +1480,7 @@ a:hover .project-caption .ui-arrow {
 .blog-cards {
   display: grid;
   grid-template-columns: repeat(4,minmax(0,1fr));
-  gap: clamp(14px,1.6vw,30px);
+  gap: var(--card-gap);
 }
 
 .blog-card a {
@@ -1696,7 +1767,7 @@ a:hover .project-caption .ui-arrow {
 
   .blog-cards {
     grid-template-columns: repeat(2,1fr);
-    gap: 50px 20px;
+    gap: var(--card-gap);
   }
 }
 
@@ -1752,20 +1823,34 @@ a:hover .project-caption .ui-arrow {
     bottom: 26px;
   }
 
-  .home-hero .hero-body {
+  :is(.home-hero, .hero-bottom) .hero-body {
     grid-template-columns: 1fr;
     gap: 16px;
-    padding-bottom: 46px;
+    --hero-bottom-space: 46px;
+    padding-bottom: var(--hero-bottom-space);
   }
 
-  .home-hero .hero-footer {
+  :is(.home-hero, .hero-bottom) .hero-footer {
     justify-self: end;
+  }
+
+  .hero-bottom .hero-body {
+    row-gap: 0;
+  }
+
+  .hero-bottom .hero-footer {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 16px;
   }
 
   .manifesto {
     min-height: 50vh;
-    gap: 36px;
     padding-block: 65px;
+  }
+
+  .manifesto .display {
+    margin-bottom: 36px;
   }
 
   .section-head {
@@ -1853,7 +1938,7 @@ a:hover .project-caption .ui-arrow {
 
   .editorial-grid {
     grid-template-columns: 1fr;
-    gap: 95px;
+    gap: var(--card-gap);
   }
 
   .final-cta {
@@ -1890,7 +1975,7 @@ a:hover .project-caption .ui-arrow {
   }
 
   .product-carousel {
-    gap: 14px;
+    gap: var(--card-gap);
   }
 
   .product-carousel .product-card {
@@ -1962,8 +2047,8 @@ a:hover .project-caption .ui-arrow {
 
   
 
-  .history-body h2, .final-cta h2, .section-title {
-    font-size: clamp(37px,8.8vw,65px);
+  .history-body h2, .final-cta h2, .section-title, .showroom-milestone-date {
+    font-size: calc(clamp(37px,8.8vw,65px) * var(--h2-scale));
   }
 
   .quote-section blockquote {
@@ -1995,7 +2080,7 @@ a:hover .project-caption .ui-arrow {
 
   .blog-cards {
     grid-template-columns: repeat(2,minmax(0,1fr));
-    gap: 40px 12px;
+    gap: var(--card-gap);
   }
 
   .blog-meta {
@@ -2015,7 +2100,7 @@ a:hover .project-caption .ui-arrow {
 
 @media (max-width: 480px) {
   .product-carousel {
-    gap: 12px;
+    gap: var(--card-gap);
   }
 
 }
