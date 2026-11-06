@@ -19,20 +19,19 @@
 
 /* 02 — INTRODUZIONE */
 .category-intro {
-  padding-block: clamp(110px, 11.9vw, 195px);
-  background: #eeeae4;
+  padding-block: clamp(45px, 4.5vw, 72px);
+  background: var(--paper);
 }
 .intro-prodotto {
-  max-width: 1000px;
-  margin-inline: auto;
-  text-align: center;
-  font-size: clamp(24px, 2.6vw, 40px);
-  line-height: 1.25;
+  width: 44%;
+  margin-left: auto;
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.45;
   color: var(--ink);
   text-wrap: pretty;
 }
 .intro-prodotto em {
-  color: var(--red);
+  color: inherit;
   font-family: var(--serif);
   font-style: italic;
   font-weight: var(--serif-weight);
@@ -45,7 +44,7 @@
 .category-section-heading h2 em { font-family: var(--serif); font-weight: var(--serif-weight); }
 
 /* 03 — GALLERY */
-.category-gallery { padding-block: clamp(110px, 11.9vw, 195px); }
+.category-gallery { padding-block: 24px clamp(36px, 3.5vw, 56px); }
 .category-section-heading {
   display: flex;
   justify-content: space-between;
@@ -75,6 +74,9 @@
 .gallery-open:hover img { transform: scale(1.025); }
 
 /* 04 — BRAND: layout condiviso con la homepage in style.css. */
+.category-gallery + .brand-section {
+  padding-top: clamp(36px, 3.5vw, 56px);
+}
 
 /* 05 — LIGHTBOX */
 .gallery-lightbox[hidden] { display: none; }
@@ -108,8 +110,10 @@
 }
 @media (max-width: 760px) {
   
-  .category-intro { padding-block: 85px; }
-  .category-gallery { padding-block: 100px; }
+  .category-intro { padding-block: 40px; }
+  .intro-prodotto { width: 100%; }
+  .category-gallery { padding-block: 16px 32px; }
+  .category-gallery + .brand-section { padding-top: 32px; }
   .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--card-gap); }
   .gallery-lightbox { padding: 15px; }
 }

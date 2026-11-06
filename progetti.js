@@ -63,18 +63,25 @@ document.querySelectorAll('#productsSubmenu a').forEach((link) => {
 // Filtri progetto
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projects = document.querySelectorAll('.project-tile');
-const visibleCount = document.querySelector('#visibleCount');
+
+function updateProjectLayout() {
+  let visibleIndex = 0;
+  projects.forEach(project => {
+    const wide = !project.hidden && ++visibleIndex % 3 === 0;
+    project.classList.toggle('tile-wide', wide);
+  });
+}
+updateProjectLayout();
 
 filterButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const selectedCategory = button.dataset.filter;
-    let count = 0;
 
     projects.forEach((project) => {
       const show = selectedCategory === 'Tutti' || project.dataset.category === selectedCategory;
       project.hidden = !show;
-      if (show) count++;
     });
+    updateProjectLayout();
 
     filterButtons.forEach((item) => {
       const active = item === button;
@@ -82,6 +89,5 @@ filterButtons.forEach((button) => {
       item.setAttribute('aria-pressed', String(active));
     });
 
-    visibleCount.textContent = String(count).padStart(2, '0');
   });
 });

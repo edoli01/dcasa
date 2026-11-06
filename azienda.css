@@ -20,18 +20,19 @@
 .azienda-hero .eyebrow { color: #fff; }
 
 /* 02 — Presentazione */
-.azienda-intro { padding-block:var(--azienda-section-gap); background:var(--band-background); }
-.intro-azienda { max-width:1000px; margin-inline:auto; text-align:center; font-size:clamp(24px,2.6vw,40px); line-height:1.25; color:var(--ink); text-wrap:pretty; }
-.intro-azienda em { color:var(--red); font-family:var(--serif); font-style:italic; font-weight:var(--serif-weight); }
+.azienda-intro { padding-block:clamp(45px,4.5vw,72px) var(--azienda-section-padding); background:var(--paper); }
+.intro-azienda { width:44%; margin-left:auto; font-size:clamp(20px,1.8vw,26px); line-height:1.45; color:var(--ink); }
+.intro-azienda em { color:inherit; font-family:var(--serif); font-style:italic; font-weight:var(--serif-weight); }
 .azienda-section-top h2,.azienda-sustainability h2 { font-weight: var(--title-weight); line-height:1; }
 .azienda-section-top h2 em,.azienda-sustainability h2 em { font-family:var(--serif); font-weight: var(--serif-weight); }
 .azienda-sustainability-copy > p:not(.eyebrow) { max-width:700px; font-size:var(--section-copy-size); line-height:var(--section-copy-leading); color:var(--muted); margin-top:var(--title-text-gap); }
+.azienda-sustainability-copy > p:not(.eyebrow) + p { margin-top:14px; }
 
 /* Anteprima showroom */
 .azienda-showrooms { padding-block:var(--azienda-section-gap) var(--azienda-section-padding); }
 
 /* 03 — Team */
-.azienda-team { padding-block:var(--azienda-section-gap); background:var(--paper); }
+.azienda-team { padding-block:var(--azienda-section-padding) var(--azienda-section-gap); background:var(--paper); }
 .azienda-section-top { display:flex; align-items:end; justify-content:space-between; gap:60px; margin-bottom:var(--azienda-heading-gap); }
 .azienda-section-top h2 { margin-top:var(--eyebrow-title-gap); }
 .azienda-section-top > p { font-size: var(--section-copy-size); color:var(--muted); line-height: var(--section-copy-leading); }
@@ -80,21 +81,6 @@
 }
 
 /* 06 — Responsive */
-@media (min-width:951px) {
-  .azienda-team .azienda-section-top {
-    grid-template-columns:repeat(4,minmax(0,1fr));
-    column-gap:var(--card-gap);
-  }
-
-  .azienda-team .azienda-section-top h2 {
-    grid-column:1 / 4;
-  }
-
-  .azienda-team .azienda-section-top > .section-copy-column {
-    grid-column:4;
-  }
-}
-
 @media (max-width:950px) {
   .azienda-team-grid { grid-auto-columns:calc((100% - var(--team-gap)) / 2); }
   .azienda-sustainability { grid-template-columns:1fr; }
@@ -103,6 +89,8 @@
 }
 @media (max-width:760px) {
   .azienda-content { --azienda-section-gap:64px; --azienda-heading-gap:36px; }
+  .azienda-intro { padding-top:40px; }
+  .intro-azienda { width:100%; }
   
   .azienda-section-top { display:block; }
   .azienda-section-top > p { margin-top:var(--title-text-gap); }

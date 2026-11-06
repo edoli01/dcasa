@@ -184,7 +184,7 @@
   padding: 14px 16px;
   color: var(--ink);
   font: 400 16px/1.45 var(--sans);
-  border-radius: var(--button-radius);
+  border-radius: 4px;
   transition: border-color .2s, background-color .2s;
 }
 
