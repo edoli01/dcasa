@@ -13,7 +13,7 @@
 .case-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(var(--hero-shade), var(--hero-shade)),linear-gradient(90deg,rgba(19,17,15,.62) 0%,rgba(19,17,15,.18) 57%,rgba(19,17,15,.03) 100%),linear-gradient(0deg,rgba(13,13,13,.32),transparent 30%);
+  background: var(--hero-shade);
 }
 
 .case-hero h1 {
