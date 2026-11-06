@@ -80,6 +80,39 @@ showSlide(0);
 selectShowroomFromHash();
 window.addEventListener('hashchange', selectShowroomFromHash);
 
+// Carosello fotografico: stesso passo delle Realizzazioni in homepage.
+const galleryCarousel = document.getElementById('showroomGalleryCarousel');
+if (galleryCarousel) {
+  const photos = [...galleryCarousel.querySelectorAll('.gallery-open')];
+  const previous = document.getElementById('prevGallery');
+  const next = document.getElementById('nextGallery');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function moveGallery(direction) {
+    const left = galleryCarousel.scrollLeft;
+    const end = galleryCarousel.scrollWidth - galleryCarousel.clientWidth;
+    const offsets = photos.map(photo => photo.getBoundingClientRect().left
+      - galleryCarousel.getBoundingClientRect().left + left);
+    let target = direction > 0
+      ? offsets.find(offset => offset > left + 5)
+      : offsets.reverse().find(offset => offset < left - 5);
+    if (direction > 0 && left >= end - 2) target = 0;
+    if (direction < 0 && left <= 2) target = end;
+    if (target === undefined) return;
+    galleryCarousel.scrollTo({ left: target, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+  }
+
+  previous.addEventListener('click', () => moveGallery(-1));
+  next.addEventListener('click', () => moveGallery(1));
+  galleryCarousel.addEventListener('keydown', event => {
+    if (event.target !== galleryCarousel) return;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      moveGallery(event.key === 'ArrowRight' ? 1 : -1);
+    }
+  });
+}
+
 // 3. LIGHTBOX GALLERY: usa direttamente il src dell'immagine,
 //    quindi quando lo cambi nell'HTML non devi cambiare altro.
 const lightbox = document.querySelector('#galleryLightbox');

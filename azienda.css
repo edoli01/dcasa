@@ -1,6 +1,12 @@
 /* D.CASA — AZIENDA | Stili esclusivi; font, colori, header e footer sono in style.css */
 /* Tutte le foto usano object-fit: cover: basta sostituire src, senza ritagliare i file. */
 
+.azienda-content {
+  --azienda-section-gap: clamp(72px, 7vw, 112px);
+  --azienda-section-padding: calc(var(--azienda-section-gap) / 2);
+  --azienda-heading-gap: clamp(36px, 4vw, 56px);
+}
+
 /* 01 — Hero */
 .azienda-hero { position: relative; }
 .azienda-hero-slides { position:absolute; inset:0; }
@@ -14,28 +20,19 @@
 .azienda-hero .eyebrow { color: #fff; }
 
 /* 02 — Presentazione */
-.azienda-intro { padding-block:clamp(110px,11.9vw,195px); background:#eeeae4; }
+.azienda-intro { padding-block:var(--azienda-section-gap); background:var(--band-background); }
 .intro-azienda { max-width:1000px; margin-inline:auto; text-align:center; font-size:clamp(24px,2.6vw,40px); line-height:1.25; color:var(--ink); text-wrap:pretty; }
 .intro-azienda em { color:var(--red); font-family:var(--serif); font-style:italic; font-weight:var(--serif-weight); }
-.azienda-section-top h2,.azienda-sustainability h2 { font-weight: var(--title-weight); font-size:calc(clamp(37px,4.2vw,78px) * var(--h2-scale)); line-height:1.02; }
+.azienda-section-top h2,.azienda-sustainability h2 { font-weight: var(--title-weight); line-height:1; }
 .azienda-section-top h2 em,.azienda-sustainability h2 em { font-family:var(--serif); font-weight: var(--serif-weight); }
-.azienda-sustainability-copy > p:not(.eyebrow) { font-size:17px; line-height:1.75; color:var(--muted); margin-top:24px; }
-.azienda-sustainability-copy > p.azienda-lead { font-size:clamp(22px,2.15vw,31px); line-height:1.45; color:var(--ink)!important; margin-top:0!important; }
+.azienda-sustainability-copy > p:not(.eyebrow) { max-width:700px; font-size:var(--section-copy-size); line-height:var(--section-copy-leading); color:var(--muted); margin-top:var(--title-text-gap); }
 
 /* Anteprima showroom */
-.azienda-showrooms { padding-block:clamp(95px,10.2vw,160px); }
-.azienda-showroom-heading { display:flex; align-items:end; justify-content:space-between; gap:60px; margin-bottom:clamp(55px,7vw,105px); }
-.azienda-showroom-heading .eyebrow { margin-bottom:var(--eyebrow-title-gap); }
-.azienda-showroom-heading > p { font-size: var(--section-copy-size); line-height: var(--section-copy-leading); color:var(--muted); }
-.azienda-showroom-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap: var(--card-gap); align-items:start; margin-bottom:45px; }
-.azienda-showroom-card .photo { height:auto; aspect-ratio:4/5; }
-.azienda-showroom-card .photo img { object-fit:cover; }
-.azienda-showroom-subtitle { font-family:var(--serif); font-size:20px; font-weight: var(--serif-weight); opacity:.6; }
-.azienda-showroom-card:focus-visible { outline:2px solid var(--red); outline-offset:6px; }
+.azienda-showrooms { padding-block:var(--azienda-section-gap) var(--azienda-section-padding); }
 
 /* 03 — Team */
-.azienda-team { padding-block:clamp(95px,10.2vw,160px); background:#eeeae4; }
-.azienda-section-top { display:flex; align-items:end; justify-content:space-between; gap:60px; margin-bottom:clamp(55px,7vw,105px); }
+.azienda-team { padding-block:var(--azienda-section-gap); background:var(--paper); }
+.azienda-section-top { display:flex; align-items:end; justify-content:space-between; gap:60px; margin-bottom:var(--azienda-heading-gap); }
 .azienda-section-top h2 { margin-top:var(--eyebrow-title-gap); }
 .azienda-section-top > p { font-size: var(--section-copy-size); color:var(--muted); line-height: var(--section-copy-leading); }
 .azienda-team-grid { --team-gap:var(--card-gap); display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 3 * var(--team-gap)) / 4); gap:var(--team-gap); overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; }
@@ -44,9 +41,9 @@
 .azienda-person { min-width:0; scroll-snap-align:start; }
 .azienda-person-photo { overflow:hidden; aspect-ratio:4/4.5; background:#c9c4bc; }
 .azienda-person-photo img { width:100%; height:100%; object-fit:cover; }
-.azienda-person-caption { border-top:1px solid var(--hair); margin-top:14px; padding-top:18px; }
-.azienda-person-caption h3 { font-size:clamp(16px,1.4vw,21px); line-height:1.08; font-weight: var(--title-weight); margin:0 0 8px; }
-.azienda-person-caption p { line-height:1.5; font-size:14px; color:var(--muted); }
+.azienda-person-caption { padding-top:18px; }
+.azienda-person-caption h3 { font-size:clamp(16px,1.4vw,21px); line-height:0.6; font-weight: var(--title-weight); margin:0 0 8px; }
+.azienda-person-caption p { line-height:1.2; font-size:16px; color:var(--muted); }
 .azienda-team-controls { justify-content:flex-end; margin-top:16px; }
 .azienda-team-controls[hidden] { display:none; }
 .azienda-team-controls button { color:var(--ink); border-color:var(--hair); }
@@ -54,49 +51,63 @@
 .azienda-team-controls button:focus-visible { outline:2px solid var(--red); outline-offset:3px; }
 
 /* 04 — Sostenibilità */
-.azienda-sustainability { display:grid; grid-template-columns:1fr 1fr; background:#e7e5df; }
+.azienda-sustainability { display:grid; grid-template-columns:1fr 1fr; background:var(--band-background); }
 .azienda-sustainability-photo { position:relative; min-height:0; overflow:hidden; }
 .azienda-sustainability-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-.azienda-sustainability-copy { padding:clamp(65px,5.95vw,130px) clamp(35px,6vw,115px); align-self:center; }
+.azienda-sustainability-copy { padding:var(--azienda-section-padding) var(--edge); align-self:center; }
 .azienda-sustainability-copy h2 { margin:var(--eyebrow-title-gap) 0 var(--title-text-gap); }
 .azienda-principles { display:grid; gap:0; margin-top:55px; }
-.azienda-principles > div { display:grid; grid-template-columns:38px 1fr; gap:3px 20px; padding:18px 0; border-top:1px solid #c7c4bc; }
+.azienda-principles > div { display:grid; grid-template-columns:38px 1fr; gap:3px 20px; padding:18px 0; border-top:1px solid var(--hair); }
 .azienda-principles span { color:var(--red); font-size:clamp(16px,1.4vw,20px); }
 .azienda-principles strong { font-size:clamp(22px,2vw,28px); line-height:1.2; font-weight:500; }
-.azienda-principles p { grid-column:2; font-size:13px; color:var(--muted); line-height:1.55; }
+.azienda-principles p { grid-column:2; font-size:16px; color:var(--muted); line-height:1.55; }
 
 /* 05 — Servizi */
-.azienda-services { padding-block:clamp(100px,11.05vw,185px); }
-.azienda-service-list { border-top:1px solid var(--hair); margin-bottom:55px; }
+.azienda-services { padding-block:var(--azienda-section-padding) var(--azienda-section-gap); }
+.azienda-service-list { border-top:1px solid var(--hair); margin-bottom:var(--text-button-gap); }
 .azienda-service-list > .azienda-service-link { display:grid; grid-template-columns:65px minmax(130px,.75fr) minmax(200px,1fr) 22px; align-items:center; gap:20px; padding:34px 0; border-bottom:1px solid var(--hair); }
 .azienda-service-icon { width:40px; height:40px; object-fit:contain; filter:grayscale(100%); transition:filter .35s ease; }
 .azienda-service-link:hover .azienda-service-icon,.azienda-service-link:focus-visible .azienda-service-icon { filter:grayscale(0%); }
 .azienda-service-list h3 { font-size:clamp(24px,2.6vw,40px); font-weight: var(--title-weight); }
-.azienda-service-list p { font-size:15px; color:var(--muted); line-height:1.6; max-width:440px; }
+.azienda-service-list p { font-size:16px; color:var(--muted); line-height:1.6; max-width:440px; }
 .azienda-service-list .ui-arrow { width:15px; height:15px; }
 .azienda-service-link:hover h3,.azienda-service-link:focus-visible h3 { color:var(--red); }
 .azienda-service-link:focus-visible { outline:2px solid var(--red); outline-offset:6px; }
 
+.azienda-content > .final-cta {
+  min-height: 0;
+  padding-block: var(--azienda-section-padding);
+}
+
 /* 06 — Responsive */
+@media (min-width:951px) {
+  .azienda-team .azienda-section-top {
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    column-gap:var(--card-gap);
+  }
+
+  .azienda-team .azienda-section-top h2 {
+    grid-column:1 / 4;
+  }
+
+  .azienda-team .azienda-section-top > .section-copy-column {
+    grid-column:4;
+  }
+}
+
 @media (max-width:950px) {
   .azienda-team-grid { grid-auto-columns:calc((100% - var(--team-gap)) / 2); }
   .azienda-sustainability { grid-template-columns:1fr; }
   .azienda-sustainability-photo { min-height:500px; height:60vh; }
-  .azienda-sustainability-copy { padding:75px var(--edge); }
+  .azienda-sustainability-copy { padding:var(--azienda-section-gap) var(--edge); }
 }
 @media (max-width:760px) {
-  .azienda-showroom-heading { display:block; }
-  .azienda-showroom-heading > p { margin-top:var(--title-text-gap); }
-  .azienda-showroom-grid { grid-template-columns:1fr; gap: var(--card-gap); }
-  .azienda-showrooms { padding-block:85px; }
+  .azienda-content { --azienda-section-gap:64px; --azienda-heading-gap:36px; }
   
-  .azienda-intro { padding-block:85px; }
   .azienda-section-top { display:block; }
   .azienda-section-top > p { margin-top:var(--title-text-gap); }
-  .azienda-team { padding-block:85px; }
   .azienda-person-caption h3 { font-size:16px; }
   .azienda-sustainability-photo { min-height:350px; height:52vh; }
-  .azienda-services { padding-block:95px; }
   .azienda-service-list > .azienda-service-link { grid-template-columns:40px 1fr 20px; gap:14px 22px; }
   .azienda-service-icon { width:28px; height:28px; }
   .azienda-service-list p { grid-column:2; grid-row:2; }

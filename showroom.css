@@ -312,9 +312,30 @@
   letter-spacing: .04em;
 }
 
-/* 03 — GALLERY: stessa griglia della pagina Pavimenti e rivestimenti */
+/* 03 — GALLERY: carosello fotografico con apertura delle immagini intere */
 .showroom-gallery {
-  padding-block: clamp(100px,11.05vw,185px) clamp(110px,11.9vw,195px);
+  padding-block: clamp(64px, 5.5vw, 92px) clamp(80px, 8vw, 120px);
+}
+
+.showroom-gallery-heading {
+  margin-bottom: 36px;
+}
+
+.gallery-carousel > .gallery-open {
+  flex: 0 0 calc((100% - var(--card-gap)) / 2);
+  aspect-ratio: 4 / 3;
+  scroll-snap-align: start;
+}
+
+.gallery-open:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: -4px;
+}
+
+.gallery-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
 }
 
 .showroom-gallery-heading h2 {
@@ -445,7 +466,11 @@
   }
 
   .showroom-gallery {
-    padding-block: 90px 100px;
+    padding-block: 56px 80px;
+  }
+
+  .gallery-carousel > .gallery-open {
+    flex-basis: 100%;
   }
 
   .gallery-grid {

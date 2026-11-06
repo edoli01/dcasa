@@ -200,9 +200,8 @@
   <section class="showroom-gallery page-shell" id="gallery">
     <div class="section-head showroom-gallery-heading">
       <div><p class="eyebrow">02 / Gli spazi</p><h2 class="section-title">Dentro lo <em class="serif">showroom.</em></h2></div>
-      <p class="section-copy-column">Atmosfere, materiali e dettagli architettonici dello showroom di Calcinelli.</p>
     </div>
-    <div class="gallery-grid">
+    <div class="project-layout gallery-carousel" id="showroomGalleryCarousel" tabindex="0" role="region" aria-label="Fotografie dello showroom Calcinelli">
       <button type="button" class="gallery-open" aria-label="Apri fotografia 1 dello showroom Calcinelli">
         <img src="assets/showroom/calcinelli/_WF60520.webp" alt="Showroom di Calcinelli — fotografia 1" loading="lazy" srcset="assets/showroom/calcinelli/_WF60520-640.webp 640w, assets/showroom/calcinelli/_WF60520-960.webp 960w, assets/showroom/calcinelli/_WF60520-1200.webp 1200w, assets/showroom/calcinelli/_WF60520-1600.webp 1600w, assets/showroom/calcinelli/_WF60520.webp 1920w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(343px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(343px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(343px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(343px, 960px), (max-width: 768px) max(1px, calc(23.54497vw + 162.175px)), (max-width: 1440px) max(1px, calc(44.64286vw + 0.143px)), (max-width: 1920px) max(1px, calc(45.83333vw + -17.000px)), (max-width: 2560px) max(1px, calc(49.53125vw + -88.000px)), (max-width: 3840px) max(1px, calc(50.00000vw + -100.000px)), 1820px" data-source-ratio="1.5">
       </button>
@@ -233,6 +232,12 @@
       <button type="button" class="gallery-open" aria-label="Apri fotografia 10 dello showroom Calcinelli">
         <img src="assets/showroom/calcinelli/_WF60595.webp" alt="Showroom di Calcinelli — fotografia 10" loading="lazy" srcset="assets/showroom/calcinelli/_WF60595-640.webp 640w, assets/showroom/calcinelli/_WF60595-960.webp 960w, assets/showroom/calcinelli/_WF60595-1200.webp 1200w, assets/showroom/calcinelli/_WF60595-1600.webp 1600w, assets/showroom/calcinelli/_WF60595.webp 1920w" sizes="(max-width: 768px) and (min-resolution: 4.01dppx) min(343px, 320px), (max-width: 768px) and (min-resolution: 3.01dppx) min(343px, 480px), (max-width: 768px) and (min-resolution: 2.01dppx) min(343px, 640px), (max-width: 768px) and (min-resolution: 1.01dppx) min(343px, 960px), (max-width: 768px) max(1px, calc(23.54497vw + 162.175px)), (max-width: 1440px) max(1px, calc(44.64286vw + 0.143px)), (max-width: 1920px) max(1px, calc(45.83333vw + -17.000px)), (max-width: 2560px) max(1px, calc(49.53125vw + -88.000px)), (max-width: 3840px) max(1px, calc(50.00000vw + -100.000px)), 1820px" data-source-ratio="1.5">
       </button>
+    </div>
+    <div class="gallery-controls">
+      <div class="slide-arrows project-arrows">
+        <button type="button" id="prevGallery" aria-label="Fotografia precedente" aria-controls="showroomGalleryCarousel"><svg class="ui-arrow" aria-hidden="true" viewBox="0 0 505.08 840.34"><polygon points="0 420.12 84.86 335.26 420.12 0 504.97 84.86 169.71 420.12 505.08 755.49 420.23 840.34 84.86 504.97 0 420.12"/></svg></button>
+        <button type="button" id="nextGallery" aria-label="Fotografia successiva" aria-controls="showroomGalleryCarousel"><svg class="ui-arrow" aria-hidden="true" viewBox="0 0 505.08 840.34"><polygon points="505.08 420.12 420.22 335.26 84.96 0 0.11 84.86 335.37 420.12 0 755.49 84.85 840.34 420.22 504.97 505.08 420.12"/></svg></button>
+      </div>
     </div>
     <div class="showroom-next"><a class="text-link" href="showroom.html">Tutti gli showroom </a><a class="text-link" href="showroom.html#marotta">Scopri Marotta </a></div>
   </section>

@@ -11,7 +11,7 @@
   --ink: #252521;
   --muted: #68665f;
   --red: #c8242b;
-  --button-radius: 12px;
+  --button-radius: 50px;
   --hair: #d7d5ce;
   --hero-shade: rgba(15, 14, 13, .22);
   --edge: clamp(20px, 3.6vw, 72px);
@@ -810,6 +810,8 @@ a:hover .project-caption .ui-arrow {
 .home-content {
   --home-section-space: clamp(90px, 9vw, 144px);
   --home-section-half-space: calc(var(--home-section-space) / 2);
+  --home-section-gap: clamp(72px, 7vw, 112px);
+  --home-section-padding: calc(var(--home-section-gap) / 2);
 }
 
 .home-intro {
@@ -903,6 +905,7 @@ a:hover .project-caption .ui-arrow {
 }
 
 .home-content .showroom-item .card-caption,
+.azienda-content .showroom-item .card-caption,
 .home-content .product-card .card-caption {
   border-top: 0;
   margin-top: 0;
@@ -1238,7 +1241,8 @@ a:hover .project-caption .ui-arrow {
   max-width: none;
 }
 
-.home-content :is(.showrooms, .products, .projects) > .section-head {
+.home-content :is(.showrooms, .products, .projects) > .section-head,
+.azienda-content > .showrooms > .section-head {
   margin-bottom: clamp(44px, 5vw, 72px);
 }
 
@@ -1523,9 +1527,28 @@ a:hover .project-caption .ui-arrow {
 }
 
 .blog-card h3 {
-  font-size: clamp(17px,1.45vw,24px);
+  font-size: clamp(16px,1.4vw,21px);
   line-height: 1.1;
   margin-top: 15px;
+}
+
+.blog-date {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.blog-read {
+  margin-top: 22px;
+  align-self: flex-start;
+}
+
+.blog-read:disabled {
+  cursor: default;
+  opacity: .5;
+  pointer-events: none;
 }
 
 .blog-arrow {
@@ -1774,6 +1797,7 @@ a:hover .project-caption .ui-arrow {
 @media (max-width: 760px) {
   .home-content {
     --home-section-space: 80px;
+    --home-section-gap: 64px;
   }
 
   .topbar {
@@ -2113,6 +2137,37 @@ a:hover .project-caption .ui-arrow {
   *, *::before, *::after {
     transition: none !important;
   }
+}
+
+/* Ritmo della home: due mezzi spazi formano una distanza tra sezioni.
+   Il padding superiore dell'introduzione conserva la distanza dalla hero. */
+.home-content > .home-intro {
+  padding-bottom: var(--home-section-padding);
+}
+
+.home-content > :is(.showrooms, .manifesto, .products, .services, .quote-section, .projects, .brand-section, .editorial, .final-cta) {
+  min-height: 0;
+  padding-block: var(--home-section-padding);
+}
+
+/* Vicino alle fasce, la distanza esterna si misura dal bordo colorato.
+   La sezione Azienda nascosta non interrompe la sequenza visibile. */
+.home-content > section:has(+ :is(.manifesto, .quote-section)) {
+  padding-bottom: var(--home-section-gap);
+}
+
+.home-content > :is(.manifesto, .quote-section) + section:not([hidden]),
+.home-content > :is(.manifesto, .quote-section) + section[hidden] + section:not([hidden]) {
+  padding-top: var(--home-section-gap);
+}
+
+/* Più respiro ai passaggi Brand → Blog → Contatti. */
+.home-content > .brand-section {
+  padding-bottom: calc(var(--home-section-padding) + 24px);
+}
+
+.home-content > .editorial {
+  padding-block: var(--home-section-gap);
 }
 
 /* Distanze condivise su schermi piccoli. */
