@@ -245,7 +245,7 @@
   display: inline-flex;
   align-items: center;
   background: transparent;
-  border: 1px solid var(--red);
+  border: var(--button-border-width) solid var(--red);
   border-radius: var(--button-radius);
   min-height: 46px;
   padding: 14px 22px;

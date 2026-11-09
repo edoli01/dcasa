@@ -125,7 +125,7 @@
   align-items: center;
   gap: 12px;
   padding: 13px 15px;
-  border: 1px solid transparent;
+  border: var(--button-border-width) solid transparent;
   background: transparent;
   color: #ffffffb0;
   font: inherit;

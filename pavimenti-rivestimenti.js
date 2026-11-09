@@ -44,34 +44,3 @@ document.addEventListener('click', event => {
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') setProductsOpen(false);
 });
-
-// 3. Apri e chiudi le fotografie (clic, pulsante X, ESC).
-const lightbox = document.querySelector('#galleryLightbox');
-const lightboxImage = document.querySelector('#lightboxImage');
-const closeButton = lightbox.querySelector('.lightbox-close');
-let lastFocused = null;
-
-document.querySelectorAll('.gallery-open').forEach(button => {
-  button.addEventListener('click', () => {
-    lastFocused = button;
-    lightboxImage.src = button.dataset.full;
-    lightboxImage.alt = button.dataset.alt;
-    lightbox.hidden = false;
-    document.body.style.overflow = 'hidden';
-    closeButton.focus();
-  });
-});
-function closeLightbox() {
-  if (lightbox.hidden) return;
-  lightbox.hidden = true;
-  lightboxImage.removeAttribute('src');
-  document.body.style.overflow = '';
-  if (lastFocused) lastFocused.focus();
-}
-closeButton.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', event => {
-  if (event.target === lightbox) closeLightbox();
-});
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') closeLightbox();
-});

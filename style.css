@@ -3,6 +3,43 @@
  * Regole organizzate per sezione; media query raccolte in fondo al file.
  */
 
+/* Controlli condivisi delle gallerie ingrandite. */
+.gallery-lightbox .lightbox-navigation {
+  position: absolute;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: #fff;
+}
+.gallery-lightbox .lightbox-navigation[hidden] { display: none; }
+.lightbox-navigation button {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: var(--button-border-width) solid #ffffff7d;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.lightbox-navigation button svg {
+  width: 12px;
+  height: 20px;
+  fill: currentColor;
+}
+.lightbox-navigation button:hover { background: #ffffff20; }
+.lightbox-navigation button:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.lightbox-navigation span { min-width: 60px; text-align: center; font-size: 14px; }
+.gallery-lightbox #lightboxImage {
+  max-height: calc(100svh - 180px);
+  touch-action: pan-y pinch-zoom;
+}
+
 /* ================= 01 — VARIABILI / COLORI / FONT / MARGINI ================= */
 
 :root {
@@ -12,6 +49,7 @@
   --muted: #68665f;
   --red: #c8242b;
   --button-radius: 50px;
+  --button-border-width: 1px;
   --button-font-family: var(--sans);
   --button-font-size: 11px;
   --button-font-weight: 600;
@@ -251,7 +289,7 @@ em, i {
   text-transform: uppercase;
   min-height: 46px;
   padding: 14px 22px;
-  border: 1px solid var(--button-color);
+  border: var(--button-border-width) solid var(--button-color);
   border-radius: var(--button-radius);
   color: var(--button-color);
   background: transparent;
@@ -342,7 +380,7 @@ a:hover .project-caption .ui-arrow {
 :is(.blog-filter, .filter-btn) {
   min-height: 44px;
   padding: 11px 16px;
-  border: 1px solid var(--hair);
+  border: var(--button-border-width) solid var(--hair);
   border-radius: var(--button-radius);
   background: transparent;
   color: var(--ink);
@@ -717,7 +755,7 @@ a:hover .project-caption .ui-arrow {
   place-items: center;
   width: 47px;
   height: 47px;
-  border: 1px solid #ffffff7d;
+  border: var(--button-border-width) solid #ffffff7d;
   border-radius: 50%;
   color: #fff;
   transition: background .2s ease;
@@ -813,7 +851,7 @@ a:hover .project-caption .ui-arrow {
 
 .slide-arrows button {
   color: #fff;
-  border: 1px solid #ffffff7d;
+  border: var(--button-border-width) solid #ffffff7d;
   background: transparent;
   border-radius: 50%;
   width: 47px;
@@ -1682,7 +1720,7 @@ a:hover .project-caption .ui-arrow {
   justify-content: center;
   width: 44px;
   height: 44px;
-  border: 1px solid var(--footer-line);
+  border: var(--button-border-width) solid var(--footer-line);
   border-radius: 50%;
   color: var(--ink);
   transition: background-color .2s ease, border-color .2s ease;

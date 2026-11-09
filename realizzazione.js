@@ -42,37 +42,6 @@ document.querySelectorAll('.navlinks a').forEach(link => link.addEventListener('
   setProductsOpen(false);
 }));
 
-// Gallery: apre l'immagine già presente nella card.
-// Per sostituire la fotografia modifica soltanto src nell'HTML.
-const lightbox = document.querySelector('#galleryLightbox');
-const largeImage = document.querySelector('#lightboxImage');
-const closeButton = lightbox.querySelector('.lightbox-close');
-let previousFocus = null;
-document.querySelectorAll('.gallery-open').forEach(button => {
-  button.addEventListener('click', () => {
-    previousFocus = button;
-    const image = button.querySelector('img');
-    largeImage.src = image.src;
-    largeImage.alt = image.alt;
-    lightbox.hidden = false;
-    document.body.style.overflow = 'hidden';
-    closeButton.focus();
-  });
-});
-function closeLightbox() {
-  if (lightbox.hidden) return;
-  lightbox.hidden = true;
-  largeImage.removeAttribute('src');
-  document.body.style.overflow = '';
-  previousFocus?.focus();
-}
-closeButton.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', event => {
-  if (event.target === lightbox) closeLightbox();
-});
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') {
-    closeLightbox();
-    setProductsOpen(false);
-  }
+  if (event.key === 'Escape') setProductsOpen(false);
 });

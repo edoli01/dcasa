@@ -89,7 +89,7 @@
   width: 44px;
   height: 44px;
   padding: 10px;
-  border: 1px solid var(--hair);
+  border: var(--button-border-width) solid var(--hair);
   border-radius: var(--button-radius);
   background: transparent;
   color: var(--ink);

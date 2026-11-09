@@ -113,33 +113,4 @@ if (galleryCarousel) {
   });
 }
 
-// 3. LIGHTBOX GALLERY: usa direttamente il src dell'immagine,
-//    quindi quando lo cambi nell'HTML non devi cambiare altro.
-const lightbox = document.querySelector('#galleryLightbox');
-if (lightbox) {
-  const image = lightbox.querySelector('#lightboxImage');
-  const close = lightbox.querySelector('.lightbox-close');
-  let lastFocused;
-  document.querySelectorAll('.gallery-open').forEach(button => {
-    button.addEventListener('click', () => {
-      lastFocused = button;
-      const photo = button.querySelector('img');
-      image.src = photo.src;
-      image.alt = photo.alt;
-      lightbox.hidden = false;
-      document.body.style.overflow = 'hidden';
-      close.focus();
-    });
-  });
-  function closeLightbox() {
-    if (lightbox.hidden) return;
-    lightbox.hidden = true;
-    image.removeAttribute('src');
-    document.body.style.overflow = '';
-    lastFocused?.focus();
-  }
-  close.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', event => {if(event.target === lightbox) closeLightbox()});
-  document.addEventListener('keydown', event => {if(event.key === 'Escape') closeLightbox()});
-}
 document.addEventListener('keydown', event => {if(event.key === 'Escape') setProductsOpen(false)});
