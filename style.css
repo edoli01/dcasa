@@ -18,7 +18,7 @@
   --button-line-height: 1.3;
   --button-tracking: .1em;
   --hair: #d7d5ce;
-  --hero-shade: rgba(0, 0, 0, 0.26);
+  --hero-shade: rgba(0, 0, 0, 0.25);
   --edge: clamp(20px, 3.6vw, 72px);
   --sans: 'Inter Tight', Arial, sans-serif;
   --serif: 'Playfair Display', Georgia, serif;

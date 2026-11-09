@@ -9,7 +9,7 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(var(--hero-shade), var(--hero-shade)),
-              image-set(url('assets/pavimenti%20rivestimenti/_WL72014-1600.webp') 1x, url('assets/pavimenti%20rivestimenti/_WL72014.webp') 2x) center / cover no-repeat;
+              image-set(url('assets/pavimenti%20rivestimenti/_DSF9185-1600.webp') 1x, url('assets/pavimenti%20rivestimenti/_DSF9185.webp') 2x) center / cover no-repeat;
 }
 .category-hero h1 {
   font-family: var(--sans);
@@ -122,5 +122,5 @@
 
 
 @media (min-width: 1201px) {
- .category-hero-image { background-image: linear-gradient(var(--hero-shade), var(--hero-shade)),url("assets/pavimenti%20rivestimenti/_WL72014.webp"); }
+ .category-hero-image { background-image: linear-gradient(var(--hero-shade), var(--hero-shade)),url("assets/pavimenti%20rivestimenti/_DSF9185.webp"); }
 }
