@@ -77,3 +77,67 @@
     frame = requestAnimationFrame(animate);
   });
 })();
+
+// Entrata delle sezioni come blocchi unici, una sola volta.
+(() => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reducedMotion.matches || !('IntersectionObserver' in window)
+    || !('animate' in Element.prototype)) return;
+
+  const animations = new Map();
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(({ target, isIntersecting }) => {
+      if (!isIntersecting) return;
+      observer.unobserve(target);
+      const animation = animations.get(target);
+      if (!animation) return;
+      if (reducedMotion.matches || target.contains(document.activeElement)) {
+        animation.cancel();
+        animations.delete(target);
+        return;
+      }
+      animation.play();
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
+
+  document.querySelectorAll(
+    'main > section:not(.hero):not(.page-intro):not([hidden]), '
+    + '.article-cover, .article-layout, .footer-top'
+  ).forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (!rect.width || !rect.height || rect.top < window.innerHeight) return;
+    // Prepara l'entrata fuori schermo: il blocco non diventa trasparente dopo essere apparso.
+    const animation = section.animate([
+      { opacity: 0, transform: 'translateY(16px)' },
+      { opacity: 1, transform: 'translateY(0)' }
+    ], {
+      duration: 1200,
+      easing: 'cubic-bezier(.25, .1, .25, 1)',
+      fill: 'both'
+    });
+    animation.pause();
+    animation.currentTime = 0;
+    animations.set(section, animation);
+    animation.finished.then(() => {
+      animation.cancel();
+      animations.delete(section);
+    }, () => animations.delete(section));
+    observer.observe(section);
+  });
+
+  document.addEventListener('focusin', event => {
+    animations.forEach((animation, section) => {
+      if (section.contains(event.target)) {
+        observer.unobserve(section);
+        animation.cancel();
+        animations.delete(section);
+      }
+    });
+  });
+  reducedMotion.addEventListener('change', () => {
+    if (!reducedMotion.matches) return;
+    observer.disconnect();
+    animations.forEach(animation => animation.cancel());
+    animations.clear();
+  });
+})();
