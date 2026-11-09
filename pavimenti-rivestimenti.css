@@ -111,6 +111,7 @@
   
   .category-intro { padding-block: 40px; }
   .intro-prodotto { width: 100%; }
+  .category-section-heading h2 { font-size: calc(clamp(42px, 10vw, 72px) * var(--h2-scale)); }
   .category-gallery { padding-block: 16px 32px; }
   .category-gallery + .brand-section { padding-top: 32px; }
   .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--card-gap); }

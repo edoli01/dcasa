@@ -49,5 +49,5 @@
   .servizi-jump + .servizi-jump::before { display:none; }
   .servizi-jump img { width:36px; height:36px; }
   .servizi-detail { padding-block:75px; }
-  .servizi-detail-heading h2 { font-size:calc(clamp(37px,8.8vw,65px) * var(--h2-scale)); }
+  .servizi-detail-heading h2 { font-size:var(--mobile-section-title-size); }
 }

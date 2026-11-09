@@ -75,9 +75,11 @@
 .azienda-service-link:hover h3,.azienda-service-link:focus-visible h3 { color:var(--red); }
 .azienda-service-link:focus-visible { outline:2px solid var(--red); outline-offset:6px; }
 
-.azienda-content > .final-cta {
-  min-height: 0;
-  padding-block: var(--azienda-section-padding);
+@media (min-width:761px) {
+  .azienda-content > .final-cta {
+    min-height: 0;
+    padding-block: var(--azienda-section-padding);
+  }
 }
 
 /* 06 — Responsive */
@@ -94,9 +96,9 @@
   
   .azienda-section-top { display:block; }
   .azienda-section-top > p { margin-top:var(--title-text-gap); }
-  .azienda-person-caption h3 { font-size:16px; }
+  .azienda-person-caption h3 { font-size:var(--mobile-card-title-size); line-height:1.08; }
   .azienda-sustainability-photo { min-height:350px; height:52vh; }
-  .azienda-service-list > .azienda-service-link { grid-template-columns:40px 1fr 20px; gap:14px 22px; }
+  .azienda-service-list > .azienda-service-link { grid-template-columns:40px minmax(0,1fr) 20px; gap:14px 22px; }
   .azienda-service-icon { width:28px; height:28px; }
   .azienda-service-list p { grid-column:2; grid-row:2; }
   .azienda-service-list .ui-arrow { grid-column:3; grid-row:1; }

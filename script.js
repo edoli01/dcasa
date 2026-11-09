@@ -14,6 +14,19 @@
 const SLIDE_DURATION = 6500; // millisecondi: durata di ogni slide
 const MOBILE_BREAKPOINT = 760; // deve coincidere con il CSS
 
+// Su mobile il link al blog segue le card anche nell'ordine di tastiera.
+const blogPreview = document.querySelector('.home-content .blog-preview');
+const blogHeading = blogPreview?.querySelector('.blog-heading');
+const blogAside = blogHeading?.querySelector('.blog-aside');
+if (blogAside) {
+  const mobileBlog = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
+  const placeBlogLink = () => {
+    (mobileBlog.matches ? blogPreview : blogHeading).append(blogAside);
+  };
+  mobileBlog.addEventListener('change', placeBlogLink);
+  placeBlogLink();
+}
+
 const header = document.getElementById('topbar');
 const hero = document.getElementById('hero');
 const mobileMenuButton = document.getElementById('menuToggle');

@@ -368,13 +368,6 @@
   transform: scale(1.025);
 }
 
-.showroom-next {
-  display: flex;
-  justify-content: space-between;
-  gap: 25px;
-  margin-top: 65px;
-}
-
 /* 04 — LIGHTBOX */
 .gallery-lightbox[hidden] {
   display: none;
@@ -461,6 +454,13 @@
     padding: 48px var(--edge) 46px;
   }
 
+  .showroom-detail-hero .hero-scroll-down {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    justify-self: center;
+    margin-top: var(--hero-scroll-gap);
+  }
+
   .showroom-timeline {
     padding: 24px var(--edge) 56px;
   }
@@ -482,10 +482,6 @@
     padding: 15px;
   }
 
-  .showroom-next {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
 
 @media (prefers-reduced-motion:reduce) {

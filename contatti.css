@@ -288,7 +288,7 @@
   .contact-page { --contact-section-gap: 64px; }
 
   .contact-intro.page-intro { grid-template-columns: minmax(0, 1fr); }
-  .contact-intro > .text-link { grid-column: 1; grid-row: 4; margin-top: 24px; }
+  .contact-intro > .text-link { grid-column: 1; grid-row: 4; justify-self: start; margin-top: 24px; }
 
   .contact-map-wrap {
     height: clamp(360px, 65svh, 480px);

@@ -208,8 +208,8 @@
   .case-hero-cta {
     grid-column: 1;
     grid-row: 4;
-    justify-self: end;
-    margin-top: var(--text-button-gap);
+    justify-self: center;
+    margin-top: var(--hero-scroll-gap);
   }
 
   .case-intro {

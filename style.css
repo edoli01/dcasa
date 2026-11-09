@@ -1891,17 +1891,19 @@ a:hover .project-caption .ui-arrow {
 
   .hero-footer {
     bottom: 26px;
+    justify-content: center;
   }
 
   :is(.home-hero, .hero-bottom) .hero-body {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 0;
     --hero-bottom-space: 46px;
     padding-bottom: var(--hero-bottom-space);
   }
 
   :is(.home-hero, .hero-bottom) .hero-footer {
-    justify-self: end;
+    justify-self: center;
+    margin-top: var(--hero-scroll-gap);
   }
 
   .hero-bottom .hero-body {
@@ -1911,7 +1913,6 @@ a:hover .project-caption .ui-arrow {
   .hero-bottom .hero-footer {
     grid-column: 1;
     grid-row: 3;
-    margin-top: 16px;
   }
 
   .manifesto {
@@ -1938,7 +1939,7 @@ a:hover .project-caption .ui-arrow {
 
   .card-caption h3,
   .projects .project-caption {
-    font-size: 16px;
+    font-size: var(--mobile-card-title-size);
   }
 
   .history {
@@ -2013,7 +2014,6 @@ a:hover .project-caption .ui-arrow {
 
   .final-cta {
     display: block;
-    min-height: 340px;
   }
 
   .final-cta .text-link {
@@ -2062,6 +2062,11 @@ a:hover .project-caption .ui-arrow {
 
   .showroom-grid {
     grid-template-columns: 1fr;
+    row-gap: 36px;
+  }
+
+  #showroom .showroom-item small {
+    font-size: var(--mobile-card-title-size);
   }
 
   .navlinks>a, .nav-dropdown-toggle {
@@ -2118,7 +2123,7 @@ a:hover .project-caption .ui-arrow {
   
 
   .history-body h2, .final-cta h2, .section-title, .showroom-milestone-date {
-    font-size: calc(clamp(37px,8.8vw,65px) * var(--h2-scale));
+    font-size: var(--mobile-section-title-size);
   }
 
   .quote-section blockquote {
@@ -2130,7 +2135,7 @@ a:hover .project-caption .ui-arrow {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 760px) {
   .magazine-intro {
     grid-template-columns: 1fr;
     gap: 45px;
@@ -2145,12 +2150,21 @@ a:hover .project-caption .ui-arrow {
   }
 
   .blog-aside {
-    margin-top: 28px;
+    margin-top: var(--title-text-gap);
+  }
+
+  .home-content .blog-heading > .blog-aside.section-copy-column {
+    text-align: left;
+  }
+
+  .home-content .blog-preview > .blog-aside {
+    margin-top: var(--text-button-gap);
+    text-align: left;
   }
 
   .blog-cards {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-    gap: var(--card-gap);
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 
   .blog-meta {
@@ -2165,7 +2179,7 @@ a:hover .project-caption .ui-arrow {
 
   .blog-card h3,
   .journal-card h2 {
-    font-size: 17px;
+    font-size: var(--mobile-card-title-size);
   }
 }
 
@@ -2224,11 +2238,33 @@ a:hover .project-caption .ui-arrow {
 /* Distanze condivise su schermi piccoli. */
 @media (max-width: 760px) {
   :root {
+    /* La stessa scala alimenta hero, aperture interne e Manifesto. */
+    --home-display-size: clamp(40px, 10.5vw, 72px);
+    --mobile-section-title-size: calc(clamp(37px, 8.8vw, 65px) * var(--h2-scale));
+    --mobile-card-title-size: 18px;
+    --hero-scroll-gap: 22px;
     --hero-content-top: clamp(170px, 28svh, 240px);
     --page-intro-top: 125px;
     --page-intro-bottom: 65px;
     --eyebrow-title-gap: 22px;
     --title-text-gap: 22px;
     --text-button-gap: 30px;
+  }
+
+  .hero h1,
+  .page-intro h1 {
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  /* Chiusura comune a tutte le pagine, come nella home mobile. */
+  .final-cta,
+  .home-content > .final-cta {
+    min-height: 0;
+    padding-block: 32px;
+  }
+
+  .footer-column > a[href="index.html#prodotti"] {
+    display: none;
   }
 }
