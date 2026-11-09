@@ -57,7 +57,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
   gap: clamp(40px, 6vw, 88px);
-  padding-block: clamp(64px, 7vw, 112px) clamp(40px, 4vw, 64px);
+  padding-block: var(--hero-bottom-space) clamp(40px, 4vw, 64px);
   align-items: start;
   scroll-margin-top: 100px;
 }
@@ -213,7 +213,7 @@
   }
 
   .case-intro {
-    padding-block: 48px 32px;
+    padding-block: 46px 32px;
   }
 
   .case-gallery {
