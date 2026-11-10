@@ -7,6 +7,15 @@
   --azienda-heading-gap: clamp(36px, 4vw, 56px);
 }
 
+.azienda-content > section[hidden] { display:none; }
+
+/* Magazine: stessa copertina integrale e impaginazione della pagina Blog. */
+.azienda-content > .magazine-intro { padding-top:var(--azienda-section-gap); }
+.azienda-content .magazine-cover { aspect-ratio:auto; background:transparent; }
+.azienda-content .magazine-cover img { height:auto; aspect-ratio:1200 / 1600; }
+.azienda-content .magazine-cover:focus-visible { outline:2px solid var(--red); outline-offset:6px; }
+.azienda-content .magazine-format { font-size:11px; }
+
 /* 01 — Hero */
 .azienda-hero { position: relative; }
 .azienda-hero-slides { position:absolute; inset:0; }
